@@ -77,7 +77,7 @@
 
     <div class="brand-cta">
       <%= lang === 'en' ? 'Want to enquire about a journey with this brand?' : '想与该品牌策划一段旅程？' %>
-      <a href="https://wr-travel.com/contact" target="_blank" rel="noopener"><%= lang === 'en' ? 'Contact the advisor →' : '联系顾问 →' %></a>
+      <a href="<%= advisorUrl(lang, { source: 'brand-detail' }) %>" data-enquiry-cta="brand-detail"><%= lang === 'en' ? 'Contact the advisor →' : '联系顾问 →' %></a>
     </div>
   </div>
 

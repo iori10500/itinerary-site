@@ -3,6 +3,11 @@ const path = require('path');
 const fs = require('fs');
 const { marked } = require('marked');
 const schemas = require('./lib/schemas');
+const { createEnquiryHandler } = require('./lib/enquiries');
+
+function textQuery(value, max = 180) {
+  return String(value || '').trim().slice(0, max);
+}
 
 function extractBrochureContent(html) {
   // Extract <style> blocks (may be multiple)
@@ -59,6 +64,17 @@ app.locals.urlFor = function(p, lang) {
   return p;
 };
 app.locals.SITE_URL = 'https://itinerary.wildroadgroup.com';
+app.locals.advisorUrl = function(lang, params = {}) {
+  const base = (lang === 'en' ? '/en' : '') + '/advisor';
+  const query = new URLSearchParams(Object.entries(params).filter(([, value]) => value));
+  return query.size ? `${base}?${query.toString()}` : base;
+};
+app.locals.turnstileSiteKey = process.env.TURNSTILE_SITE_KEY || '';
+app.locals.advisorEmail = process.env.ADVISOR_PUBLIC_EMAIL || 'info@wildroadgroup.com';
+app.locals.wechatQrPath = process.env.WECHAT_QR_PATH || '/images/wechat-contact-qr.png';
+
+app.use(express.json({ limit: '32kb' }));
+app.use(express.urlencoded({ extended: false, limit: '32kb' }));
 
 // Serve static files from public directory
 app.use(express.static(path.join(__dirname, 'public')));
@@ -148,6 +164,8 @@ app.get('/sitemap.xml', (req, res) => {
   const pages = [
     { loc: `${baseUrl}/`, priority: '1.0', changefreq: 'weekly' },
     { loc: `${baseUrl}/en`, priority: '0.9', changefreq: 'weekly' },
+    { loc: `${baseUrl}/advisor`, priority: '0.9', changefreq: 'monthly' },
+    { loc: `${baseUrl}/en/advisor`, priority: '0.8', changefreq: 'monthly' },
   ];
   itineraries.forEach(item => {
     pages.push({ loc: `${baseUrl}/${item.id}`, priority: '0.8', changefreq: 'monthly' });
@@ -924,6 +942,20 @@ app.get('/routes/:slug', (req, res) => {
 });
 
 // Homepage route
+
+app.post('/api/enquiries', createEnquiryHandler());
+
+app.get('/advisor', (req, res) => {
+  const lang = req.lang;
+  const routeSlug = textQuery(req.query.route, 180);
+  const route = routeSlug ? routesIndex[routeSlug] : null;
+  res.render('advisor', {
+    lang,
+    route,
+    source: textQuery(req.query.source, 180) || 'advisor-page',
+    title: lang === 'en' ? 'Talk to your travel advisor | WR Journeys' : '与旅行顾问聊聊 | WR Journeys',
+  });
+});
 
 app.get('/', (req, res) => {
   const lang = req.lang;

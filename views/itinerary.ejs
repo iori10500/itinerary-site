@@ -104,7 +104,7 @@
     <span class="title"><%= itinerary ? (lang === 'en' ? (itinerary.title_en || itinerary.title) : itinerary.title) : (lang === 'en' ? 'Not Found' : '未找到行程') %></span>
     <% if (itinerary) { %>
     <div style="display:flex;align-items:center;gap:8px;">
-      <a href="https://wr-travel.com/contact" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:4px;background:#c8a96e;color:#fff;font-size:13px;font-weight:600;padding:6px 14px;border-radius:6px;text-decoration:none;transition:background 0.2s;"><%= lang === 'en' ? '💬 Consult' : '💬 咨询顾问' %></a>
+      <a href="<%= advisorUrl(lang, { source: 'itinerary-header' }) %>" data-enquiry-cta="itinerary-header" style="display:inline-flex;align-items:center;gap:4px;background:#c8a96e;color:#fff;font-size:13px;font-weight:600;padding:6px 14px;border-radius:6px;text-decoration:none;transition:background 0.2s;"><%= lang === 'en' ? '💬 Consult' : '💬 咨询顾问' %></a>
       <a href="/pdfs/<%= itinerary.id %>.pdf" class="download-btn" download><%= lang === 'en' ? '📥 Download PDF' : '📥 下载PDF' %></a>
     </div>
     <% } else { %>
@@ -268,7 +268,7 @@
 </script>
 
   <!-- Floating Consult Button -->
-  <a href="https://wr-travel.com/contact" target="_blank" rel="noopener" class="float-consult" aria-label="<%= lang === 'en' ? 'Consult' : '咨询' %>">💬 <%= lang === 'en' ? 'Consult' : '咨询' %></a>
+  <a href="<%= advisorUrl(lang, { source: 'itinerary-floating' }) %>" data-enquiry-cta="itinerary-floating" class="float-consult" aria-label="<%= lang === 'en' ? 'Consult' : '咨询' %>">💬 <%= lang === 'en' ? 'Consult' : '咨询' %></a>
   <style>
     .float-consult {
       position: fixed; bottom: 28px; right: 28px; z-index: 9999;

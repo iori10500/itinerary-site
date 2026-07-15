@@ -87,7 +87,7 @@
     <% } else { %>
     <div class="cr-empty">
       <%= lang === 'en' ? 'No public routes yet for this region — we curate bespoke. ' : '本区域暂无公开线路，按一事一议设计。' %>
-      <a href="https://wr-travel.com/contact" target="_blank" rel="noopener"><%= lang === 'en' ? 'Contact Advisor →' : '联系顾问 →' %></a>
+      <a href="<%= advisorUrl(lang, { source: 'china-region' }) %>" data-enquiry-cta="china-region"><%= lang === 'en' ? 'Contact Advisor →' : '联系顾问 →' %></a>
     </div>
     <% } %>
   </div>

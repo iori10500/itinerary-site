@@ -111,7 +111,7 @@
     <% } else { %>
     <div style="text-align:center;padding:60px 24px;">
       <p style="font-size:18px;color:#888;margin-bottom:24px;"><%= lang === 'en' ? 'Coming Soon — Custom itineraries for ' + destination.name_en : destination.name_zh + ' 定制行程即将推出' %></p>
-      <a href="https://wr-travel.com/contact" target="_blank" rel="noopener" style="display:inline-block;background:linear-gradient(135deg,#c8a96e,#b08d4a);color:#fff;font-size:16px;font-weight:600;padding:14px 32px;border-radius:8px;text-decoration:none;"><%= lang === 'en' ? 'Consult a Travel Advisor' : '咨询旅行顾问' %></a>
+      <a href="<%= advisorUrl(lang, { source: 'destination-detail' }) %>" data-enquiry-cta="destination-detail" style="display:inline-block;background:linear-gradient(135deg,#c8a96e,#b08d4a);color:#fff;font-size:16px;font-weight:600;padding:14px 32px;border-radius:8px;text-decoration:none;"><%= lang === 'en' ? 'Consult a Travel Advisor' : '咨询旅行顾问' %></a>
     </div>
     <% } %>
   </div>

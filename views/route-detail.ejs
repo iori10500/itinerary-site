@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="/fonts/fonts.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/main.css">
+  <link rel="stylesheet" href="/enquiry.css">
   <%- include('partials/jsonld') %>
   <style>
     .r-hero { position:relative; height:62vh; min-height:380px; overflow:hidden; background:#1a1a2e; }
@@ -143,11 +144,16 @@
     <% }); %>
     <% } %>
 
-    <div class="r-cta">
-      <h3><%= lang === 'en' ? 'Make this journey yours' : '把这趟旅程订下来' %></h3>
-      <p><%= lang === 'en' ? 'Bespoke quote · slow-stay anchors · concierge service throughout' : '一事一议报价 · 慢栖锚定 · 全程旅程管家服务' %></p>
-      <a href="https://wr-travel.com/contact" target="_blank" rel="noopener"><%= lang === 'en' ? 'Contact Advisor →' : '联系顾问 →' %></a>
-    </div>
+    <section class="route-enquiry" id="plan-this-journey">
+      <div class="advisor-form-heading">
+        <p class="advisor-kicker"><%= lang === 'en' ? 'MAKE THIS JOURNEY YOURS' : '让这趟旅程真正属于您' %></p>
+        <h2><%= lang === 'en' ? 'Keep the spirit. Change every detail.' : '保留旅程的精神，重写每一个细节。' %></h2>
+        <p><%= lang === 'en' ? 'Dates, pace, lodges and experiences are shaped around your party.' : '日期、节奏、住宿与体验，都可以围绕您的同行者重新设计。' %></p>
+      </div>
+      <div class="advisor-form-shell">
+        <%- include('partials/enquiry-form', { variant: 'long', source: 'route-detail', route: route }) %>
+      </div>
+    </section>
   </div>
 
   <%- include("partials/footer") %>

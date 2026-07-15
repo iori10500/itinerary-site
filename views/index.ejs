@@ -52,6 +52,7 @@
   <link rel="stylesheet" href="/fonts/fonts.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/main.css">
+  <link rel="stylesheet" href="/enquiry.css">
 <%- include('partials/ga') %>
 </head>
 <body>
@@ -93,7 +94,7 @@
       </div>
       <div class="bh-cta">
         <span class="bh-cta-text"><%= lang === 'en' ? 'Planning a journey? Talk to a real advisor.' : '想策划一段旅程？联系真人顾问。' %></span>
-        <a class="bh-cta-btn" href="https://wr-travel.com/contact" target="_blank" rel="noopener"><%= lang === 'en' ? 'Contact Advisor →' : '联系顾问 →' %></a>
+        <a class="bh-cta-btn" href="<%= advisorUrl(lang, { source: 'home-brand-house' }) %>" data-enquiry-cta="home-brand-house"><%= lang === 'en' ? 'Contact Advisor →' : '联系顾问 →' %></a>
       </div>
     </div>
   </section>
@@ -117,6 +118,17 @@
     .bh-cta-btn:hover { transform:scale(1.04); }
     @media (max-width:640px) { .bh-title { font-size:20px; } .bh-card-name { font-size:18px; } }
   </style>
+
+  <section class="home-enquiry" aria-labelledby="home-enquiry-title">
+    <div class="home-enquiry__inner">
+      <div class="home-enquiry__copy">
+        <p class="advisor-kicker"><%= lang === 'en' ? 'A REAL ADVISOR, FROM THE FIRST NOTE' : '从第一条消息起，就是真人顾问' %></p>
+        <h2 id="home-enquiry-title"><%= lang === 'en' ? 'Where is your mind wandering?' : '最近，您正向往哪里？' %></h2>
+        <p><%= lang === 'en' ? 'A destination, a feeling, or a rough month is enough. Our owner personally reads every enquiry and replies within 24 hours.' : '一个目的地、一种感受，或大致月份，就足够开始。本店主理人亲自阅读每一条询价，工作时间内 20 分钟回复。' %></p>
+      </div>
+      <%- include('partials/enquiry-form', { variant: 'short', source: 'home-inline', route: null }) %>
+    </div>
+  </section>
 
   <!-- SEARCH -->
   <div class="search-section">
@@ -302,7 +314,7 @@
   </script>
 
   <!-- Floating Consult Button -->
-  <a href="https://wr-travel.com/contact" target="_blank" rel="noopener" class="float-consult" aria-label="<%= lang === 'en' ? 'Consult' : '咨询' %>">💬 <%= lang === 'en' ? 'Consult' : '咨询' %></a>
+  <a href="<%= advisorUrl(lang, { source: 'home-floating' }) %>" data-enquiry-cta="home-floating" class="float-consult" aria-label="<%= lang === 'en' ? 'Consult' : '咨询' %>">💬 <%= lang === 'en' ? 'Consult' : '咨询' %></a>
   <style>
     .float-consult {
       position: fixed; bottom: 28px; right: 28px; z-index: 9999;

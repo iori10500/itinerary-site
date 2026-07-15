@@ -57,7 +57,7 @@
     <% } else { %>
     <div style="background:#f7f5f0;border-left:3px solid #c8a96e;padding:18px 22px;margin:32px 0;border-radius:4px;">
       <%= lang === 'en' ? 'We curate this mode bespoke. Contact the advisor to design one tailored to you.' : '该出行模式以一事一议为主，欢迎联系顾问按你的需求单独设计。' %>
-      &nbsp;<a href="https://wr-travel.com/contact" target="_blank" rel="noopener" style="color:#c8a96e;text-decoration:none;font-weight:500;"><%= lang === 'en' ? 'Contact Advisor →' : '联系顾问 →' %></a>
+      &nbsp;<a href="<%= advisorUrl(lang, { source: 'mode-detail' }) %>" data-enquiry-cta="mode-detail" style="color:#c8a96e;text-decoration:none;font-weight:500;"><%= lang === 'en' ? 'Contact Advisor →' : '联系顾问 →' %></a>
     </div>
     <% } %>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px;">

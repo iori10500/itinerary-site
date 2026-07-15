@@ -1,0 +1,104 @@
+<%
+  var isLong = variant === 'long';
+  var routeValue = route && route.slug ? route.slug : '';
+  var routeLabel = route ? (lang === 'en' ? route.title_en : route.title_zh) : '';
+%>
+<form class="enquiry-form enquiry-form--<%= variant %>" data-enquiry-form novalidate>
+  <input type="hidden" name="variant" value="<%= variant %>">
+  <input type="hidden" name="lang" value="<%= lang %>">
+  <input type="hidden" name="source" value="<%= source %>">
+  <input type="hidden" name="route" value="<%= routeValue %>">
+  <input type="hidden" name="started_at" value="">
+  <div class="enquiry-honeypot" aria-hidden="true">
+    <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+  </div>
+
+  <% if (routeLabel) { %>
+  <div class="enquiry-route-context">
+    <span><%= lang === 'en' ? 'Journey in mind' : '意向路线' %></span>
+    <strong><%= routeLabel %></strong>
+  </div>
+  <% } %>
+
+  <div class="enquiry-grid">
+    <label class="enquiry-field">
+      <span><%= lang === 'en' ? 'Your name' : '您的称呼' %> *</span>
+      <input name="name" autocomplete="name" maxlength="100" required placeholder="<%= lang === 'en' ? 'How should we address you?' : '我们该如何称呼您？' %>">
+    </label>
+    <label class="enquiry-field">
+      <span>Email *</span>
+      <input type="email" name="email" autocomplete="email" maxlength="180" required placeholder="name@example.com">
+    </label>
+    <label class="enquiry-field enquiry-field--wide">
+      <span><%= lang === 'en' ? 'WhatsApp (optional)' : '微信号 / WhatsApp（选填）' %></span>
+      <input name="contact" autocomplete="tel" maxlength="180" placeholder="<%= lang === 'en' ? 'Country code + number' : '方便顾问快速联系您' %>">
+    </label>
+
+    <% if (isLong) { %>
+    <label class="enquiry-field">
+      <span><%= lang === 'en' ? 'Travel dates' : '预计出发日期' %></span>
+      <input name="dates" maxlength="180" placeholder="<%= lang === 'en' ? 'Exact or flexible dates' : '具体日期或大致月份均可' %>">
+    </label>
+    <label class="enquiry-field">
+      <span><%= lang === 'en' ? 'Trip length' : '旅行时长' %></span>
+      <input name="duration" maxlength="80" placeholder="<%= lang === 'en' ? 'e.g. 8–10 days' : '例如 8–10 天' %>">
+    </label>
+    <label class="enquiry-field">
+      <span><%= lang === 'en' ? 'Travellers' : '出行人数' %></span>
+      <input name="travellers" maxlength="80" placeholder="<%= lang === 'en' ? 'Adults and children' : '成人与儿童人数' %>">
+    </label>
+    <label class="enquiry-field">
+      <span><%= lang === 'en' ? 'Budget range' : '预算区间' %></span>
+      <select name="budget">
+        <option value=""><%= lang === 'en' ? 'Tell me what is possible' : '请顾问提供建议' %></option>
+        <option value="under-cny-30000"><%= lang === 'en' ? 'Under CNY 30,000 / person' : '每人 ¥30,000 以下' %></option>
+        <option value="cny-30000-60000"><%= lang === 'en' ? 'CNY 30,000–60,000 / person' : '每人 ¥30,000–60,000' %></option>
+        <option value="cny-60000-100000"><%= lang === 'en' ? 'CNY 60,000–100,000 / person' : '每人 ¥60,000–100,000' %></option>
+        <option value="cny-100000-plus"><%= lang === 'en' ? 'CNY 100,000+ / person' : '每人 ¥100,000 以上' %></option>
+      </select>
+    </label>
+    <fieldset class="enquiry-field enquiry-field--wide enquiry-interests">
+      <legend><%= lang === 'en' ? 'What matters most?' : '您最看重什么？' %></legend>
+      <div>
+        <% var tags = lang === 'en' ? ['Slow stays','Boutique hotels','Food','Culture','Nature','Family','Wellness','Photography'] : ['慢栖体验','精品酒店','美食','文化','自然','亲子','康养','摄影']; %>
+        <% tags.forEach(function(tag) { %><label><input type="checkbox" name="interests" value="<%= tag %>"><span><%= tag %></span></label><% }); %>
+      </div>
+    </fieldset>
+    <label class="enquiry-field enquiry-field--wide">
+      <span><%= lang === 'en' ? 'Preferred language' : '偏好沟通语言' %></span>
+      <select name="preferred_language">
+        <option value="<%= lang === 'en' ? 'English' : '中文' %>"><%= lang === 'en' ? 'English' : '中文' %></option>
+        <option value="<%= lang === 'en' ? 'Chinese' : 'English' %>"><%= lang === 'en' ? 'Chinese' : 'English' %></option>
+      </select>
+    </label>
+    <% } %>
+
+    <label class="enquiry-field enquiry-field--wide">
+      <span><%= lang === 'en' ? 'Tell us about your dream journey' : '描述您理想中的旅程' %> *</span>
+      <textarea name="message" rows="5" maxlength="3000" required placeholder="<%= lang === 'en' ? 'Where would you like to slow down? What should this journey feel like?' : '想去哪里、希望怎样旅行，以及任何重要偏好。' %>"></textarea>
+    </label>
+    <% if (!isLong && lang !== 'en') { %>
+    <label class="enquiry-field enquiry-field--wide">
+      <span>您从哪里知道我们？</span>
+      <select name="discovery"><option value="">选填</option><option>搜索引擎</option><option>公众号 / 小红书</option><option>朋友推荐</option><option>既有客户</option><option>其他</option></select>
+    </label>
+    <% } %>
+  </div>
+
+  <% if (turnstileSiteKey) { %>
+  <div class="cf-turnstile" data-sitekey="<%= turnstileSiteKey %>" data-theme="light" data-size="flexible"></div>
+  <% } %>
+
+  <label class="enquiry-consent">
+    <input type="checkbox" name="privacy_consent" value="1" required>
+    <span><%= lang === 'en' ? 'I agree to the WR Travel Privacy Policy and consent to being contacted about this enquiry.' : '我同意 WR Travel 隐私政策，并同意顾问通过我提供的联系方式回复本次咨询。' %>
+      <a href="https://wr-travel.com/privacy" target="_blank" rel="noopener"><%= lang === 'en' ? 'Read policy' : '查看政策' %></a>
+    </span>
+  </label>
+
+  <div class="enquiry-actions">
+    <button type="submit"><span><%= lang === 'en' ? 'Start planning' : '开启规划' %></span><i aria-hidden="true">→</i></button>
+    <p><%= lang === 'en' ? 'Complimentary planning · No fee until you book' : '免费规划 · 落单前无任何费用' %></p>
+  </div>
+  <div class="enquiry-status" data-enquiry-status role="status" aria-live="polite"></div>
+</form>

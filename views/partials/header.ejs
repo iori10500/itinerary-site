@@ -4,6 +4,6 @@
   <a href="<%= lang === 'en' ? '/en' : '' %>/destinations"><%= lang === 'en' ? 'Destinations' : '目的地' %></a>
   <a href="<%= lang === 'en' ? '/en' : '' %>/modes"><%= lang === 'en' ? 'Modes' : '出行模式' %></a>
   <a href="<%= lang === 'en' ? '/en' : '' %>/journal"><%= lang === 'en' ? 'Journal' : '旅行灵感' %></a>
-  <a href="https://wr-travel.com/luxury-travel" target="_blank" rel="noopener"><%= lang === 'en' ? 'Custom Itinerary' : '定制行程' %></a>
+  <a href="<%= advisorUrl(lang, { source: 'main-nav' }) %>" data-enquiry-cta="main-nav"><%= lang === 'en' ? 'Talk to an Advisor' : '咨询顾问' %></a>
   <a href="https://wr-travel.com" target="_blank" rel="noopener"><%= lang === 'en' ? 'About WR Travel' : '关于我们' %></a>
 </nav>
