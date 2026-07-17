@@ -1,0 +1,127 @@
+{
+  "slug": "swiss-alpine-rail-8d7n",
+  "country_slugs": ["switzerland"],
+  "region_zh": "瑞士 · 恩加丁与瓦莱州",
+  "region_en": "Switzerland · Engadin & Valais",
+  "title_zh": "两座山谷之间·瑞士阿尔卑斯慢行",
+  "title_en": "Between Two Valleys: A Slow Journey Across the Swiss Alps",
+  "subtitle_zh": "圣莫里茨三晚、冰川快车全景穿越、采尔马特三晚，把阿尔卑斯留给清晨与黄昏",
+  "subtitle_en": "Three nights in St. Moritz, the full Glacier Express crossing, and three nights in Zermatt — keeping the Alps for dawn and dusk",
+  "days": 8,
+  "nights": 7,
+  "duration_zh": "8天7晚",
+  "duration_en": "8 Days / 7 Nights",
+  "lodge_zh": "圣莫里茨山居酒店、采尔马特山景酒店（按季节与偏好甄选）",
+  "lodge_en": "Curated mountain hotels in St. Moritz and Zermatt, selected by season and preference",
+  "hero_image": "/images/swiss7/cover.jpg",
+  "route_zh": "苏黎世 → 圣莫里茨（3晚）→ 冰川快车 → 采尔马特（3晚）→ 苏黎世或日内瓦",
+  "route_en": "Zurich → St. Moritz (3 nights) → Glacier Express → Zermatt (3 nights) → Zurich or Geneva",
+  "tags": [
+    { "zh": "阿尔卑斯慢旅", "en": "Slow Alps" },
+    { "zh": "冰川快车", "en": "Glacier Express" },
+    { "zh": "景观列车", "en": "Panoramic Rail" },
+    { "zh": "圣莫里茨", "en": "St. Moritz" },
+    { "zh": "采尔马特", "en": "Zermatt" },
+    { "zh": "私家定制", "en": "Bespoke Journey" }
+  ],
+  "intro_zh": "这不是一条追着瑞士地标奔跑的环线，而是在两座山谷各住三晚。先在恩加丁高原适应山地节奏：湖边散步、缆车上山，把午后留给长餐与水疗；随后用一整天乘冰川快车穿越阿尔卑斯腹地，抵达无车小镇采尔马特。接下来的日子不以“登顶”为唯一目标，而是围绕天气与体力，在马特洪峰观景、轻徒步、村落生活和酒店时光之间留出余白。全程可按季节选择更偏户外、滑雪、美食或纯度假的版本。",
+  "intro_en": "This is not a circuit that races from landmark to landmark. It gives each of two Alpine valleys three unhurried nights. Begin on the Engadin plateau, easing into mountain time with lakeside walks, a cable-car ascent, long lunches and spa afternoons. Then devote a full day to crossing the Alps aboard the Glacier Express before arriving in car-free Zermatt. The days that follow are not built around summits alone: weather and energy shape a gentle balance of Matterhorn viewpoints, easy walks, village life and time at the hotel. Each journey can lean toward hiking, skiing, gastronomy or pure retreat according to season.",
+  "overview": [
+    {
+      "day_zh": "第一天",
+      "day_en": "Day 1",
+      "items": [
+        {
+          "title_zh": "抵达苏黎世，前往圣莫里茨",
+          "title_en": "Arrive in Zurich and continue to St. Moritz",
+          "desc_zh": "机场迎接后，以一等座铁路或专车进入恩加丁山谷。入住圣莫里茨甄选酒店，傍晚只安排湖边短走与休息，让身体慢慢适应海拔。",
+          "desc_en": "Meet your host at Zurich Airport and continue into the Engadin by first-class rail or private car. Check in to a curated St. Moritz hotel, with only a short lakeside walk planned for the evening as you settle into the altitude."
+        }
+      ]
+    },
+    {
+      "day_zh": "第二天",
+      "day_en": "Day 2",
+      "items": [
+        {
+          "title_zh": "圣莫里茨与恩加丁湖区",
+          "title_en": "St. Moritz and the Engadin lakes",
+          "desc_zh": "跟随当地向导认识圣莫里茨的度假传统，再沿湖区选择一段轻松步道。午后不赶行程，可回酒店水疗、在露台用餐，或按季节安排帆船与雪地活动。",
+          "desc_en": "Discover St. Moritz's resort heritage with a local guide, then choose an easy trail through the Engadin lake district. Keep the afternoon open for the spa, a long terrace lunch, sailing or a snow experience depending on season."
+        }
+      ]
+    },
+    {
+      "day_zh": "第三天",
+      "day_en": "Day 3",
+      "items": [
+        {
+          "title_zh": "恩加丁山谷慢游",
+          "title_en": "An unhurried day in the Engadin",
+          "desc_zh": "根据天气在山间观景台、静谧村落与谷地步道中择一深游。今日刻意只设一个主题，让风景、午餐与山谷日光自然决定节奏。",
+          "desc_en": "Let the weather choose one focus: a mountain viewpoint, a quiet Engadin village or a valley walk. The day deliberately holds a single theme, allowing the landscape, lunch and changing Alpine light to set the pace."
+        }
+      ]
+    },
+    {
+      "day_zh": "第四天",
+      "day_en": "Day 4",
+      "items": [
+        {
+          "title_zh": "冰川快车全景穿越：圣莫里茨至采尔马特",
+          "title_en": "The full Glacier Express crossing to Zermatt",
+          "desc_zh": "乘冰川快车完成约八小时的阿尔卑斯全景穿越，经过峡谷、山口与高架桥。可按预算和余位选择一等座或 Excellence Class；车票、强制订座及餐饮配置以出发日期为准。抵达后步行或电瓶车前往酒店。",
+          "desc_en": "Cross the Alps on the approximately eight-hour Glacier Express journey through gorges, mountain passes and viaducts. Choose First Class or, subject to budget and availability, Excellence Class; tickets, mandatory reservations and dining arrangements are confirmed for the actual travel date. Continue to the hotel on foot or by electric vehicle on arrival."
+        }
+      ]
+    },
+    {
+      "day_zh": "第五天",
+      "day_en": "Day 5",
+      "items": [
+        {
+          "title_zh": "马特洪峰的第一眼",
+          "title_en": "A first encounter with the Matterhorn",
+          "desc_zh": "在天气最清晰的时段前往马特洪峰观景区域，路线与高度由顾问根据季节、雪况和体力选择。午后回到无车小镇，留时间给老村漫步与酒店休息。",
+          "desc_en": "Use the clearest part of the day for a Matterhorn viewpoint, with route and altitude selected around season, snow conditions and your energy. Return to the car-free village for an old-town walk and an unhurried hotel afternoon."
+        }
+      ]
+    },
+    {
+      "day_zh": "第六天",
+      "day_en": "Day 6",
+      "items": [
+        {
+          "title_zh": "采尔马特山野日",
+          "title_en": "A day in the mountains above Zermatt",
+          "desc_zh": "夏季可安排向导轻徒步或高山野餐，冬季可改为滑雪体验或雪地漫步。强度从亲子友好到进阶路线均可调整，并为天气变化保留替代方案。",
+          "desc_en": "In summer, choose a guided easy hike or Alpine picnic; in winter, switch to skiing or a snow walk. Difficulty ranges from family-friendly to advanced, with a weather-safe alternative held in reserve."
+        }
+      ]
+    },
+    {
+      "day_zh": "第七天",
+      "day_en": "Day 7",
+      "items": [
+        {
+          "title_zh": "留白的一天",
+          "title_en": "A deliberately open day",
+          "desc_zh": "不预设必去清单。可以重返最喜欢的山景、预约水疗与长午餐，也可以请顾问临时安排摄影、直升机观景或私家体验；所有项目均视天气、许可与实际资源确认。",
+          "desc_en": "No fixed checklist today. Revisit a favourite view, book a spa and long lunch, or ask the advisor to arrange photography, a scenic helicopter flight or another private experience, always subject to weather, permissions and live availability."
+        }
+      ]
+    },
+    {
+      "day_zh": "第八天",
+      "day_en": "Day 8",
+      "items": [
+        {
+          "title_zh": "离开采尔马特",
+          "title_en": "Depart Zermatt",
+          "desc_zh": "早餐后前往苏黎世或日内瓦机场。顾问会根据国际航班时间倒排铁路或专车衔接，并为冬季天气预留安全冗余。",
+          "desc_en": "After breakfast, continue to Zurich or Geneva Airport. Your advisor will build the rail or private-transfer connection backward from the international flight time, with extra contingency for winter conditions."
+        }
+      ]
+    }
+  ]
+}

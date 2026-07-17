@@ -86,6 +86,30 @@
 
   <div class="trips-section">
     <h2><%= lang === 'en' ? 'Itineraries in ' + destination.name_en : destination.name_zh + ' 的行程' %></h2>
+    <% if (curatedRoutes && curatedRoutes.length > 0) { %>
+    <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px;margin-bottom:28px;">
+      <% curatedRoutes.forEach(function(route) {
+        var isEn = lang === 'en';
+        var cardTitle = isEn ? route.title_en : route.title_zh;
+        var cardDesc = isEn ? route.subtitle_en : route.subtitle_zh;
+      %>
+        <a class="card" href="<%= isEn ? '/en' : '' %>/routes/<%= route.slug %>" style="text-decoration:none;color:inherit;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.06);transition:transform 0.3s;">
+          <div style="position:relative;height:200px;overflow:hidden;">
+            <picture>
+              <source srcset="<%= route.hero_path.replace(/\.jpg$/, '.webp') %>" type="image/webp">
+              <img src="<%= route.hero_path %>" alt="<%= cardTitle %>" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;">
+            </picture>
+            <div style="position:absolute;top:16px;left:16px;background:rgba(0,0,0,0.55);color:#fff;font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;"><%= isEn ? route.duration_en : route.duration_zh %></div>
+          </div>
+          <div style="padding:16px;">
+            <div style="font-size:11px;color:#c8a96e;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px;"><%= isEn ? 'Wanderway · Curated' : '万德 · 甄选线路' %></div>
+            <h3 style="font-size:16px;margin:0 0 4px;"><%= cardTitle %></h3>
+            <p style="font-size:13px;color:#888;margin:0;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;"><%= cardDesc %></p>
+          </div>
+        </a>
+      <% }); %>
+    </div>
+    <% } %>
     <% if (trips.length > 0) { %>
     <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px;">
       <% trips.forEach(function(item) {
@@ -108,7 +132,7 @@
         </a>
       <% }); %>
     </div>
-    <% } else { %>
+    <% } else if (!curatedRoutes || curatedRoutes.length === 0) { %>
     <div style="text-align:center;padding:60px 24px;">
       <p style="font-size:18px;color:#888;margin-bottom:24px;"><%= lang === 'en' ? 'Coming Soon — Custom itineraries for ' + destination.name_en : destination.name_zh + ' 定制行程即将推出' %></p>
       <a href="<%= advisorUrl(lang, { source: 'destination-detail' }) %>" data-enquiry-cta="destination-detail" style="display:inline-block;background:linear-gradient(135deg,#c8a96e,#b08d4a);color:#fff;font-size:16px;font-weight:600;padding:14px 32px;border-radius:8px;text-decoration:none;"><%= lang === 'en' ? 'Consult a Travel Advisor' : '咨询旅行顾问' %></a>

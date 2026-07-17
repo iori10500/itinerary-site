@@ -289,8 +289,11 @@ try {
         const obj = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf-8'));
         obj.slug = obj.slug || path.basename(f, '.json');
         obj.brand = brandSlug;
-        // Normalize hero_path → /images/brands/<brand>/<slug>-hero.jpg
-        obj.hero_path = `/images/brands/${brandSlug}/${obj.slug}-hero.jpg`;
+        // Reuse an existing site asset when hero_image is an absolute public path;
+        // otherwise keep the per-brand naming convention.
+        obj.hero_path = obj.hero_image && obj.hero_image.startsWith('/')
+          ? obj.hero_image
+          : `/images/brands/${brandSlug}/${obj.slug}-hero.jpg`;
         brandRoutes[brandSlug].push(obj);
         routesIndex[obj.slug] = obj;
       });
@@ -639,6 +642,12 @@ function tripsForCountry(slug) {
   });
 }
 
+function curatedRoutesForCountry(slug) {
+  return Object.values(routesIndex).filter(route =>
+    (route.country_slugs || []).map(s => s.toLowerCase()).includes(slug)
+  );
+}
+
 function getCountries() {
   const found = {};
   // Seed from destinations.json so even 0-trip countries appear
@@ -665,6 +674,11 @@ function getCountries() {
           count: 0,
         };
       }
+      if (found[slug]) found[slug].count++;
+    });
+  });
+  Object.values(routesIndex).forEach(route => {
+    (route.country_slugs || []).forEach(slug => {
       if (found[slug]) found[slug].count++;
     });
   });
@@ -745,6 +759,7 @@ app.get('/destinations/:country', (req, res) => {
   if (!destDesc) return res.status(404).send('Not found');
 
   const countryTrips = tripsForCountry(country);
+  const curatedRoutes = curatedRoutesForCountry(country);
   const countries = getCountries();
   const dest = countries.find(c => c.slug === country);
   const destination = {
@@ -758,7 +773,7 @@ app.get('/destinations/:country', (req, res) => {
   };
 
   res.render('destination-detail', {
-    destination, trips: countryTrips, lang,
+    destination, trips: countryTrips, curatedRoutes, lang,
     title: (lang === 'en' ? destination.name_en : destination.name_zh) + ' | WR Travel'
   });
 });
