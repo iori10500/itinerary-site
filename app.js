@@ -163,7 +163,7 @@ app.get('/sitemap.xml', (req, res) => {
   const baseUrl = 'https://itinerary.wildroadgroup.com';
   const pages = [
     { loc: `${baseUrl}/`, priority: '1.0', changefreq: 'weekly' },
-    { loc: `${baseUrl}/en`, priority: '0.9', changefreq: 'weekly' },
+    { loc: `${baseUrl}/en/`, priority: '0.9', changefreq: 'weekly' },
     { loc: `${baseUrl}/advisor`, priority: '0.9', changefreq: 'monthly' },
     { loc: `${baseUrl}/en/advisor`, priority: '0.8', changefreq: 'monthly' },
   ];
@@ -760,6 +760,7 @@ app.get('/destinations/:country', (req, res) => {
 
   const countryTrips = tripsForCountry(country);
   const curatedRoutes = curatedRoutesForCountry(country);
+  const relatedGuides = guidesData.filter(guide => guide.destination === country).slice(0, 6);
   const countries = getCountries();
   const dest = countries.find(c => c.slug === country);
   const destination = {
@@ -773,7 +774,7 @@ app.get('/destinations/:country', (req, res) => {
   };
 
   res.render('destination-detail', {
-    destination, trips: countryTrips, curatedRoutes, lang,
+    destination, trips: countryTrips, curatedRoutes, relatedGuides, lang,
     title: (lang === 'en' ? destination.name_en : destination.name_zh) + ' | WR Travel'
   });
 });
@@ -804,6 +805,9 @@ app.get('/journal/:slug', (req, res) => {
   const relatedTrips = itineraries.filter(t =>
     (t.regions || []).some(r => r.toLowerCase().replace(/\s+/g, '-') === guide.destination)
   );
+  const relatedGuides = guidesData
+    .filter(item => item.destination === guide.destination && item.slug !== guide.slug)
+    .slice(0, 4);
 
   const contentHtml = guide.content_zh || guide.content_en
     ? marked.parse(lang === 'en' ? (guide.content_en || guide.content_zh) : (guide.content_zh || guide.content_en))
@@ -811,7 +815,7 @@ app.get('/journal/:slug', (req, res) => {
   const faqItems = generateFaqItems(guide, destInfo, lang);
 
   res.render('journal-detail', {
-    guide, destInfo, relatedTrips, lang, typeLabel, contentHtml, faqItems,
+    guide, destInfo, relatedTrips, relatedGuides, lang, typeLabel, contentHtml, faqItems,
     destinations: destinationsData,
     baseUrl: 'https://itinerary.wildroadgroup.com',
     title: (lang === 'en' ? guide.title_en : guide.title_zh) + ' | WR Journeys'

@@ -62,6 +62,7 @@
 <%- include('partials/ga') %>
 </head>
 <body>
+  <%- include("partials/header") %>
   <button id="langToggle" onclick="toggleLang()" class="lang-toggle"><%= lang === 'en' ? '中' : 'EN' %></button>
 
   <div class="dest-hero">
@@ -90,6 +91,8 @@
       </a>
     <% }); %>
   </div>
+
+  <%- include("partials/footer") %>
 
   <script>
     function toggleLang() {

@@ -58,6 +58,7 @@
 <%- include('partials/ga') %>
 </head>
 <body>
+  <%- include("partials/header") %>
   <button id="langToggle" onclick="toggleLang()" class="lang-toggle"><%= lang === 'en' ? '中' : 'EN' %></button>
 
   <div class="dest-detail-hero">
@@ -85,6 +86,20 @@
   <% } %>
 
   <div class="trips-section">
+    <% if (relatedGuides && relatedGuides.length > 0) { %>
+    <section style="margin-bottom:44px;">
+      <h2><%= lang === 'en' ? destination.name_en + ' Travel Guides' : destination.name_zh + '旅行指南' %></h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;">
+        <% relatedGuides.forEach(function(guide) { %>
+        <a href="<%= lang === 'en' ? '/en' : '' %>/journal/<%= guide.slug %>" style="display:block;padding:18px 20px;border:1px solid #e8e5dd;border-radius:12px;text-decoration:none;color:#1a1a2e;background:#fff;">
+          <span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#c8a96e;"><%= lang === 'en' ? 'Journal' : '旅行灵感' %></span>
+          <h3 style="font-size:16px;line-height:1.5;margin:6px 0 0;"><%= lang === 'en' ? guide.title_en : guide.title_zh %></h3>
+        </a>
+        <% }); %>
+      </div>
+    </section>
+    <% } %>
+
     <h2><%= lang === 'en' ? 'Itineraries in ' + destination.name_en : destination.name_zh + ' 的行程' %></h2>
     <% if (curatedRoutes && curatedRoutes.length > 0) { %>
     <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px;margin-bottom:28px;">
@@ -139,6 +154,8 @@
     </div>
     <% } %>
   </div>
+
+  <%- include("partials/footer") %>
 
   <script>
     function toggleLang() {
