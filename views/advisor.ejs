@@ -16,6 +16,7 @@
   <script type="application/ld+json"><%- JSON.stringify({
     '@context': 'https://schema.org', '@type': 'ContactPage',
     name: lang === 'en' ? 'Talk to your travel advisor' : '与旅行顾问聊聊',
+    description: lang === 'en' ? 'Begin a human-led journey. AI helps WR Journeys connect faster; listening, planning and end-to-end care remain with a real advisor.' : '从真人聆听开始规划旅程。AI 帮助 WR Journeys 更快联络，规划与从始至终的照顾由真人顾问负责。',
     url: `https://itinerary.wildroadgroup.com${lang === 'en' ? '/en' : ''}/advisor`,
     isPartOf: { '@type': 'WebSite', name: 'WR Journeys', url: 'https://itinerary.wildroadgroup.com' }
   }) %></script>
@@ -31,7 +32,7 @@
       <div class="advisor-hero__copy">
         <p class="advisor-kicker">WR JOURNEYS · PRIVATE PLANNING</p>
         <h1><%= lang === 'en' ? 'A journey begins with being understood.' : '一段旅程，始于真正被理解。' %></h1>
-        <p><%= lang === 'en' ? 'No call centre. No pre-written package. Our owner personally reads every enquiry and shapes the first direction with you.' : '没有呼叫中心，也没有套装模板。每一条询价都由本店主理人亲自阅读，和您一起确定旅程最初的方向。' %></p>
+        <p><%= lang === 'en' ? 'No call centre. No automated itinerary hand-off. AI helps us connect and coordinate faster; our owner personally listens, shapes the first direction with you, and stays involved through your return.' : '没有呼叫中心，也不会把行程交给自动系统。AI 帮助我们更快联络与协调；本店主理人亲自聆听，和您确定最初的方向，并一路跟进到旅行归来。' %></p>
       </div>
       <aside class="advisor-hero__promise">
         <div><span>01</span><p><strong><%= lang === 'en' ? 'A real human' : '真人接待' %></strong><%= lang === 'en' ? 'One advisor follows the thread from first idea to return.' : '从第一条想法到旅行归来，由同一位顾问持续跟进。' %></p></div>

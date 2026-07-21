@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= title %></title>
-  <meta name="description" content="<%= lang === 'en' ? 'Curated global luxury custom itineraries. Direct hotel contracts, private journeys, 24/7 concierge.' : '精選全球奢華定制行程，奢華酒店直簽，私人定制，24小時旅行管家服務。' %>">
+  <meta name="description" content="<%= lang === 'en' ? 'Human-curated slow-luxury journeys. A real advisor listens, plans and stays with your travel story from first conversation to return.' : '真人甄选的慢奢旅程。从第一次交谈到旅行归来，由真人顾问聆听、规划并陪您完成整段旅行故事。' %>">
   <meta property="og:title" content="<%= title %>">
-  <meta property="og:description" content="<%= lang === 'en' ? 'Curated global luxury custom itineraries.' : '精選全球奢華定制行程，奢華酒店直簽，私人定制。' %>">
+  <meta property="og:description" content="<%= lang === 'en' ? 'AI helps us connect faster; listening, judgement and end-to-end care remain human.' : 'AI 让我们更快相遇；聆听、判断与从始至终的照顾始终来自真人。' %>">
   <meta property="og:image" content="https://itinerary.wildroadgroup.com/<%= itineraries[0] ? itineraries[0].coverImage : '' %>">
   <meta property="og:url" content="https://itinerary.wildroadgroup.com<%= lang === 'en' ? '/en' : '' %>/">
   <meta property="og:type" content="website">
@@ -14,7 +14,7 @@
   <meta property="og:locale" content="<%= lang === 'en' ? 'en_US' : 'zh_CN' %>">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="<%= title %>">
-  <meta name="twitter:description" content="<%= lang === 'en' ? 'Curated global luxury custom itineraries.' : '精選全球奢華定制行程。' %>">
+  <meta name="twitter:description" content="<%= lang === 'en' ? 'A real advisor, from first conversation to return.' : '从第一次交谈到旅行归来，始终由真人顾问陪伴。' %>">
   <meta name="twitter:image" content="https://itinerary.wildroadgroup.com/<%= itineraries[0] ? itineraries[0].coverImage : '' %>">
   <link rel="canonical" href="https://itinerary.wildroadgroup.com<%= lang === 'en' ? '/en' : '' %>/">
   <link rel="alternate" hreflang="zh-CN" href="https://itinerary.wildroadgroup.com/">
@@ -30,7 +30,7 @@
     "@type": "WebSite",
     "name": lang === 'en' ? 'WR Travel Itineraries' : '野路逸行行程手册',
     "url": "https://itinerary.wildroadgroup.com",
-    "description": lang === 'en' ? 'Curated luxury travel itineraries — Switzerland, Tanzania, Thailand and more' : '野路逸行（WR Travel）精选行程手册 — 瑞士、坦桑尼亚、泰国等目的地高端定制旅行',
+    "description": lang === 'en' ? 'Human-curated slow-luxury journeys with a real advisor from first conversation to return' : '真人甄选的慢奢旅程，从第一次交谈到旅行归来，由真人顾问全程陪伴',
     "inLanguage": ["zh-CN", "en"],
     "publisher": { "@type": "Organization", "name": "野路逸行 WR Travel", "url": "https://wr-travel.com" }
   }) %>
@@ -66,7 +66,7 @@
     <div class="hero-content">
       <div class="hero-brand">WR Journeys</div>
       <h1 class="hero-title"><%= lang === 'en' ? 'A Slow-Luxury Brand House' : '慢奢甄选之家' %></h1>
-      <p class="hero-sub"><%= lang === 'en' ? 'Slow stays, deep stories, hand-picked brands — curated by Wildroad &amp; Wanderway.' : '慢栖、深度叙事、精选品牌 — 由野路逸行与万德甄选。' %></p>
+      <p class="hero-sub"><%= lang === 'en' ? 'Slow stays, deep stories, and a real advisor from first conversation to return.' : '慢栖、深度叙事，从第一次交谈到旅行归来，始终由真人顾问陪伴。' %></p>
     </div>
   </section>
 
@@ -124,7 +124,7 @@
       <div class="home-enquiry__copy">
         <p class="advisor-kicker"><%= lang === 'en' ? 'A REAL ADVISOR, FROM THE FIRST NOTE' : '从第一条消息起，就是真人顾问' %></p>
         <h2 id="home-enquiry-title"><%= lang === 'en' ? 'Where is your mind wandering?' : '最近，您正向往哪里？' %></h2>
-        <p><%= lang === 'en' ? 'A destination, a feeling, or a rough month is enough. Our owner personally reads every enquiry and replies within 24 hours.' : '一个目的地、一种感受，或大致月份，就足够开始。本店主理人亲自阅读每一条询价，工作时间内 20 分钟回复。' %></p>
+        <p><%= lang === 'en' ? 'A destination, a feeling, or a rough month is enough. AI may help us connect and coordinate faster; our owner personally listens, shapes the journey, and stays involved through your return.' : '一个目的地、一种感受，或大致月份，就足够开始。AI 帮助我们更快联络与协调；真正聆听、规划并陪您走到旅行归来的，是本店主理人。' %></p>
       </div>
       <%- include('partials/enquiry-form', { variant: 'short', source: 'home-inline', route: null }) %>
     </div>

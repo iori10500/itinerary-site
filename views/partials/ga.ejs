@@ -5,6 +5,13 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-R0TMD98X7G');
+  (function () {
+    try {
+      var source = new URLSearchParams(location.search).get('utm_source') || new URL(document.referrer).hostname;
+      var match = String(source).toLowerCase().match(/chatgpt|perplexity|copilot|gemini|claude|you\.com|meta\.ai/);
+      if (match) gtag('event', 'ai_referral_landing', { ai_source: match[0], non_interaction: true });
+    } catch (_) {}
+  })();
 </script>
 <script src="/enquiry.js" defer></script>
 <% if (turnstileSiteKey) { %><script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script><% } %>
