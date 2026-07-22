@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-07-22",
+  "annotations": {
+    "ITCVV": {
+      "display_zh": "奇维塔韦基亚（罗马门户港）",
+      "gateway_city_zh": "罗马",
+      "annotation_type": "gateway_port",
+      "note_zh": "实际靠港城市为奇维塔韦基亚；前往罗马仍需陆路转乘。"
+    },
+    "GRPIR": {
+      "display_zh": "比雷埃夫斯（雅典门户港）",
+      "gateway_city_zh": "雅典",
+      "annotation_type": "gateway_port",
+      "note_zh": "实际靠港于比雷埃夫斯；雅典为主要关联城市。"
+    },
+    "ITFSA": {
+      "display_zh": "富西纳（威尼斯门户港）",
+      "gateway_city_zh": "威尼斯",
+      "annotation_type": "gateway_port",
+      "note_zh": "实际靠港于富西纳；前往威尼斯历史中心需要接驳。"
+    },
+    "GBSOU": {
+      "display_zh": "南安普敦（伦敦航线门户港）",
+      "gateway_city_zh": "伦敦",
+      "annotation_type": "gateway_port",
+      "note_zh": "实际靠港城市为南安普敦；伦敦属于远端关联城市，不应直接写成伦敦港。"
+    },
+    "FRVFM": {
+      "display_zh": "滨海自由城（尼斯）",
+      "gateway_city_zh": "尼斯",
+      "annotation_type": "gateway_port",
+      "note_zh": "实际停靠滨海自由城，并以尼斯作为目的地提示；官方数据标记为 TENDER。"
+    },
+    "ITLIV": {
+      "display_zh": "里窝那（佛罗伦萨门户港）",
+      "gateway_city_zh": "佛罗伦萨",
+      "annotation_type": "gateway_port",
+      "note_zh": "实际靠港城市为里窝那；佛罗伦萨需要另行陆路转乘。"
+    },
+    "TNLGN": {
+      "display_zh": "拉古莱特（突尼斯）",
+      "gateway_city_zh": "突尼斯市",
+      "annotation_type": "gateway_port",
+      "note_zh": "La Goulette 为实际港口，Tunis 为主要关联城市。"
+    }
+  }
+}

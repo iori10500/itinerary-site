@@ -906,6 +906,29 @@ app.get('/brands/:slug', (req, res) => {
   if (!brand) return res.status(404).send('Brand not found');
   const lang = req.lang;
   if (brand.external && brand.external_url) return res.redirect(302, brand.external_url);
+  if (brand.slug === 'explora') {
+    try {
+      const catalog = readExploraReviewData();
+      return res.render('explora', {
+        brand,
+        lang,
+        stats: catalog.stats,
+        detailsStats: catalog.details_stats,
+        generatedAt: catalog.generated_at,
+        schemas: [
+          schemas.brandOrganization(brand),
+          schemas.breadcrumbList([
+            { name: lang === 'en' ? 'Home' : '首页', path: '/' },
+            { name: lang === 'en' ? 'Brands' : '品牌矩阵', path: '/brands' },
+            { name: brand.name_en, path: '/brands/explora' },
+          ]),
+        ],
+      });
+    } catch (err) {
+      console.error('Failed to render Explora catalogue:', err.message);
+      return res.status(503).send('Explora catalogue is unavailable');
+    }
+  }
   const routes = brandRoutes[brand.slug] || [];
   res.render('brand-detail', {
     brand, routes, lang,
@@ -974,6 +997,136 @@ app.get('/advisor', (req, res) => {
     source: textQuery(req.query.source, 180) || 'advisor-page',
     title: lang === 'en' ? 'Talk to your travel advisor | WR Journeys' : '与旅行顾问聊聊 | WR Journeys',
   });
+});
+
+// Local-only data review surface. Production hosts return 404 unless explicitly enabled.
+function requireInternalReview(req, res, next) {
+  const hostname = String(req.hostname || '').toLowerCase();
+  const isLocal = hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1';
+  if (!isLocal && process.env.ENABLE_INTERNAL_REVIEW !== '1') {
+    return res.status(404).send('Not found');
+  }
+  next();
+}
+
+function readExploraCatalog() {
+  const catalogPath = path.join(__dirname, 'data', 'sources', 'explora', 'catalog.json');
+  return JSON.parse(fs.readFileSync(catalogPath, 'utf-8'));
+}
+
+let exploraReviewCache = null;
+
+function readExploraReviewData() {
+  if (exploraReviewCache) return exploraReviewCache;
+  const sourceDir = path.join(__dirname, 'data', 'sources', 'explora');
+  const catalog = readExploraCatalog();
+  const details = JSON.parse(fs.readFileSync(path.join(sourceDir, 'details.json'), 'utf-8'));
+  const annotationFile = JSON.parse(fs.readFileSync(path.join(sourceDir, 'port-annotations.json'), 'utf-8'));
+  const annotations = annotationFile.annotations || {};
+  const ports = details.ports.map(port => ({ ...port, annotation: annotations[port.code] || null }));
+  const portsByCode = Object.fromEntries(ports.map(port => [port.code, port]));
+  const detailsById = Object.fromEntries(details.departures.map(item => [item.id, item]));
+  const departures = catalog.departures.map(departure => {
+    const detail = detailsById[departure.id];
+    const portDays = (detail?.itinerary || []).filter(day => !day.at_sea && day.port_code);
+    const startPortCode = portDays[0]?.port_code || null;
+    const endPortCode = portDays.at(-1)?.port_code || null;
+    return {
+      ...departure,
+      metrics: detail?.metrics || null,
+      itinerary: detail?.itinerary || [],
+      start_port: startPortCode ? portsByCode[startPortCode] : null,
+      end_port: endPortCode ? portsByCode[endPortCode] : null,
+    };
+  });
+  exploraReviewCache = {
+    ...catalog,
+    generated_at: details.generated_at,
+    catalog_generated_at: catalog.generated_at,
+    details_stats: details.stats,
+    port_annotations_updated_at: annotationFile.updated_at,
+    ports,
+    departures,
+  };
+  return exploraReviewCache;
+}
+
+function exploraPortSummary(port) {
+  if (!port) return null;
+  return {
+    code: port.code,
+    official_name: port.official_name,
+    country: port.country,
+    country_code: port.country_code,
+    display_zh: port.annotation?.display_zh || null,
+    annotation_type: port.annotation?.annotation_type || null,
+    note_zh: port.annotation?.note_zh || null,
+  };
+}
+
+function exploraPublicData() {
+  const catalog = readExploraReviewData();
+  return {
+    generated_at: catalog.generated_at,
+    stats: {
+      departures: catalog.stats.departures,
+      voyages: catalog.stats.voyages,
+      vessels: catalog.stats.vessels,
+      late_departure_share: catalog.details_stats.late_departure_share,
+      full_day_share: catalog.details_stats.full_day_share,
+    },
+    vessels: catalog.vessels,
+    departures: catalog.departures.map(departure => ({
+      id: departure.id,
+      vessel_id: departure.vessel_id,
+      voyage_id: departure.voyage_id,
+      embarkation_date: departure.embarkation_date,
+      disembarkation_date: departure.disembarkation_date,
+      nights: departure.nights,
+      region_codes: departure.region_codes,
+      source_url: departure.source_url,
+      metrics: departure.metrics,
+      start_port: exploraPortSummary(departure.start_port),
+      end_port: exploraPortSummary(departure.end_port),
+    })),
+  };
+}
+
+app.get('/api/explora/journeys', (req, res) => {
+  try {
+    res.set('Cache-Control', 'public, max-age=300, stale-while-revalidate=3600');
+    res.json(exploraPublicData());
+  } catch (err) {
+    console.error('Failed to read public Explora catalogue:', err.message);
+    res.status(503).json({ error: 'Explora catalogue is unavailable' });
+  }
+});
+
+app.get('/internal/explora-review/data.json', requireInternalReview, (req, res) => {
+  try {
+    res.set('Cache-Control', 'no-store');
+    res.json(readExploraReviewData());
+  } catch (err) {
+    console.error('Failed to read Explora catalogue:', err.message);
+    res.status(503).json({ error: 'Explora catalogue is unavailable' });
+  }
+});
+
+app.get('/internal/explora-review', requireInternalReview, (req, res) => {
+  try {
+    const catalog = readExploraReviewData();
+    res.set('Cache-Control', 'no-store');
+    res.render('explora-review', {
+      title: 'Explora Catalogue Review | WR Journeys',
+      stats: catalog.stats,
+      detailsStats: catalog.details_stats,
+      generatedAt: catalog.generated_at,
+      sourceUrl: catalog.source.url,
+    });
+  } catch (err) {
+    console.error('Failed to render Explora catalogue review:', err.message);
+    res.status(503).send('Explora catalogue is unavailable. Run npm run ingest:explora first.');
+  }
 });
 
 app.get('/', (req, res) => {

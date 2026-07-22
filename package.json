@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "node app.js"
+    "dev": "node app.js",
+    "ingest:explora": "node scripts/ingest-explora-catalog.mjs",
+    "enrich:explora": "node scripts/enrich-explora-details.mjs"
   },
   "dependencies": {
     "ejs": "^3.1.9",
