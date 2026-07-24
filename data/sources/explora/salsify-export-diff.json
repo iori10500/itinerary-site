@@ -1,0 +1,418 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-24",
+  "source": {
+    "type": "emailed_salsify_xlsx_export",
+    "path": "data/sources/explora/raw/salsify/products.xlsx",
+    "sha256": "6771487615bb8ce0911fe7679a968d55c6ed10cf020422edf4a0740c47fccbe2",
+    "sheet": "Sheet1",
+    "range": "A1:CY1145"
+  },
+  "stats": {
+    "export_rows": 1144,
+    "export_columns": 103,
+    "unique_product_ids": 1144,
+    "duplicate_product_ids": [],
+    "export_journey_products": 742,
+    "export_reference_products": 402,
+    "public_index_products": 742,
+    "official_departures": 747,
+    "export_and_official_common": 742,
+    "export_only_journeys": 0,
+    "official_only": 5,
+    "public_index_missing_from_export": 0,
+    "export_journeys_not_in_public_index": 0
+  },
+  "official_only": [
+    "EJ20280911BCNFSA",
+    "EJ20281009BCNFSA",
+    "EL20260729CVVBC4",
+    "EX20290304AKLPPT",
+    "EX20290424MIABCN"
+  ],
+  "official_only_details": [
+    {
+      "id": "EJ20280911BCNFSA",
+      "vessel_id": "explora-vi",
+      "embarkation_date": "2028-09-11",
+      "disembarkation_date": "2028-09-25",
+      "embarkation_port": "Barcelona",
+      "disembarkation_port": "Fusina (Venice)",
+      "nights": 14,
+      "source_url": "https://explorajourneys.com/us/en/destinations-globe/med/journeys/bcnfsa-14-v2?id-journey=EJ20280911BCNFSA"
+    },
+    {
+      "id": "EJ20281009BCNFSA",
+      "vessel_id": "explora-vi",
+      "embarkation_date": "2028-10-09",
+      "disembarkation_date": "2028-10-23",
+      "embarkation_port": "Barcelona",
+      "disembarkation_port": "Fusina (Venice)",
+      "nights": 14,
+      "source_url": "https://explorajourneys.com/us/en/destinations-globe/med/journeys/bcnfsa-14-v2?id-journey=EJ20281009BCNFSA"
+    },
+    {
+      "id": "EL20260729CVVBC4",
+      "vessel_id": "explora-iii",
+      "embarkation_date": "2026-07-29",
+      "disembarkation_date": "2026-08-02",
+      "embarkation_port": "Civitavecchia (Rome)",
+      "disembarkation_port": "Barcelona",
+      "nights": 4,
+      "source_url": "https://explorajourneys.com/us/en/destinations-globe/med/journeys/cvvbcn-04-v1?id-journey=EL20260729CVVBC4"
+    },
+    {
+      "id": "EX20290304AKLPPT",
+      "vessel_id": "explora-i",
+      "embarkation_date": "2029-03-04",
+      "disembarkation_date": "2029-03-20",
+      "embarkation_port": "Auckland",
+      "disembarkation_port": "Papeete (Tahiti)",
+      "nights": 16,
+      "source_url": "https://explorajourneys.com/us/en/destinations-globe/wor/journeys/aklppt-16-v1?id-journey=EX20290304AKLPPT"
+    },
+    {
+      "id": "EX20290424MIABCN",
+      "vessel_id": "explora-i",
+      "embarkation_date": "2029-04-24",
+      "disembarkation_date": "2029-05-14",
+      "embarkation_port": "Miami",
+      "disembarkation_port": "Barcelona",
+      "nights": 20,
+      "source_url": "https://explorajourneys.com/us/en/destinations-globe/wor/journeys/miabcn-20-v3?id-journey=EX20290424MIABCN"
+    }
+  ],
+  "export_only_journeys": [],
+  "reference_product_sample": [
+    "AAATC",
+    "AEAUH",
+    "AEDFW",
+    "AEDXB",
+    "AEKLF",
+    "AERKT",
+    "AGSJO",
+    "AIRBY",
+    "ALSAR",
+    "AUBNE",
+    "AUCNS",
+    "AUDRW",
+    "AUHBA",
+    "AUMEL",
+    "AUSYD",
+    "AUWSY",
+    "AWORJ",
+    "BBBGI",
+    "BEZEE",
+    "BHBAH"
+  ],
+  "public_index_missing_from_export": [],
+  "field_comparison": {
+    "title_en": {
+      "mismatch_count": 1,
+      "mismatches": [
+        {
+          "id": "EX20270621CVVBCN",
+          "official": "A Journey through Renaissance Scenes & Iconic Shores",
+          "salsify_export": "A Journey through Renaissance Scenes & Mediterranean Tranquillity"
+        }
+      ]
+    },
+    "duration_n": {
+      "mismatch_count": 0,
+      "mismatches": []
+    },
+    "embarkation_date": {
+      "mismatch_count": 0,
+      "mismatches": []
+    },
+    "disembarkation_date": {
+      "mismatch_count": 0,
+      "mismatches": []
+    },
+    "url_product_id": {
+      "mismatch_count": 0,
+      "mismatches": []
+    },
+    "url_journey_slug": {
+      "mismatch_count": 0,
+      "mismatches": []
+    },
+    "url_region": {
+      "mismatch_count": 0,
+      "mismatches": []
+    }
+  },
+  "locale_completeness": {
+    "Product Title": {
+      "en": 742,
+      "de": 702,
+      "es": 704,
+      "fr": 704,
+      "it": 700
+    },
+    "Product Images": {
+      "en": 742,
+      "de": 702,
+      "es": 704,
+      "fr": 704,
+      "it": 700
+    },
+    "Digital Assets - Map": {
+      "en": 742,
+      "de": 0,
+      "es": 0,
+      "fr": 0,
+      "it": 0
+    },
+    "Digital Assets - Map - PDF": {
+      "en": 742,
+      "de": 0,
+      "es": 0,
+      "fr": 0,
+      "it": 0
+    },
+    "URL": {
+      "en": 742,
+      "de": 702,
+      "es": 704,
+      "fr": 704,
+      "it": 700
+    },
+    "Technical Status": {
+      "en": 740,
+      "de": 700,
+      "es": 702,
+      "fr": 702,
+      "it": 698
+    },
+    "Parent": {
+      "en": 742,
+      "de": 702,
+      "es": 704,
+      "fr": 704,
+      "it": 700
+    },
+    "Duration (n)": {
+      "en": 742,
+      "de": 702,
+      "es": 704,
+      "fr": 704,
+      "it": 700
+    },
+    "Disembarkation Date": {
+      "en": 742,
+      "de": 702,
+      "es": 704,
+      "fr": 704,
+      "it": 700
+    },
+    "Embarkation Date": {
+      "en": 742,
+      "de": 702,
+      "es": 704,
+      "fr": 704,
+      "it": 700
+    },
+    "Disembarkation Port": {
+      "en": 742,
+      "de": 702,
+      "es": 704,
+      "fr": 704,
+      "it": 700
+    },
+    "Embarkation Port": {
+      "en": 742,
+      "de": 702,
+      "es": 704,
+      "fr": 704,
+      "it": 700
+    },
+    "Description": {
+      "en": 742,
+      "de": 702,
+      "es": 704,
+      "fr": 704,
+      "it": 700
+    }
+  },
+  "technical_status_gaps": {
+    "en": [
+      "EL20280831VANTYO",
+      "EX20261227MIASJU"
+    ],
+    "de": [
+      "EA20281024QUEMIA",
+      "EJ20281030CVVFSA",
+      "EL20280831VANTYO",
+      "EO20270623SOUSOU",
+      "EO20270701CPHSOU",
+      "EP20261205CVVCAS",
+      "EP20261213CASLIS",
+      "EP20270211BCNCAS",
+      "EP20270215CASLIS",
+      "EP20281002BCNBCN",
+      "EP20281009CVVBCN",
+      "EP20281016BCNCVV",
+      "EP20281115BCNBCN",
+      "EP20281122BCNBCN",
+      "EP20281129BCNRIO",
+      "EX20261005CVVBCN",
+      "EX20261101BCNSJO",
+      "EX20261112SJOMIA",
+      "EX20261227MIASJU",
+      "EX20280407PIRFSA",
+      "EX20280407PIRPIR",
+      "EX20280506FSAPI1",
+      "EX20280513PIRFSA",
+      "EX20280513PIRPIR",
+      "EX20280527FSAPI1",
+      "EX20280603PIRFSA",
+      "EX20280603PIRPIR",
+      "EX20280617FSAPI1",
+      "EX20280624PIRFSA",
+      "EX20280624PIRPIR",
+      "EX20280708FSAPI1",
+      "EX20280715PIRFSA",
+      "EX20280715PIRPIR",
+      "EX20280729FSAPI1",
+      "EX20280805PIRFSA",
+      "EX20280805PIRPIR",
+      "EX20280819FSAPI1",
+      "EX20280826PIRFSA",
+      "EX20280826PIRPIR",
+      "EX20280909FSAPI1",
+      "EX20280916PIRFSA",
+      "EX20280916PIRPIR"
+    ],
+    "es": [
+      "EJ20281030CVVFSA",
+      "EL20280831VANTYO",
+      "EO20270623SOUSOU",
+      "EO20270701CPHSOU",
+      "EP20261205CVVCAS",
+      "EP20261213CASLIS",
+      "EP20270211BCNCAS",
+      "EP20270215CASLIS",
+      "EP20281002BCNBCN",
+      "EP20281009CVVBCN",
+      "EP20281016BCNCVV",
+      "EP20281115BCNBCN",
+      "EP20281122BCNBCN",
+      "EP20281129BCNRIO",
+      "EX20261101BCNSJO",
+      "EX20261112SJOMIA",
+      "EX20261227MIASJU",
+      "EX20280407PIRFSA",
+      "EX20280407PIRPIR",
+      "EX20280506FSAPI1",
+      "EX20280513PIRFSA",
+      "EX20280513PIRPIR",
+      "EX20280527FSAPI1",
+      "EX20280603PIRFSA",
+      "EX20280603PIRPIR",
+      "EX20280617FSAPI1",
+      "EX20280624PIRFSA",
+      "EX20280624PIRPIR",
+      "EX20280708FSAPI1",
+      "EX20280715PIRFSA",
+      "EX20280715PIRPIR",
+      "EX20280729FSAPI1",
+      "EX20280805PIRFSA",
+      "EX20280805PIRPIR",
+      "EX20280819FSAPI1",
+      "EX20280826PIRFSA",
+      "EX20280826PIRPIR",
+      "EX20280909FSAPI1",
+      "EX20280916PIRFSA",
+      "EX20280916PIRPIR"
+    ],
+    "fr": [
+      "EJ20281030CVVFSA",
+      "EL20280831VANTYO",
+      "EO20270623SOUSOU",
+      "EO20270701CPHSOU",
+      "EP20261205CVVCAS",
+      "EP20261213CASLIS",
+      "EP20270211BCNCAS",
+      "EP20270215CASLIS",
+      "EP20281002BCNBCN",
+      "EP20281009CVVBCN",
+      "EP20281016BCNCVV",
+      "EP20281115BCNBCN",
+      "EP20281122BCNBCN",
+      "EP20281129BCNRIO",
+      "EX20261101BCNSJO",
+      "EX20261112SJOMIA",
+      "EX20261227MIASJU",
+      "EX20280407PIRFSA",
+      "EX20280407PIRPIR",
+      "EX20280506FSAPI1",
+      "EX20280513PIRFSA",
+      "EX20280513PIRPIR",
+      "EX20280527FSAPI1",
+      "EX20280603PIRFSA",
+      "EX20280603PIRPIR",
+      "EX20280617FSAPI1",
+      "EX20280624PIRFSA",
+      "EX20280624PIRPIR",
+      "EX20280708FSAPI1",
+      "EX20280715PIRFSA",
+      "EX20280715PIRPIR",
+      "EX20280729FSAPI1",
+      "EX20280805PIRFSA",
+      "EX20280805PIRPIR",
+      "EX20280819FSAPI1",
+      "EX20280826PIRFSA",
+      "EX20280826PIRPIR",
+      "EX20280909FSAPI1",
+      "EX20280916PIRFSA",
+      "EX20280916PIRPIR"
+    ],
+    "it": [
+      "EA20280401PIRFSA",
+      "EJ20281030CVVFSA",
+      "EL20280831VANTYO",
+      "EO20270623SOUSOU",
+      "EO20270701CPHSOU",
+      "EP20261205CVVCAS",
+      "EP20261213CASLIS",
+      "EP20270211BCNCAS",
+      "EP20270215CASLIS",
+      "EP20281002BCNBCN",
+      "EP20281009CVVBCN",
+      "EP20281016BCNCVV",
+      "EP20281115BCNBCN",
+      "EP20281122BCNBCN",
+      "EP20281129BCNRIO",
+      "EX20260831BCNBCN",
+      "EX20260907CVVCVV",
+      "EX20260914BCNBCN",
+      "EX20261101BCNSJO",
+      "EX20261112SJOMIA",
+      "EX20261227MIASJU",
+      "EX20280407PIRFSA",
+      "EX20280407PIRPIR",
+      "EX20280506FSAPI1",
+      "EX20280513PIRFSA",
+      "EX20280513PIRPIR",
+      "EX20280527FSAPI1",
+      "EX20280603PIRFSA",
+      "EX20280603PIRPIR",
+      "EX20280617FSAPI1",
+      "EX20280624PIRFSA",
+      "EX20280624PIRPIR",
+      "EX20280708FSAPI1",
+      "EX20280715PIRFSA",
+      "EX20280715PIRPIR",
+      "EX20280729FSAPI1",
+      "EX20280805PIRFSA",
+      "EX20280805PIRPIR",
+      "EX20280819FSAPI1",
+      "EX20280826PIRFSA",
+      "EX20280826PIRPIR",
+      "EX20280909FSAPI1",
+      "EX20280916PIRFSA",
+      "EX20280916PIRPIR"
+    ]
+  }
+}

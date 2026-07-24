@@ -7,6 +7,8 @@
     "start": "node app.js",
     "dev": "node app.js",
     "ingest:explora": "node scripts/ingest-explora-catalog.mjs",
+    "ingest:explora:salsify": "node scripts/ingest-explora-salsify.mjs",
+    "analyze:explora:salsify-export": "python3 scripts/analyze-explora-salsify-xlsx.py",
     "enrich:explora": "node scripts/enrich-explora-details.mjs"
   },
   "dependencies": {

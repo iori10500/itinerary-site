@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "requested_at": "2026-07-24T05:47:18Z",
+  "received_at": "2026-07-24T05:50:00Z",
+  "source": {
+    "type": "salsify_emailed_xlsx_export",
+    "catalogue": "Active Journey Catalogue",
+    "url": "https://sites.salsify.com/923a52ce-d34e-4e7f-bb22-0c2a7d9f60a5/84e7bf86-ba1a-4938-851b-0d3e1dca60ba/"
+  },
+  "storage": {
+    "root": "data/sources/explora/raw/salsify",
+    "tracked_in_git": false
+  },
+  "files": [
+    {
+      "path": "Active Journey Catalogue_2026-07-24T05-47-18Z.zip",
+      "size_bytes": 1985332,
+      "sha256": "c7211ce6ea4a7b2eaf17122dcd63172820017a8a998265f3d93ba144b8a7f067"
+    },
+    {
+      "path": "products.xlsx",
+      "size_bytes": 2119642,
+      "sha256": "6771487615bb8ce0911fe7679a968d55c6ed10cf020422edf4a0740c47fccbe2",
+      "sheet": "Sheet1",
+      "range": "A1:CY1145"
+    }
+  ],
+  "notes": [
+    "The workbook contains 742 journey products and 402 referenced port products; the latter are not departures.",
+    "The emailed download URL was temporary and is intentionally not stored."
+  ]
+}

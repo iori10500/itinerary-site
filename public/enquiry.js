@@ -92,9 +92,30 @@
   document.addEventListener('click', function (event) {
     const cta = event.target.closest('[data-enquiry-cta]');
     if (!cta || typeof window.gtag !== 'function') return;
-    window.gtag('event', 'advisor_cta_click', {
+
+    const href = cta.href || cta.getAttribute('href') || '';
+    const isPlainSameTabClick = event.button === 0
+      && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey
+      && (!cta.target || cta.target === '_self') && Boolean(href);
+    let followed = false;
+    function followLink() {
+      if (followed) return;
+      followed = true;
+      window.location.assign(href);
+    }
+
+    const params = {
       cta_location: cta.dataset.enquiryCta || 'unknown',
       destination: cta.getAttribute('href') || '',
-    });
+      transport_type: 'beacon',
+    };
+    if (cta.dataset.journeyId) params.journey_id = cta.dataset.journeyId;
+    if (isPlainSameTabClick) {
+      event.preventDefault();
+      params.event_callback = followLink;
+      params.event_timeout = 500;
+    }
+    window.gtag('event', 'advisor_cta_click', params);
+    if (isPlainSameTabClick) window.setTimeout(followLink, 550);
   });
 })();

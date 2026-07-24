@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "retrieved_at": "2026-07-24T05:20:00Z",
+  "source": {
+    "type": "sharepoint_shared_folder",
+    "url": "https://msccruisescnsha.sharepoint.cn/:f:/s/EJ/EkEcXGHFp61NpTXszL_g49kB5rStnNr8pZDaW6thwvmS4A?e=AbvdWt"
+  },
+  "storage": {
+    "root": "data/sources/explora/raw/sharepoint",
+    "tracked_in_git": false
+  },
+  "notes": [
+    "Downloaded current EXPLORA III ship guides and the most relevant brand, ship and suite training decks.",
+    "The SharePoint Promotion folder's latest Invitation to Discover artwork still carries the expired 2026-06-23 deadline; the official offer page and group notice extend the current deadline to 2026-07-28, so this image must not be published as current promotion creative."
+  ],
+  "files": [
+    {
+      "category": "ship-guide",
+      "path": "ship-guide/EXPLORA III 船书  中文版.pdf",
+      "size_bytes": 11320050,
+      "sha256": "d1c9cfa70391a5836f386b1c0c157f9b35b3cf5aa786caba4c67276d27bf5ae6"
+    },
+    {
+      "category": "ship-guide",
+      "path": "ship-guide/EXPLORA III 船书 繁体版.pdf",
+      "size_bytes": 11390713,
+      "sha256": "483584acbfd5411bdcbbd45a9d8eb1810b7fec6490d0dd69eb723d3616ed3567"
+    },
+    {
+      "category": "ship-guide",
+      "path": "ship-guide/EXPLORA III 船书 英文版.pdf",
+      "size_bytes": 26287286,
+      "sha256": "9615a5fed33fa494e2572df9cdc2c95cd3f76b0fab8cb1b02c9065485a74fe54"
+    },
+    {
+      "category": "promotion",
+      "path": "promotion/2026限时探索之邀 2026.5.27-6.23 简体.jpg",
+      "size_bytes": 461660,
+      "sha256": "fe1a22f16141d47668f876643470df37190cf195ba102d59e235a95f20a5f065"
+    },
+    {
+      "category": "itinerary-calendar",
+      "path": "itinerary-calendar/EJ Itinerary Calendar.xlsx",
+      "size_bytes": 21367,
+      "sha256": "0e233431ba651e49d8221cd60fe29c90245e5d893c1bd4413d2b276d98eb0827"
+    },
+    {
+      "category": "training-deck",
+      "path": "training-deck/EXPLORA III - Ship Overview - CHN 意铂三号船概况_中文版.pdf",
+      "size_bytes": 3255415,
+      "sha256": "860533f9e4504708b5c0fadd401a2b646c6f6f7caa353e10e0ce0c63647e7cf2"
+    },
+    {
+      "category": "training-deck",
+      "path": "training-deck/Explora I II 房型介绍.pdf",
+      "size_bytes": 8485438,
+      "sha256": "76c5c10783f43a9d11cc48dc8f8610881054e859a80c1fda9a25b4520745af50"
+    },
+    {
+      "category": "training-deck",
+      "path": "training-deck/Explora Journeys_Brand Introduction 意铂邮轮品牌介绍.pdf",
+      "size_bytes": 26083693,
+      "sha256": "e93f5d7c2057d9206879a4ea701a1522e29faf440c613927c9143f2ba49e31a2"
+    }
+  ]
+}

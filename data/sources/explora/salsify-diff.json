@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-24T05:24:48.169Z",
+  "sources": {
+    "salsify": {
+      "type": "public_catalog_index",
+      "url": "https://sites.salsify.com/923a52ce-d34e-4e7f-bb22-0c2a7d9f60a5/84e7bf86-ba1a-4938-851b-0d3e1dca60ba/",
+      "publication_date": "2026-07-23T18:01:31Z",
+      "retrieved_at": "2026-07-24T05:24:48.169Z",
+      "note": "Public catalogue index, not the emailed Salsify spreadsheet export."
+    },
+    "official": {
+      "type": "official_public_catalog",
+      "url": "https://explorajourneys.com/us/en/cruise-catalog",
+      "retrieved_at": "2026-07-24T05:24:43.073Z"
+    }
+  },
+  "stats": {
+    "salsify_products": 742,
+    "official_departures": 747,
+    "common": 742,
+    "salsify_only": 0,
+    "official_only": 5
+  },
+  "salsify_only": [],
+  "official_only": [
+    "EJ20280911BCNFSA",
+    "EJ20281009BCNFSA",
+    "EL20260729CVVBC4",
+    "EX20290304AKLPPT",
+    "EX20290424MIABCN"
+  ]
+}

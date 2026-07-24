@@ -2,6 +2,7 @@ node_modules/
 .DS_Store
 *.log
 .cache/
+data/sources/explora/raw/
 .env
 .env.*
 !.env.example

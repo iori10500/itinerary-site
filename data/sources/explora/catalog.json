@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-22T06:26:09.515Z",
+  "generated_at": "2026-07-24T05:24:43.073Z",
   "source": {
     "type": "official_public_catalog",
     "url": "https://explorajourneys.com/us/en/cruise-catalog",
-    "retrieved_at": "2026-07-22T06:26:09.515Z"
+    "retrieved_at": "2026-07-24T05:24:43.073Z"
   },
   "stats": {
     "catalog_entries": 775,
