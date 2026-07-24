@@ -234,6 +234,17 @@ try {
   console.error('Failed to load destinations:', err.message);
 }
 
+// Optional editorial overlays keep long-form SEO copy separate from catalogue facts.
+const destinationEditorialPath = path.join(__dirname, 'data', 'destination-editorial.json');
+try {
+  const destinationEditorial = JSON.parse(fs.readFileSync(destinationEditorialPath, 'utf-8'));
+  Object.entries(destinationEditorial).forEach(([slug, editorial]) => {
+    destinationsData[slug] = { ...(destinationsData[slug] || {}), ...editorial };
+  });
+} catch (err) {
+  if (err.code !== 'ENOENT') console.error('Failed to load destination editorial:', err.message);
+}
+
 // Load guides data
 const guidesPath = path.join(__dirname, 'data', 'guides.json');
 let guidesData = [];
@@ -241,6 +252,14 @@ try {
   guidesData = JSON.parse(fs.readFileSync(guidesPath, 'utf-8'));
 } catch (err) {
   console.error('Failed to load guides:', err.message);
+}
+
+const guideEditorialPath = path.join(__dirname, 'data', 'guide-editorial.json');
+try {
+  const guideEditorial = JSON.parse(fs.readFileSync(guideEditorialPath, 'utf-8'));
+  guidesData = guidesData.map(guide => ({ ...guide, ...(guideEditorial[guide.slug] || {}) }));
+} catch (err) {
+  if (err.code !== 'ENOENT') console.error('Failed to load guide editorial:', err.message);
 }
 
 // Load brands data
@@ -771,10 +790,16 @@ app.get('/destinations/:country', (req, res) => {
     description_en: destDesc.en,
     coverImage: destDesc.coverImage || null,
     gallery: destDesc.gallery || [],
+    editorial_zh: destDesc.editorial_zh || null,
+    editorial_en: destDesc.editorial_en || null,
   };
 
+  const editorialHtml = marked.parse(
+    lang === 'en' ? (destination.editorial_en || '') : (destination.editorial_zh || '')
+  );
+
   res.render('destination-detail', {
-    destination, trips: countryTrips, curatedRoutes, relatedGuides, lang,
+    destination, editorialHtml, trips: countryTrips, curatedRoutes, relatedGuides, lang,
     title: (lang === 'en' ? destination.name_en : destination.name_zh) + ' | WR Travel'
   });
 });

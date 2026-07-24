@@ -52,6 +52,13 @@
     .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
     .gallery-grid img { width: 100%; height: 160px; object-fit: cover; border-radius: 10px; transition: transform 0.3s; cursor: pointer; }
     .gallery-grid img:hover { transform: scale(1.03); }
+    .destination-editorial { max-width: 820px; margin: 44px auto 0; padding: 0 24px; color: #3f3f46; }
+    .destination-editorial h2 { margin: 34px 0 12px; color: #1a1a2e; font-family: 'Playfair Display',serif; font-size: 24px; }
+    .destination-editorial h3 { margin: 24px 0 10px; color: #1a1a2e; font-size: 18px; }
+    .destination-editorial p { margin: 0 0 16px; font-size: 15px; line-height: 1.9; }
+    .destination-editorial ul { margin: 0 0 20px; padding-left: 22px; }
+    .destination-editorial li { margin-bottom: 8px; font-size: 15px; line-height: 1.75; }
+    .destination-editorial strong { color: #1a1a2e; }
     .trips-section { max-width: 1200px; margin: 40px auto; padding: 0 24px 80px; }
     .trips-section h2 { font-size: 22px; margin-bottom: 20px; color: #333; }
   </style>
@@ -83,6 +90,12 @@
       <% }); %>
     </div>
   </div>
+  <% } %>
+
+  <% if (editorialHtml) { %>
+  <article class="destination-editorial">
+    <%- editorialHtml %>
+  </article>
   <% } %>
 
   <div class="trips-section">
