@@ -76,8 +76,15 @@ app.locals.wechatQrPath = process.env.WECHAT_QR_PATH || '/images/wechat-contact-
 app.use(express.json({ limit: '32kb' }));
 app.use(express.urlencoded({ extended: false, limit: '32kb' }));
 
-// Serve static files from public directory
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve static files from public directory. Font filenames are treated as
+// versioned assets; rename the file when replacing its contents.
+app.use(express.static(path.join(__dirname, 'public'), {
+  setHeaders(res, filePath) {
+    if (path.extname(filePath) === '.woff2') {
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+    }
+  },
+}));
 
 // Format price for display
 function formatPrice(itinerary, lang) {
