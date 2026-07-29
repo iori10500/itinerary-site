@@ -24,8 +24,8 @@
     "parent": "china",
     "headline_zh": "云南 — 苍洱之间的隐逸慢游",
     "headline_en": "Yunnan — slow journeys between Cangshan and Erhai",
-    "manifesto_zh": "云南是中国最被旅人爱过的省份，但真正的好酒店多到难选。我们在大理（金梭岛匠庐·蜜湾、木夕大里伙山）、丽江、香格里拉沿线深挖，按你的 family / couple / solo 画像配伍线路。\n\n匠庐·蜜湾把整个金梭岛包了，洱海日出日落都在你窗外；木夕大里把白族建筑语汇做到当代极简的程度。",
-    "manifesto_en": "Yunnan is China's most romanticised province, with more good hotels than easy to choose from. We anchor on Dali (Jianglu Miwan on Jinsuo Island, MUXI Dali Houshan), Lijiang, and the Shangri-la corridor — paired to your family / couple / solo profile.\n\nJianglu Miwan occupies all of Jinsuo Island — Erhai sunrise and sunset frame your window. MUXI takes Bai-architecture vocabulary into contemporary minimalism.",
+    "manifesto_zh": "云南是中国最被旅人爱过的省份，但真正的好酒店多到难选。我们在大理（金梭岛匠庐·蜜湾、木夕大里伙山）、丽江、香格里拉沿线深挖，按你的亲子、伴侣或独行画像配伍线路。\n\n匠庐·蜜湾把整个金梭岛包了，洱海日出日落都在你窗外；木夕大里把白族建筑语汇做到当代极简的程度。大理适合把节奏放慢，丽江适合连接山地与古城，继续向北则要为海拔和长距离转场留出余量。\n\n春秋通常最稳妥，雨季的云层和冬季的干燥光线各有价值。WR 顾问不会只按“热门景点”排列，而会先听你更在意住宿、风景、饮食还是亲子便利，再决定住几晚、删掉哪些转场，并由同一位真人从首次沟通跟到旅行归来。",
+    "manifesto_en": "Yunnan is China's most romanticised province, with more good hotels than easy to choose from. We anchor on Dali (Jianglu Miwan on Jinsuo Island, MUXI Dali Houshan), Lijiang, and the Shangri-la corridor — paired to your family, couple or solo profile.\n\nJianglu Miwan occupies all of Jinsuo Island, with Erhai sunrise and sunset framing the windows. MUXI takes Bai architectural vocabulary into contemporary minimalism. Dali rewards a slower stay; Lijiang works as a bridge between old-town texture and mountain country; continuing north requires deliberate altitude and transfer planning.\n\nSpring and autumn are usually the most forgiving, while summer cloudscapes and dry winter light each suit different travellers. A WR advisor first listens for what matters most — lodging, landscape, food, photography or family ease — then decides where to stay longer and which transfers to remove. The same real person follows the journey from first conversation to return.",
     "matchTags": ["大理", "dali", "云南", "yunnan", "丽江", "lijiang"]
   },
   "shangri-la": {
@@ -34,8 +34,8 @@
     "parent": "china",
     "headline_zh": "香格里拉 — 雪山下的高原游牧",
     "headline_en": "Shangri-La — plateau nomadic life under snow mountains",
-    "manifesto_zh": "香格里拉行政上属云南，但文化和地理上独立成区。我们和匠庐·赛朵游牧、匠庐·雾浓顶（梅里雪山脚下）合作，做「高原慢游」主题线路 — 看雪山、走牧场、住山居、吃藏家私房菜。冬季 12-3 月梅里日照金山是高潮场景。",
-    "manifesto_en": "Shangri-la is administratively part of Yunnan but culturally and geographically a region of its own. We work with Jianglu Saiduo Nomadic and Jianglu Wunongding (at the foot of Meili Snow Mountain) on plateau-slow-travel themed routes — snow mountains, alpine pastures, mountain lodges, Tibetan home cooking. The Dec–Mar 'Sun-on-Gold' view of Meili is the climactic scene.",
+    "manifesto_zh": "香格里拉行政上属云南，但文化和地理上独立成区。我们和匠庐·赛朵游牧、匠庐·雾浓顶（梅里雪山脚下）合作，做「高原慢游」主题线路 — 看雪山、走牧场、住山居、吃藏家私房菜。\n\n冬季 12–3 月空气通透，梅里日照金山是高潮场景；春末到秋初更适合草甸和轻徒步，但雨季需要为道路与能见度预留弹性。这里不适合把松赞林寺、纳帕海、奔子栏和梅里全部压进两三天，海拔适应和停留质量比打卡数量重要。\n\nWR 顾问会先聆听体力、睡眠、摄影和同行者年龄，再判断是否跨到梅里、在哪一站连住，以及哪些活动应作为天气备选。AI 帮我们更快整理信息和联络资源，路线判断与从出发前到归来后的照顾始终由真人负责。",
+    "manifesto_en": "Shangri-La is administratively part of Yunnan but culturally and geographically a region of its own. We work with Jianglu Saiduo Nomadic and Jianglu Wunongding at the foot of Meili Snow Mountain on plateau-slow-travel journeys: snow peaks, alpine pasture, mountain lodges and Tibetan home cooking.\n\nDecember to March brings the clearest air and the best chance of Meili's sunrise alpenglow. Late spring through early autumn suits meadow walks, while the wet season needs flexibility for roads and visibility. Songzanlin, Napa Lake, Benzilan and Meili should not be compressed into two or three days; altitude adaptation and the quality of each stay matter more than collecting stops.\n\nA WR advisor first listens to fitness, sleep, photography priorities and the ages of everyone travelling, then decides whether to continue to Meili, where to stay twice and which activities should remain weather alternatives. AI helps us organise facts and reach partners faster; route judgement and end-to-end care remain human.",
     "matchTags": ["香格里拉", "shangri-la", "shangrila", "梅里", "meili"]
   },
   "sichuan": {
@@ -44,8 +44,8 @@
     "parent": "china",
     "headline_zh": "四川 — 川西高原的下一章（开发中）",
     "headline_en": "Sichuan — the next chapter on the Tibetan plateau (in development)",
-    "manifesto_zh": "四川是 WR Journeys 接下来要重点接入的区域 — 松赞在川西的稻城亚丁、丹巴、康定都有项目，匠庐也在评估扩张。目前线路尚未公开，欢迎联系顾问预约定制。",
-    "manifesto_en": "Sichuan is WR Journeys' next major regional onboarding — Songtsam has projects across Yading, Danba, and Kangding; Jianglu is also evaluating expansion. Routes are not yet public — contact the advisor for a bespoke design.",
+    "manifesto_zh": "四川是 WR Journeys 接下来重点接入的区域。川西从康定、丹巴到稻城亚丁，距离看似相连，实际受到海拔、道路与季节影响，不能按平原城市之间的方式计算转场。松赞在相关区域已有成熟住宿网络，我们也在持续核验更多在地伙伴。\n\n5–6 月适合高山花期，9–10 月通常拥有更稳定的秋色；盛夏要考虑降雨，冬季则需判断道路、保暖与部分服务停运。第一次进入高原的旅人，更适合从较低海拔逐步上升，并把至少一晚留给适应，而不是连续追赶景点。\n\n公开标准线路尚在整理，但真人顾问已经可以按体力、时间、摄影或亲子需求做一事一议设计。我们会明确哪些段落已经实地或由可信伙伴核验、哪些仍需二次确认；AI 只帮助加快资料整理与联络，最终取舍和旅程责任由真人承担。",
+    "manifesto_en": "Sichuan is the next major region being built into WR Journeys. Western Sichuan appears connected on a map, but Kangding, Danba and Yading are shaped by altitude, road conditions and season; transfers cannot be planned like journeys between lowland cities. Songtsam already provides a mature lodge network in parts of the region, while we continue to verify additional local partners.\n\nMay and June suit alpine flowers, and September to October usually bring the most dependable autumn colour. Summer requires rain buffers; winter needs careful checks on roads, warmth and seasonal closures. First-time plateau travellers are better served by a gradual ascent and at least one adaptation night than by chasing consecutive landmarks.\n\nPublic standard routes are still being prepared, but a real advisor can already design a bespoke journey around fitness, available time, photography or family needs. We distinguish what has been directly checked, what comes from trusted partners and what still requires confirmation. AI speeds research and coordination; the final trade-offs and responsibility for the journey remain human.",
     "matchTags": ["四川", "sichuan", "稻城", "yading", "康定", "kangding"]
   }
 }

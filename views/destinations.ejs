@@ -78,6 +78,16 @@
       <h2 style="font-family:'Playfair Display',serif;font-size:24px;margin:0 0 6px;color:#fff;"><%= lang === 'en' ? 'China — the value frontier of slow luxury' : '中国 — slow-luxury 的价值洼地' %></h2>
       <p style="font-size:14px;color:rgba(255,255,255,0.75);margin:0;"><%= lang === 'en' ? '9 curated routes across Guizhou, Yunnan, Shangri-la — anchored on Jianglu, Songtsam.' : '贵州、云南、香格里拉 9 条甄选线路 — 由匠庐、松赞支撑。' %> →</p>
     </a>
+    <nav aria-label="<%= lang === 'en' ? 'China regions' : '中国区域' %>" style="display:flex;flex-wrap:wrap;gap:10px;padding:14px 4px 10px;">
+      <% [
+        { slug: 'guizhou', zh: '贵州', en: 'Guizhou' },
+        { slug: 'yunnan', zh: '云南', en: 'Yunnan' },
+        { slug: 'shangri-la', zh: '香格里拉', en: 'Shangri-La' },
+        { slug: 'sichuan', zh: '四川', en: 'Sichuan' }
+      ].forEach(function(region) { %>
+      <a href="<%= lang === 'en' ? '/en' : '' %>/destinations/china/<%= region.slug %>" style="font-size:13px;color:#6b6258;text-decoration:none;background:#f7f5f0;border:1px solid #e8e0d0;border-radius:999px;padding:7px 13px;"><%= lang === 'en' ? region.en : region.zh %> →</a>
+      <% }); %>
+    </nav>
   </div>
 
   <div class="dest-grid">
