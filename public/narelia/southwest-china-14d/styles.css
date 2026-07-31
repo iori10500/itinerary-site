@@ -231,7 +231,6 @@ button { font: inherit; }
 .vehicle-copy { color: var(--muted); font-size: 13px; line-height: 1.75; }
 .vehicle-points { display: grid; gap: 9px; margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 12px; }
 .vehicle-points span::before { content: "◆"; color: var(--gold); margin-right: 8px; font-size: 8px; }
-.saving { margin-top: 18px; padding: 15px; background: #f1ece2; color: var(--rust); font: italic 18px Georgia, serif; }
 .transport-note { margin-top: 22px; padding: 20px 24px; background: var(--ink); color: rgba(255,255,255,.67); font-size: 12px; line-height: 1.7; }
 .transport-note strong { color: var(--gold-light); }
 
