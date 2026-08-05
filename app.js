@@ -352,7 +352,7 @@ const modeMap = {
     body_en: 'Heritage journeys are for travellers who want a place to actually change them. We favour cultural depth at a slow pace — an Uffizi restoration vault with a Florentine conservator, three days of tea ceremony with a Kyoto master, an afternoon of philosophy with a Lama in a Tibetan monastery. Lodging is always culturally-anchored boutique: Tawaraya Kyoto, Aman Kyoto, Four Seasons Florence, The Witchery in Edinburgh.\n\nOne house rule: every destination on a Heritage route includes at least one "atypical encounter" — a real local experience you won\'t find on TripAdvisor.'
   },
   'private-villa': { zh: '私人别墅', en: 'Private Villa', icon: '🏝️', themeTag: null,
-    external: 'https://ai-test.wildroadgroup.com/villas' },
+    external: 'https://villas.wildroadgroup.com/' },
   'adventure': {
     zh: '户外冒险', en: 'Adventure', icon: '🏔️', themeTag: 'adventure',
     body_zh: '户外冒险覆盖徒步、骑行、滑雪、潜水、攀岩、滑翔伞等所有把身体交出去的玩法。我们偏好"白天硬核 + 夜晚精致"的组合 — 白天 5 小时阿尔卑斯徒步，晚上回到 Aman St. Moritz 泡温泉吃米其林；白天潜水看鬼蝠鲼，晚上回到 Soneva Fushi 的 Star Bed 看银河。\n\n所有 adventure 线路都搭配持证向导，强度按 family / couple / solo 分级；保险与紧急撤离方案随行程附上。',
