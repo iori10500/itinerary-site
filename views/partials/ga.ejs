@@ -4,12 +4,32 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  gtag('set', 'linker', { domains: ['wr-travel.com', 'wildroadgroup.com'], accept_incoming: true });
+  gtag('set', {
+    site_hostname: location.hostname,
+    content_group: 'wr_journeys',
+    brand: 'WR Travel'
+  });
   gtag('config', 'G-R0TMD98X7G');
   (function () {
     try {
-      var source = new URLSearchParams(location.search).get('utm_source') || new URL(document.referrer).hostname;
-      var match = String(source).toLowerCase().match(/chatgpt|perplexity|copilot|gemini|claude|you\.com|meta\.ai/);
-      if (match) gtag('event', 'ai_referral_landing', { ai_source: match[0], non_interaction: true });
+      var utmSource = new URLSearchParams(location.search).get('utm_source') || '';
+      var referrerHost = document.referrer ? new URL(document.referrer).hostname : '';
+      var source = String(utmSource || referrerHost).toLowerCase();
+      var providers = [
+        ['openai', /chatgpt|openai|oai-searchbot/], ['perplexity', /perplexity/],
+        ['copilot', /copilot/], ['gemini', /gemini|bard/], ['claude', /claude|anthropic/],
+        ['you.com', /you\.com/], ['meta.ai', /meta\.ai/], ['doubao', /doubao|toutiao|bytedance/],
+        ['deepseek', /deepseek/], ['kimi', /kimi|moonshot/], ['qwen', /qwen|tongyi/],
+        ['grok', /grok|x\.ai/]
+      ];
+      var provider = providers.find(function (item) { return item[1].test(source); });
+      if (provider) gtag('event', 'ai_referral_landing', {
+        ai_source: provider[0],
+        referral_method: utmSource ? 'utm' : 'referrer',
+        landing_path: location.pathname,
+        non_interaction: true
+      });
     } catch (_) {}
   })();
 </script>
