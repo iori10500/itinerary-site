@@ -211,6 +211,8 @@ app.get('/sitemap.xml', (req, res) => {
   // China hub (IA v2)
   pages.push({ loc: `${baseUrl}/destinations/china`, priority: '0.9', changefreq: 'monthly' });
   pages.push({ loc: `${baseUrl}/en/destinations/china`, priority: '0.8', changefreq: 'monthly' });
+  pages.push({ loc: `${baseUrl}/guides/first-trip-to-china`, priority: '0.8', changefreq: 'monthly' });
+  pages.push({ loc: `${baseUrl}/en/guides/first-trip-to-china`, priority: '0.9', changefreq: 'monthly' });
   Object.entries(chinaRegionsData).filter(([s, r]) => r.parent === 'china').forEach(([slug]) => {
     pages.push({ loc: `${baseUrl}/destinations/china/${slug}`, priority: '0.7', changefreq: 'monthly' });
     pages.push({ loc: `${baseUrl}/en/destinations/china/${slug}`, priority: '0.6', changefreq: 'monthly' });
@@ -755,6 +757,44 @@ app.get('/destinations/china', (req, res) => {
         subRegions.map(r => ({ name: lang === 'en' ? r.name_en : r.name_zh, url: `/destinations/china/${r.slug}` })),
         lang === 'en' ? 'China sub-regions' : '中国子区域'
       ),
+    ],
+  });
+});
+
+// High-intent China inbound guide: first visit + 10/14/21-day decision support.
+app.get('/guides/first-trip-to-china', (req, res) => {
+  const lang = req.lang;
+  const isEn = lang === 'en';
+  const canonicalPath = `${isEn ? '/en' : ''}/guides/first-trip-to-china`;
+  const title = isEn
+    ? 'First Trip to China: 10, 14 or 21 Days? | WR Journeys'
+    : '第一次去中国：10、14 或 21 天怎么安排？ | WR Journeys';
+  const metaDescription = isEn
+    ? 'Plan your first private trip to China with a real human advisor. Compare 10, 14 and 21-day routes, practical entry, payment and rail guidance, and a considered pace.'
+    : '第一次来中国如何规划？比较 10、14 与 21 天路线节奏，并了解入境、支付与铁路出行要点，由真人顾问从需求沟通跟进到旅行结束。';
+  res.render('china-first-trip', {
+    lang, title, metaDescription,
+    contentGroup: 'china_inbound',
+    schemas: [
+      schemas.breadcrumbList([
+        { name: isEn ? 'Home' : '首页', path: '/' },
+        { name: isEn ? 'China' : '中国', path: '/destinations/china' },
+        { name: isEn ? 'First trip to China' : '第一次去中国', path: '/guides/first-trip-to-china' },
+      ]),
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        '@id': `https://itinerary.wildroadgroup.com${canonicalPath}#article`,
+        headline: title.split('|')[0].trim(),
+        description: metaDescription,
+        url: `https://itinerary.wildroadgroup.com${canonicalPath}`,
+        inLanguage: isEn ? 'en' : 'zh-CN',
+        datePublished: '2026-08-06',
+        dateModified: '2026-08-06',
+        author: { '@type': 'Organization', name: 'WR Journeys' },
+        publisher: { '@id': 'https://itinerary.wildroadgroup.com#org' },
+        image: 'https://itinerary.wildroadgroup.com/images/chengdu-dali-lijiang-14d/cover.jpg',
+      },
     ],
   });
 });

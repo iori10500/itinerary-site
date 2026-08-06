@@ -287,6 +287,340 @@ body {
   line-height: 1.8;
 }
 
+.china-first-entry {
+  display: grid;
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto 88px;
+  padding: 46px 48px;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(36px, 8vw, 110px);
+  border-top: 1px solid var(--china-line);
+  border-bottom: 1px solid var(--china-line);
+}
+
+.china-first-entry h2 {
+  max-width: 520px;
+  margin: 14px 0 0;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: clamp(34px, 4vw, 54px);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.china-first-entry > div:last-child > p {
+  margin: 0 0 28px;
+  color: rgba(23, 24, 18, 0.68);
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.china-first-entry a,
+.china-practical a,
+.china-duration a {
+  color: #755729;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* First-trip editorial guide */
+.china-guide-hero {
+  position: relative;
+  min-height: min(760px, 86vh);
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  color: #fff;
+}
+
+.china-guide-hero__media,
+.china-guide-hero__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.china-guide-hero__veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(11, 14, 10, 0.86) 0%, rgba(11, 14, 10, 0.55) 52%, rgba(11, 14, 10, 0.18) 100%), linear-gradient(0deg, rgba(11, 14, 10, 0.58), transparent 58%);
+}
+
+.china-guide-hero__inner {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 104px 0 62px;
+}
+
+.china-guide-hero h1 {
+  max-width: 980px;
+  margin: 0;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: clamp(52px, 7vw, 96px);
+  font-weight: 400;
+  line-height: 0.97;
+  letter-spacing: -0.04em;
+}
+
+.china-guide-hero__inner > p:not(.china-kicker) {
+  max-width: 710px;
+  margin: 28px 0 0;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: clamp(17px, 1.6vw, 21px);
+  line-height: 1.75;
+}
+
+.china-guide-intro {
+  display: grid;
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 96px 0;
+  grid-template-columns: 90px minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(28px, 5vw, 76px);
+}
+
+.china-guide-intro__mark {
+  margin: 0;
+  color: var(--china-gold);
+  font-family: "Playfair Display", serif;
+  font-size: 52px;
+}
+
+.china-guide-intro h2,
+.china-duration h2,
+.china-practical h2,
+.china-route-starters h2 {
+  margin: 12px 0 0;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: clamp(38px, 5vw, 66px);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+}
+
+.china-guide-intro__copy p {
+  margin: 0 0 20px;
+  color: rgba(23, 24, 18, 0.7);
+  font-size: 17px;
+  line-height: 1.86;
+}
+
+.china-duration {
+  padding: 100px max(24px, calc((100% - 1180px) / 2));
+  background: var(--china-moss);
+  color: #fff;
+}
+
+.china-duration > header {
+  display: grid;
+  margin-bottom: 52px;
+  grid-template-columns: minmax(0, 0.55fr) minmax(0, 1.45fr);
+  gap: clamp(32px, 8vw, 120px);
+}
+
+.china-duration__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.china-duration__grid article {
+  position: relative;
+  min-height: 500px;
+  padding: 38px 34px;
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.china-duration__grid article:last-child {
+  border-right: 0;
+}
+
+.china-duration__grid article > span {
+  font-family: "Playfair Display", serif;
+  font-size: 88px;
+  line-height: 0.9;
+}
+
+.china-duration__unit {
+  margin: 10px 0 54px;
+  color: #e2c68e;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.china-duration__grid h3 {
+  margin: 0 0 16px;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: 29px;
+  font-weight: 400;
+}
+
+.china-duration__grid article > p:not(.china-duration__unit) {
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.72;
+}
+
+.china-duration__grid ul {
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.china-duration__grid li {
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.china-duration__grid a {
+  color: #e2c68e;
+  font-size: 11px;
+}
+
+.china-duration__featured {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.china-duration__featured em {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #e2c68e;
+  font-size: 9px;
+  font-style: normal;
+  letter-spacing: 0.14em;
+}
+
+.china-duration__note {
+  max-width: 780px;
+  margin: 30px 0 0 auto;
+  color: rgba(255, 255, 255, 0.56);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.china-practical {
+  display: grid;
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 104px 0;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+  gap: clamp(48px, 8vw, 120px);
+}
+
+.china-practical__head > p:last-child {
+  max-width: 450px;
+  margin-top: 28px;
+  color: rgba(23, 24, 18, 0.58);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.china-practical__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.china-practical__grid article {
+  min-height: 280px;
+  padding: 28px;
+  border: solid var(--china-line);
+  border-width: 1px 1px 0 0;
+}
+
+.china-practical__grid article:nth-child(2n) {
+  border-right: 0;
+}
+
+.china-practical__grid article:nth-last-child(-n+2) {
+  border-bottom-width: 1px;
+}
+
+.china-practical__grid span {
+  color: var(--china-gold);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}
+
+.china-practical__grid h3 {
+  margin: 44px 0 14px;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: 27px;
+  font-weight: 400;
+}
+
+.china-practical__grid p {
+  min-height: 92px;
+  color: rgba(23, 24, 18, 0.65);
+  line-height: 1.7;
+}
+
+.china-route-starters {
+  padding: 96px max(24px, calc((100% - 1180px) / 2));
+  background: #e5ddce;
+}
+
+.china-route-starters > header {
+  display: grid;
+  margin-bottom: 48px;
+  grid-template-columns: minmax(0, 0.6fr) minmax(0, 1.4fr);
+  gap: clamp(32px, 8vw, 120px);
+}
+
+.china-route-starters__grid {
+  border-top: 1px solid rgba(23, 24, 18, 0.2);
+}
+
+.china-route-starters__grid > a {
+  display: grid;
+  padding: 24px 0;
+  grid-template-columns: 150px 1fr 40px;
+  align-items: center;
+  border-bottom: 1px solid rgba(23, 24, 18, 0.2);
+  color: var(--china-ink);
+  text-decoration: none;
+}
+
+.china-route-starters__grid > a > span {
+  color: #755729;
+  font-family: "Playfair Display", serif;
+  font-size: 44px;
+}
+
+.china-route-starters__grid small,
+.china-route-starters__grid p {
+  color: rgba(23, 24, 18, 0.54);
+  font-family: inherit;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+}
+
+.china-route-starters__grid p {
+  margin: 0 0 5px;
+}
+
+.china-route-starters__grid h3 {
+  margin: 0;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 400;
+}
+
+.china-route-starters__grid i {
+  color: #755729;
+  font-style: normal;
+  font-size: 22px;
+}
+
 .china-method {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -559,6 +893,11 @@ body {
   margin-bottom: 22px;
 }
 
+.china-back a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .china-microcopy {
   color: rgba(255, 255, 255, 0.58);
   font-size: 12px;
@@ -680,6 +1019,18 @@ body {
   .china-enquiry,
   .china-faq {
     grid-template-columns: 1fr;
+  }
+
+  .china-first-entry,
+  .china-guide-intro,
+  .china-duration > header,
+  .china-practical,
+  .china-route-starters > header {
+    grid-template-columns: 1fr;
+  }
+
+  .china-guide-intro__mark {
+    display: none;
   }
 
   .china-method__grid,
@@ -806,6 +1157,82 @@ body {
 
   .china-enquiry__inner {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .china-first-entry,
+  .china-guide-hero__inner,
+  .china-guide-intro,
+  .china-practical {
+    width: min(100% - 32px, 1180px);
+  }
+
+  .china-first-entry {
+    margin-bottom: 64px;
+    padding: 40px 0;
+  }
+
+  .china-guide-hero {
+    min-height: 760px;
+  }
+
+  .china-guide-hero__inner {
+    padding-bottom: 50px;
+  }
+
+  .china-guide-hero h1 {
+    font-size: clamp(45px, 14vw, 62px);
+  }
+
+  .china-guide-intro,
+  .china-practical,
+  .china-route-starters,
+  .china-duration {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .china-duration {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .china-duration__grid,
+  .china-practical__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .china-duration__grid article {
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  }
+
+  .china-duration__grid article:last-child {
+    border-bottom: 0;
+  }
+
+  .china-practical__grid article,
+  .china-practical__grid article:nth-child(2n),
+  .china-practical__grid article:nth-last-child(-n+2) {
+    min-height: 0;
+    border-width: 1px 0 0;
+  }
+
+  .china-practical__grid article:last-child {
+    border-bottom-width: 1px;
+  }
+
+  .china-practical__grid p {
+    min-height: 0;
+  }
+
+  .china-route-starters__grid > a {
+    grid-template-columns: 72px 1fr 24px;
+    gap: 10px;
+  }
+
+  .china-route-starters__grid > a > span {
+    font-size: 32px;
   }
 }
 

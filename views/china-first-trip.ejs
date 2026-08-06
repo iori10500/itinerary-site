@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="<%= lang === 'en' ? 'en' : 'zh-CN' %>">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <meta name="description" content="<%= metaDescription %>">
+  <link rel="canonical" href="https://itinerary.wildroadgroup.com<%= lang === 'en' ? '/en' : '' %>/guides/first-trip-to-china">
+  <link rel="alternate" hreflang="zh-CN" href="https://itinerary.wildroadgroup.com/guides/first-trip-to-china">
+  <link rel="alternate" hreflang="en" href="https://itinerary.wildroadgroup.com/en/guides/first-trip-to-china">
+  <link rel="alternate" hreflang="x-default" href="https://itinerary.wildroadgroup.com/en/guides/first-trip-to-china">
+  <meta property="og:title" content="<%= title %>">
+  <meta property="og:description" content="<%= metaDescription %>">
+  <meta property="og:url" content="https://itinerary.wildroadgroup.com<%= lang === 'en' ? '/en' : '' %>/guides/first-trip-to-china">
+  <meta property="og:image" content="https://itinerary.wildroadgroup.com/images/chengdu-dali-lijiang-14d/cover.jpg">
+  <meta property="og:type" content="article">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="stylesheet" href="/main.css?v=20260801">
+  <link rel="stylesheet" href="/enquiry.css?v=20260806">
+  <link rel="stylesheet" href="/china-inbound.css?v=20260806c">
+  <%- include('partials/jsonld') %>
+  <%- include('partials/ga') %>
+</head>
+<body class="china-page china-guide-page">
+  <%- include('partials/header') %>
+  <a class="lang-toggle" href="<%= lang === 'en' ? '/guides/first-trip-to-china' : '/en/guides/first-trip-to-china' %>" hreflang="<%= lang === 'en' ? 'zh-CN' : 'en' %>"><%= lang === 'en' ? '中' : 'EN' %></a>
+
+  <main>
+    <section class="china-guide-hero">
+      <picture class="china-guide-hero__media" aria-hidden="true">
+        <source srcset="/images/chengdu-dali-lijiang-14d/cover.webp" type="image/webp">
+        <img src="/images/chengdu-dali-lijiang-14d/cover.jpg" alt="" loading="eager">
+      </picture>
+      <div class="china-guide-hero__veil"></div>
+      <div class="china-guide-hero__inner">
+        <nav class="china-back" aria-label="Breadcrumb"><a href="<%= lang === 'en' ? '/en' : '' %>/destinations/china"><%= lang === 'en' ? 'China journeys' : '中国旅程' %></a> / <%= lang === 'en' ? 'First trip' : '第一次来中国' %></nav>
+        <p class="china-kicker"><%= lang === 'en' ? 'A CLEAR FIRST JOURNEY · HUMAN-LED' : '清晰的第一趟旅程 · 真人规划' %></p>
+        <h1><%= lang === 'en' ? 'Your first trip to China should feel clear, not compressed.' : '第一次来中国，不必匆忙，也不必复杂。' %></h1>
+        <p><%= lang === 'en' ? 'Ten, fourteen or twenty-one days can each work beautifully. The difference is not how many pins fit on a map, but how deeply you want to arrive.' : '10、14 或 21 天都可以是一段好旅程。区别不在地图上能放多少个地点，而在于你希望以多深的方式抵达。' %></p>
+        <div class="china-actions">
+          <a class="china-button china-button--primary" href="#choose-your-time"><%= lang === 'en' ? 'Compare trip lengths' : '比较旅行时长' %> <span>↓</span></a>
+          <a class="china-button china-button--ghost" href="<%= advisorUrl(lang, { source: 'first-china-hero' }) %>" data-enquiry-cta="first-china-hero"><%= lang === 'en' ? 'Ask a real advisor' : '询问真人顾问' %></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="china-guide-intro">
+      <p class="china-guide-intro__mark">01</p>
+      <div><p class="china-kicker"><%= lang === 'en' ? 'THE FIRST DECISION' : '第一个决定' %></p><h2><%= lang === 'en' ? 'Choose a rhythm before you choose a route.' : '先选择节奏，再选择路线。' %></h2></div>
+      <div class="china-guide-intro__copy">
+        <p><%= lang === 'en' ? 'China rewards focus. Two well-chosen bases can reveal more than five rushed cities. We begin with your arrival point, sleep, food, mobility, children and appetite for long transfers—then design the geography.' : '中国适合有重点地旅行。两个选得好的停留地，往往比匆忙跑过五座城市更有收获。我们会先了解入境城市、睡眠、饮食、体力、儿童与长途移动偏好，再决定地理路线。' %></p>
+        <p><%= lang === 'en' ? 'A real WR advisor stays responsible from this first conversation through your return. AI helps us organise and coordinate faster; listening and judgement remain human.' : '从这次沟通开始到旅行归来，同一位 WR 真人顾问持续负责。AI 帮助我们更快整理与协调；聆听和判断始终由真人完成。' %></p>
+      </div>
+    </section>
+
+    <section class="china-duration" id="choose-your-time">
+      <header><p class="china-kicker"><%= lang === 'en' ? '10 / 14 / 21 DAYS' : '10 / 14 / 21 天' %></p><h2><%= lang === 'en' ? 'How much China fits without rushing?' : '不赶路的前提下，能看见多少中国？' %></h2></header>
+      <div class="china-duration__grid">
+        <article>
+          <span>10</span><p class="china-duration__unit"><%= lang === 'en' ? 'days' : '天' %></p>
+          <h3><%= lang === 'en' ? 'One clear chapter' : '讲好一个章节' %></h3>
+          <p><%= lang === 'en' ? 'Best for two bases: one gateway city and one landscape or cultural region.' : '适合两个主要停留地：一座入境城市，加上一片自然或文化区域。' %></p>
+          <ul><li><%= lang === 'en' ? '2 principal bases' : '2 个主要停留地' %></li><li><%= lang === 'en' ? '1 domestic flight or rail move' : '1 次国内航班或铁路移动' %></li><li><%= lang === 'en' ? 'Good for a focused first taste' : '适合主题明确的初次体验' %></li></ul>
+        </article>
+        <article class="china-duration__featured">
+          <em><%= lang === 'en' ? 'OUR BALANCED CHOICE' : '更均衡的选择' %></em>
+          <span>14</span><p class="china-duration__unit"><%= lang === 'en' ? 'days' : '天' %></p>
+          <h3><%= lang === 'en' ? 'Contrast without compression' : '有对比，也有停留' %></h3>
+          <p><%= lang === 'en' ? 'Enough time for a gateway city and two or three contrasting regions, with recovery built in.' : '可以安排一座门户城市与两至三个不同区域，并为抵达、适应和休息留出空间。' %></p>
+          <ul><li><%= lang === 'en' ? '3–4 principal bases' : '3–4 个主要停留地' %></li><li><%= lang === 'en' ? 'A balanced first journey' : '适合多数人的第一趟中国之旅' %></li><li><a href="<%= lang === 'en' ? '/en' : '' %>/chengdu-dali-lijiang-14d"><%= lang === 'en' ? 'See our 14-day Southwest China journey' : '查看 14 天中国西南旅程' %> →</a></li></ul>
+        </article>
+        <article>
+          <span>21</span><p class="china-duration__unit"><%= lang === 'en' ? 'days' : '天' %></p>
+          <h3><%= lang === 'en' ? 'A journey with depth' : '完成一段有纵深的旅程' %></h3>
+          <p><%= lang === 'en' ? 'Time for four to six bases, slower stays and a second geographic chapter.' : '可以安排四至六个主要停留地、更多慢住时间，并加入第二个地理章节。' %></p>
+          <ul><li><%= lang === 'en' ? '4–6 principal bases' : '4–6 个主要停留地' %></li><li><%= lang === 'en' ? 'Two distinct regions can work' : '可串联两个差异明显的区域' %></li><li><%= lang === 'en' ? 'More room for weather and spontaneity' : '为天气与临时灵感保留余地' %></li></ul>
+        </article>
+      </div>
+      <p class="china-duration__note"><%= lang === 'en' ? 'These are pacing principles, not fixed packages. Your advisor will adjust for arrival airports, altitude, family needs and seasonal access.' : '这些是节奏原则，不是固定套餐。顾问会根据入境机场、海拔、家庭需求与季节通行情况调整。' %></p>
+    </section>
+
+    <section class="china-practical">
+      <div class="china-practical__head">
+        <p class="china-kicker"><%= lang === 'en' ? 'BEFORE YOU FLY' : '出发之前' %></p>
+        <h2><%= lang === 'en' ? 'Four practical things to settle early.' : '四件值得提前确认的实用事项。' %></h2>
+        <p><%= lang === 'en' ? 'Last reviewed 6 August 2026. Entry and service rules change; always confirm against the linked official source before travel.' : '最后核对：2026 年 8 月 6 日。入境与服务规则会变化，出发前请始终以所链接的官方来源为准。' %></p>
+      </div>
+      <div class="china-practical__grid">
+        <article><span>01</span><h3><%= lang === 'en' ? 'Entry documents' : '入境证件' %></h3><p><%= lang === 'en' ? 'Visa-free eligibility depends on passport, purpose and length of stay. Check the current MFA FAQ; transit rules are separate.' : '是否免签取决于护照、来华目的与停留时间。请查看外交部当前问答；过境免签是另一套规则。' %></p><a href="https://cs.mfa.gov.cn/lh/lhqz_149493/cjwd/" target="_blank" rel="noopener"><%= lang === 'en' ? 'Chinese MFA visa-free FAQ' : '中国领事服务网免签问答' %> ↗</a></article>
+        <article><span>02</span><h3><%= lang === 'en' ? 'Payments' : '支付方式' %></h3><p><%= lang === 'en' ? 'Prepare more than one method. Official guidance covers mobile wallets, international cards, cash, bank accounts and e-CNY.' : '建议准备不止一种支付方式。官方指南涵盖移动支付、国际银行卡、现金、银行账户与数字人民币。' %></p><a href="https://english.www.gov.cn/news/202408/22/content_WS66c71b3ec6d0868f4e8ea2b1.html" target="_blank" rel="noopener"><%= lang === 'en' ? 'Official payment guide' : '中国政府网支付服务指南' %> ↗</a></article>
+        <article><span>03</span><h3><%= lang === 'en' ? 'Rail tickets' : '铁路票务' %></h3><p><%= lang === 'en' ? 'Use the official 12306 website or app. Foreign travellers can purchase real-name tickets with a valid passport and use that document for travel.' : '使用铁路 12306 官方网站或 App。外国旅客可凭有效护照实名购票，并使用购票证件乘车。' %></p><a href="https://www.12306.cn/en/faq.html?item=2" target="_blank" rel="noopener"><%= lang === 'en' ? 'China Railway 12306 FAQ' : '中国铁路 12306 问答' %> ↗</a></article>
+        <article><span>04</span><h3><%= lang === 'en' ? 'Connectivity' : '通信与网络' %></h3><p><%= lang === 'en' ? 'Plan roaming, a local SIM or eSIM before departure, and download essential apps in advance. Your advisor can help match the setup to your route.' : '出发前确认国际漫游、本地 SIM 或 eSIM，并预先下载必需应用。顾问会结合路线协助检查配置。' %></p><a href="https://english.www.gov.cn/AssetsZi/A_Guide_to_Working_and_Living_in_China_as_Business_Expatriates_2025.pdf" target="_blank" rel="noopener"><%= lang === 'en' ? 'Official living-in-China guide' : '官方在华生活指南' %> ↗</a></article>
+      </div>
+    </section>
+
+    <section class="china-route-starters">
+      <header><p class="china-kicker"><%= lang === 'en' ? 'ROUTES TO REACT TO' : '从参考路线开始沟通' %></p><h2><%= lang === 'en' ? 'You do not need to choose one unchanged.' : '不需要原样选择任何一条。' %></h2></header>
+      <div class="china-route-starters__grid">
+        <a href="<%= lang === 'en' ? '/en' : '' %>/chengdu-dali-lijiang-14d"><span>14 <small><%= lang === 'en' ? 'DAYS' : '天' %></small></span><div><p><%= lang === 'en' ? 'SOUTHWEST CHINA' : '中国西南' %></p><h3><%= lang === 'en' ? 'Chengdu, Dali & Lijiang' : '成都、大理与丽江' %></h3></div><i>↗</i></a>
+        <a href="<%= lang === 'en' ? '/en' : '' %>/zhangjiajie-hunan-8d"><span>08 <small><%= lang === 'en' ? 'DAYS' : '天' %></small></span><div><p><%= lang === 'en' ? 'HUNAN' : '湖南' %></p><h3><%= lang === 'en' ? 'Zhangjiajie & Fenghuang' : '张家界与凤凰' %></h3></div><i>↗</i></a>
+        <a href="<%= lang === 'en' ? '/en' : '' %>/destinations/china"><span>WR</span><div><p><%= lang === 'en' ? 'BESPOKE' : '私人定制' %></p><h3><%= lang === 'en' ? 'Explore all China journeys' : '浏览全部中国旅程' %></h3></div><i>↗</i></a>
+      </div>
+    </section>
+
+    <section class="china-faq">
+      <header><p><%= lang === 'en' ? 'FIRST-TRIP QUESTIONS' : '第一次来华常见问题' %></p><h2><%= lang === 'en' ? 'Useful answers before we talk.' : '沟通之前，先回答几个问题。' %></h2></header>
+      <div>
+        <details><summary><%= lang === 'en' ? 'Is 10 days enough for a first trip to China?' : '第一次来中国，10 天够吗？' %></summary><p><%= lang === 'en' ? 'Yes, if the route stays focused. We normally recommend one gateway city and one contrasting region rather than several distant highlights.' : '够，前提是路线保持聚焦。通常建议一座门户城市加上一片差异明显的区域，而不是跨越多个遥远景点。' %></p></details>
+        <details><summary><%= lang === 'en' ? 'What is the best first China itinerary?' : '第一次来中国，什么路线最好？' %></summary><p><%= lang === 'en' ? 'There is no universal route. Fourteen days through Chengdu, Dali and Lijiang is a balanced starting point for travellers drawn to food, landscape and boutique stays; history-first or family briefs may need a different shape.' : '没有通用答案。对重视美食、山水与精品住宿的人，成都—大理—丽江 14 天是均衡起点；若更重历史或亲子体验，则应采用不同结构。' %></p></details>
+        <details><summary><%= lang === 'en' ? 'Can WR help with practical setup?' : 'WR 会协助实用准备吗？' %></summary><p><%= lang === 'en' ? 'Yes. Once we understand your party and route, your advisor can flag the relevant entry checks, payment setup, rail booking and connectivity preparation. Final entry decisions always rest with the relevant authorities.' : '会。了解同行者与路线后，顾问可提示相关入境核对、支付准备、铁路预订与网络配置；最终入境决定始终由有关主管机关作出。' %></p></details>
+      </div>
+    </section>
+
+    <section class="china-enquiry">
+      <div class="china-enquiry__copy"><p class="china-kicker"><%= lang === 'en' ? 'BEGIN WITH YOUR TIME' : '从你拥有的时间开始' %></p><h2><%= lang === 'en' ? 'Tell one real person what matters.' : '把真正重要的事，告诉一位真人顾问。' %></h2><p><%= lang === 'en' ? 'A rough month, trip length and the people travelling with you are enough. We will help turn them into a coherent first journey.' : '只需告诉我们大致月份、旅行时长与同行者，就足够开始把它们变成一段完整的第一次中国旅程。' %></p></div>
+      <div class="china-enquiry__form"><%- include('partials/enquiry-form', { variant: 'short', source: 'first-trip-to-china', route: null }) %></div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="/main.css?v=20260801">
   <link rel="stylesheet" href="/enquiry.css?v=20260806">
-  <link rel="stylesheet" href="/china-inbound.css?v=20260806b">
+  <link rel="stylesheet" href="/china-inbound.css?v=20260806c">
   <%- include('partials/jsonld') %>
   <%- include('partials/ga') %>
 </head>
@@ -58,6 +58,17 @@
       <div class="china-editorial__label"><span>WR</span><%= lang === 'en' ? 'Why travel China with us' : '为什么和我们探索中国' %></div>
       <div class="china-editorial__body">
         <% (lang === 'en' ? china.manifesto_en : china.manifesto_zh).split(/\n\n+/).forEach(function(para) { %><p><%= para %></p><% }); %>
+      </div>
+    </section>
+
+    <section class="china-first-entry">
+      <div>
+        <p class="china-kicker"><%= lang === 'en' ? 'FIRST TIME IN CHINA?' : '第一次来中国？' %></p>
+        <h2><%= lang === 'en' ? 'Start with time, not a checklist.' : '先确定时间与节奏，不必先列打卡清单。' %></h2>
+      </div>
+      <div>
+        <p><%= lang === 'en' ? 'See what genuinely fits into 10, 14 or 21 days, plus the practical entry, payment and rail details that make a first journey feel clear.' : '了解 10、14 或 21 天真正适合怎样安排，以及入境、支付与铁路出行等让第一趟旅程更从容的实用信息。' %></p>
+        <a href="<%= lang === 'en' ? '/en' : '' %>/guides/first-trip-to-china"><%= lang === 'en' ? 'Read the first-trip guide' : '查看第一次来华旅行指南' %> <span>→</span></a>
       </div>
     </section>
 
