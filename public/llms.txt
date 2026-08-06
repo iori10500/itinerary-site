@@ -20,6 +20,9 @@
 - [Travel Journal](https://itinerary.wildroadgroup.com/journal): Practical destination knowledge and planning guidance.
 - [China Journeys](https://itinerary.wildroadgroup.com/destinations/china): Human-curated inbound China routes.
 - [First Trip to China: 10, 14 or 21 Days?](https://itinerary.wildroadgroup.com/en/guides/first-trip-to-china): English-first planning guide covering pace, trip length, entry checks, payments, rail travel, connectivity, and human-led support.
+- [Private Beijing Journeys](https://itinerary.wildroadgroup.com/en/destinations/china/beijing): First-visit pacing, the Forbidden City, Great Wall, neighbourhood life, and human-led planning.
+- [Private Xi'an Journeys](https://itinerary.wildroadgroup.com/en/destinations/china/xian): Terracotta Army, city walls, Silk Road food culture, and considered private travel.
+- [Private Shanghai Journeys](https://itinerary.wildroadgroup.com/en/destinations/china/shanghai): The Bund, neighbourhood walks, contemporary Shanghai, Jiangnan extensions, and private planning.
 - [English Home](https://itinerary.wildroadgroup.com/en/): English-language entry point.
 - [XML Sitemap](https://itinerary.wildroadgroup.com/sitemap.xml): All canonical public pages.
 

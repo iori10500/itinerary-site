@@ -621,6 +621,327 @@ body {
   font-size: 22px;
 }
 
+/* City intent pages */
+.china-city-hero {
+  position: relative;
+  min-height: min(760px, 86vh);
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  color: #fff;
+}
+
+.china-city-hero__media,
+.china-city-hero__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.china-city-page--beijing .china-city-hero__media img {
+  object-position: center center;
+}
+
+.china-city-page--xian .china-city-hero__media img {
+  object-position: center 58%;
+}
+
+.china-city-hero__veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(11, 13, 10, 0.86) 0%, rgba(11, 13, 10, 0.52) 55%, rgba(11, 13, 10, 0.12) 100%), linear-gradient(0deg, rgba(11, 13, 10, 0.7), transparent 60%);
+}
+
+.china-city-page--shanghai .china-city-hero__veil {
+  background: linear-gradient(90deg, rgba(5, 8, 14, 0.88) 0%, rgba(5, 8, 14, 0.48) 58%, rgba(5, 8, 14, 0.16) 100%), linear-gradient(0deg, rgba(5, 8, 14, 0.72), transparent 62%);
+}
+
+.china-city-hero__inner {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 104px 0 58px;
+}
+
+.china-city-hero h1 {
+  max-width: 1040px;
+  margin: 0;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: clamp(50px, 6.8vw, 92px);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.china-city-hero__lead {
+  max-width: 760px;
+  margin: 27px 0 0;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: clamp(17px, 1.55vw, 21px);
+  line-height: 1.75;
+}
+
+.china-photo-credit {
+  position: absolute;
+  z-index: 2;
+  right: 18px;
+  bottom: 14px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+}
+
+.china-city-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-bottom: 1px solid var(--china-line);
+  background: #e7dece;
+}
+
+.china-city-facts article {
+  min-height: 170px;
+  padding: 38px max(30px, calc((100vw - 1180px) / 6));
+  border-right: 1px solid rgba(23, 24, 18, 0.14);
+}
+
+.china-city-facts article:last-child {
+  border-right: 0;
+}
+
+.china-city-facts span {
+  display: block;
+  margin-bottom: 28px;
+  color: #8a6a35;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+}
+
+.china-city-facts strong {
+  display: block;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: clamp(23px, 2.4vw, 34px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.china-city-overview {
+  display: grid;
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 104px 0;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(50px, 9vw, 132px);
+}
+
+.china-city-overview h2,
+.china-city-moments h2,
+.china-city-human h2,
+.china-city-links h2 {
+  margin: 14px 0 0;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: clamp(38px, 5vw, 66px);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+}
+
+.china-city-overview__copy p {
+  margin: 0 0 24px;
+  color: rgba(23, 24, 18, 0.7);
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: clamp(20px, 2vw, 28px);
+  line-height: 1.7;
+}
+
+.china-city-moments {
+  padding: 100px max(24px, calc((100% - 1180px) / 2));
+  background: var(--china-moss);
+  color: #fff;
+}
+
+.china-city-moments > header {
+  display: grid;
+  margin-bottom: 54px;
+  grid-template-columns: minmax(0, 0.58fr) minmax(0, 1.42fr);
+  gap: clamp(32px, 8vw, 120px);
+}
+
+.china-city-moments__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid rgba(255, 255, 255, 0.17);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.17);
+}
+
+.china-city-moments__grid article {
+  min-height: 370px;
+  padding: 34px;
+  border-right: 1px solid rgba(255, 255, 255, 0.17);
+}
+
+.china-city-moments__grid article:last-child {
+  border-right: 0;
+}
+
+.china-city-moments__grid span {
+  color: #e2c68e;
+  font-family: "Playfair Display", serif;
+  font-size: 35px;
+}
+
+.china-city-moments__grid h3 {
+  margin: 104px 0 18px;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.16;
+}
+
+.china-city-moments__grid p {
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.75;
+}
+
+.china-city-human {
+  display: grid;
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 104px 0;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(48px, 9vw, 130px);
+}
+
+.china-city-human > div:last-child {
+  align-self: end;
+  padding: 32px 0 8px 34px;
+  border-left: 1px solid var(--china-gold);
+}
+
+.china-city-human > div:last-child p {
+  margin: 0 0 18px;
+  color: rgba(23, 24, 18, 0.68);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.china-city-links {
+  padding: 96px max(24px, calc((100% - 1180px) / 2));
+  background: #e5ddce;
+}
+
+.china-city-links > header {
+  display: grid;
+  margin-bottom: 48px;
+  grid-template-columns: minmax(0, 0.58fr) minmax(0, 1.42fr);
+  gap: clamp(32px, 8vw, 120px);
+}
+
+.china-city-links__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: rgba(23, 24, 18, 0.18);
+}
+
+.china-city-links__grid a {
+  position: relative;
+  min-height: 280px;
+  padding: 30px;
+  background: #f0e9dc;
+  color: var(--china-ink);
+  text-decoration: none;
+}
+
+.china-city-links__grid a.is-current {
+  background: #d4c6ad;
+}
+
+.china-city-links__grid span,
+.china-city-links__grid p {
+  color: #8a6a35;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+}
+
+.china-city-links__grid h3 {
+  margin: 82px 0 8px;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.china-city-links__grid p {
+  max-width: 280px;
+  color: rgba(23, 24, 18, 0.58);
+  letter-spacing: 0;
+  line-height: 1.6;
+}
+
+.china-city-links__grid i {
+  position: absolute;
+  right: 28px;
+  bottom: 26px;
+  color: #8a6a35;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.china-city-guide-link {
+  margin-top: 32px;
+  text-align: right;
+}
+
+.china-city-guide-link a {
+  color: #755729;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.china-hub-cities {
+  padding-top: 10px;
+}
+
+.china-hub-city-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.china-hub-city-grid a {
+  display: flex;
+  min-height: 230px;
+  flex-direction: column;
+  padding: 28px;
+  border: 1px solid var(--china-line);
+  background: #f0e9dc;
+  color: var(--china-ink);
+  text-decoration: none;
+}
+
+.china-hub-city-grid span {
+  color: #8a6a35;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+}
+
+.china-hub-city-grid h3 {
+  margin: auto 0 8px;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: 35px;
+  font-weight: 400;
+}
+
+.china-hub-city-grid p {
+  margin: 0;
+  color: rgba(23, 24, 18, 0.58);
+  line-height: 1.55;
+}
+
 .china-method {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1029,6 +1350,20 @@ body {
     grid-template-columns: 1fr;
   }
 
+  .china-city-overview,
+  .china-city-moments > header,
+  .china-city-human,
+  .china-city-links > header {
+    grid-template-columns: 1fr;
+  }
+
+  .china-city-facts,
+  .china-city-moments__grid,
+  .china-city-links__grid,
+  .china-hub-city-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .china-guide-intro__mark {
     display: none;
   }
@@ -1233,6 +1568,87 @@ body {
 
   .china-route-starters__grid > a > span {
     font-size: 32px;
+  }
+
+  .china-city-hero__inner,
+  .china-city-overview,
+  .china-city-human {
+    width: min(100% - 32px, 1180px);
+  }
+
+  .china-city-hero {
+    min-height: 740px;
+  }
+
+  .china-city-hero__inner {
+    padding-bottom: 52px;
+  }
+
+  .china-city-hero h1 {
+    font-size: clamp(44px, 13vw, 60px);
+  }
+
+  .china-city-facts,
+  .china-city-moments__grid,
+  .china-city-links__grid,
+  .china-hub-city-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .china-city-facts article {
+    min-height: 0;
+    padding: 28px 24px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(23, 24, 18, 0.14);
+  }
+
+  .china-city-facts article:last-child {
+    border-bottom: 0;
+  }
+
+  .china-city-facts span {
+    margin-bottom: 12px;
+  }
+
+  .china-city-overview,
+  .china-city-human,
+  .china-city-moments,
+  .china-city-links {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .china-city-moments,
+  .china-city-links {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .china-city-moments__grid article {
+    min-height: 0;
+    padding: 34px 24px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.17);
+  }
+
+  .china-city-moments__grid article:last-child {
+    border-bottom: 0;
+  }
+
+  .china-city-moments__grid h3 {
+    margin-top: 48px;
+  }
+
+  .china-city-human > div:last-child {
+    padding-left: 22px;
+  }
+
+  .china-city-links__grid a {
+    min-height: 220px;
+  }
+
+  .china-city-guide-link {
+    text-align: left;
   }
 }
 

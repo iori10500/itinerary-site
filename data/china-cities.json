@@ -1,0 +1,137 @@
+{
+  "beijing": {
+    "name_zh": "北京",
+    "name_en": "Beijing",
+    "hero": "/images/china-cities/beijing.jpg",
+    "photo_credit": "tXm / Wikimedia Commons, CC BY-SA 3.0",
+    "photo_url": "https://commons.wikimedia.org/wiki/File:Panorama_of_the_Forbidden_City.JPG",
+    "headline_zh": "北京，不只是第一站，而是理解中国的序章。",
+    "headline_en": "Beijing is not merely a first stop. It is the prologue to understanding China.",
+    "lead_zh": "把紫禁城、胡同、长城与当代北京放进一条有呼吸的私人路线，由真人顾问处理预约、时间与城市尺度。",
+    "lead_en": "A private, human-led journey connecting the Forbidden City, hutong life, the Great Wall and contemporary Beijing—with time and reservations handled coherently.",
+    "stay_zh": "4–5 晚",
+    "stay_en": "4–5 nights",
+    "role_zh": "历史与国家叙事的入口",
+    "role_en": "The historical and civic opening chapter",
+    "pair_zh": "西安、上海或成都",
+    "pair_en": "Xi’an, Shanghai or Chengdu",
+    "overview_zh": [
+      "第一次来北京，最常见的错误是把每个著名地点都塞进同一天。紫禁城需要时间，长城需要一整段天气窗口，胡同与当代艺术也不该只剩车窗里的剪影。",
+      "我们通常把核心古迹、城市生活与一天城外行程分开，让旅人真正感受到北京的尺度。酒店位置、预约时段、步行距离和同行者体力会共同决定路线，而不是一张通用清单。"
+    ],
+    "overview_en": [
+      "The usual mistake on a first Beijing visit is to compress every famous name into the same day. The Forbidden City needs time; the Great Wall deserves a proper weather window; hutong life and contemporary art should not become glimpses through a car window.",
+      "We normally separate monumental Beijing, lived-in Beijing and one full day beyond the centre. Hotel location, timed admissions, walking tolerance and the people travelling with you shape the route—not a universal checklist."
+    ],
+    "moments_zh": [
+      {"title": "宫城与中轴", "text": "清晨进入紫禁城，把景山或天坛放在不同半日，避免把空间压缩成赶场。"},
+      {"title": "城墙之外", "text": "为长城留出完整一天，并按季节、体力与人流选择段落，而非默认同一个入口。"},
+      {"title": "有人生活的北京", "text": "胡同、餐桌、工作室与当代建筑，让历史之外的北京也有具体的人和声音。"}
+    ],
+    "moments_en": [
+      {"title": "Palaces and the central axis", "text": "Enter the Forbidden City early, then give Jingshan or the Temple of Heaven a separate half-day so scale is not lost to rushing."},
+      {"title": "Beyond the city walls", "text": "Keep a full day for the Great Wall and choose the section around season, fitness and crowd tolerance rather than habit."},
+      {"title": "The Beijing people live in", "text": "Hutong lanes, dining rooms, studios and contemporary architecture bring people and present-day texture into the historical frame."}
+    ],
+    "faq_zh": [
+      {"q": "北京第一次去住几晚合适？", "a": "通常建议 4–5 晚。这样能分开紫禁城、长城与城市生活，也给抵达后的时差和体力留出余量。"},
+      {"q": "北京适合和哪些城市连线？", "a": "西安适合延续历史主题；上海形成传统与现代的强对比；成都则把路线带向美食与中国西南。"},
+      {"q": "WR 可以协助预约吗？", "a": "会。顾问会按最终路线提示并协调需要实名或定时预约的部分，但具体名额与开放状态以相关场馆确认为准。"}
+    ],
+    "faq_en": [
+      {"q": "How many nights should a first Beijing visit have?", "a": "Usually four to five. That allows the Forbidden City, Great Wall and everyday Beijing to breathe, with some margin for jet lag and walking."},
+      {"q": "Which cities pair well with Beijing?", "a": "Xi’an extends the historical thread; Shanghai creates a strong old-and-new contrast; Chengdu opens the route toward food culture and Southwest China."},
+      {"q": "Can WR help with reservations?", "a": "Yes. Your advisor flags and coordinates timed or real-name bookings around the final route. Availability and opening arrangements remain subject to the relevant venue."}
+    ]
+  },
+  "xian": {
+    "name_zh": "西安",
+    "name_en": "Xi’an",
+    "hero": "/images/china-cities/xian.jpg",
+    "photo_credit": "Banja-Frans Mulder / Wikimedia Commons, CC BY 3.0",
+    "photo_url": "https://commons.wikimedia.org/wiki/File:Xian,_City_Wall_-_panoramio.jpg",
+    "headline_zh": "西安，把漫长历史变成可以行走的城市。",
+    "headline_en": "Xi’an turns a long history into a city you can still walk through.",
+    "lead_zh": "从兵马俑到城墙与坊巷，把宏大历史、地方饮食和当代城市节奏放在同一段私人旅程里。",
+    "lead_en": "From the Terracotta Army to city walls and neighbourhood tables, connect monumental history, local food and the pace of the present city.",
+    "stay_zh": "3–4 晚",
+    "stay_en": "3–4 nights",
+    "role_zh": "中国古代文明的实体章节",
+    "role_en": "The tangible chapter of ancient China",
+    "pair_zh": "北京、成都或上海",
+    "pair_en": "Beijing, Chengdu or Shanghai",
+    "overview_zh": [
+      "西安不应只有兵马俑的一次往返。它曾是多个王朝的都城，也是丝绸之路东方起点；城墙之内外、博物馆、寺院与夜晚的饮食共同构成城市。",
+      "三至四晚能把城外考古与城内生活分开。我们会根据你对历史的兴趣深度、儿童同行、步行体力与饮食偏好选择讲解方式，而不是让一天被展柜和车程填满。"
+    ],
+    "overview_en": [
+      "Xi’an should not be reduced to a return drive to the Terracotta Army. It was the capital of successive dynasties and an eastern point of the Silk Road; walls, museums, religious sites and evening food culture all belong to the city’s story.",
+      "Three to four nights let archaeology beyond the centre and daily life within it remain distinct. We adjust guiding depth around your interest in history, children, walking tolerance and food—not fill a day with display cases and transfers."
+    ],
+    "moments_zh": [
+      {"title": "兵马俑，不赶场", "text": "以好的讲解和充分时间理解遗址，而不是在三个坑之间机械移动。"},
+      {"title": "城墙与城市尺度", "text": "步行或骑行一段城墙，再进入街巷，感受古都格局与今日生活的叠加。"},
+      {"title": "丝路留下的餐桌", "text": "从面食到清真饮食，以更安静、更有判断的方式进入西安的味觉，而非只追逐夜市人潮。"}
+    ],
+    "moments_en": [
+      {"title": "The Terracotta Army, unhurried", "text": "Use a strong guide and enough time to understand the site instead of moving mechanically between pits."},
+      {"title": "Walls and urban scale", "text": "Walk or cycle one considered section, then enter the streets below to see the ancient plan layered with present life."},
+      {"title": "A Silk Road table", "text": "Noodles and Muslim culinary traditions open the city through taste—without reducing the experience to the busiest night-market lane."}
+    ],
+    "faq_zh": [
+      {"q": "西安需要住几晚？", "a": "第一次到访建议 3–4 晚。两晚容易让兵马俑、博物馆、城墙和城市饮食全部变成赶场。"},
+      {"q": "西安可以从北京坐高铁到吗？", "a": "可以，铁路是两城之间常用的连接方式。具体车次、时刻与护照购票要求应在出发前通过铁路 12306 核对。"},
+      {"q": "亲子家庭适合西安吗？", "a": "适合，但要控制博物馆密度并安排互动式讲解。顾问会根据儿童年龄调整步行、用餐与休息节奏。"}
+    ],
+    "faq_en": [
+      {"q": "How many nights does Xi’an need?", "a": "Three to four nights is a sound first stay. With only two, the Terracotta Army, museums, walls and food culture tend to become a race."},
+      {"q": "Can I take a high-speed train from Beijing to Xi’an?", "a": "Yes, rail is a common connection between the two cities. Check current services, times and passport ticketing requirements through China Railway 12306 before travel."},
+      {"q": "Is Xi’an good for families?", "a": "Yes, provided museum density is controlled and guiding is engaging. Your advisor adjusts walking, meals and rest around the children’s ages."}
+    ]
+  },
+  "shanghai": {
+    "name_zh": "上海",
+    "name_en": "Shanghai",
+    "hero": "/images/china-cities/shanghai.jpg",
+    "photo_credit": "Ernest Jourdier / Wikimedia Commons, CC BY 4.0",
+    "photo_url": "https://commons.wikimedia.org/wiki/File:Shanghai_skyline_at_night.jpg",
+    "headline_zh": "上海，是中国之旅最清晰的当代对照。",
+    "headline_en": "Shanghai is the clearest contemporary counterpoint in a China journey.",
+    "lead_zh": "外滩、里弄、当代艺术与江南腹地，在一座适合步行、进餐与慢慢观察的门户城市里交汇。",
+    "lead_en": "The Bund, lane-house neighbourhoods, contemporary art and the lower Yangtze meet in a gateway city made for walking, dining and close observation.",
+    "stay_zh": "3–4 晚",
+    "stay_en": "3–4 nights",
+    "role_zh": "现代中国与江南的门户",
+    "role_en": "Gateway to modern China and Jiangnan",
+    "pair_zh": "北京、杭州、苏州或云南",
+    "pair_en": "Beijing, Hangzhou, Suzhou or Yunnan",
+    "overview_zh": [
+      "上海的价值不是多看几个高楼，而是理解这座城市如何在不同年代之间切换。外滩与浦东只是一条视觉轴线，真正的城市体验藏在街区尺度、建筑细节、餐桌和文化空间里。",
+      "三至四晚适合作为入境后的柔和起步或离境前的收束。我们会按酒店位置安排步行半径，把热门地标与更安静的街区、展览或江南一日组合起来。"
+    ],
+    "overview_en": [
+      "Shanghai’s value is not the number of towers seen, but the way the city changes register between eras. The Bund and Pudong form one visual axis; the lived experience sits in neighbourhood scale, architectural detail, dining rooms and cultural spaces.",
+      "Three to four nights work as a gentle arrival or an elegant final chapter. We plan walking radii around the hotel, then balance recognisable landmarks with quieter streets, an exhibition or a considered day into Jiangnan."
+    ],
+    "moments_zh": [
+      {"title": "一条河，两种城市想象", "text": "在外滩与浦东之间理解上海的时间层次，不把天际线只当作拍照背景。"},
+      {"title": "以街区为单位行走", "text": "法租界旧址、里弄与当代生活需要慢步，好的路线应围绕建筑、咖啡、店铺与人的节奏。"},
+      {"title": "把江南放进延伸线", "text": "杭州、苏州或水乡可成为一日或下一站，但选择取决于季节、周末人流和你真正想看的内容。"}
+    ],
+    "moments_en": [
+      {"title": "One river, two urban imaginations", "text": "Read Shanghai’s layers between the Bund and Pudong rather than treating the skyline as a photograph alone."},
+      {"title": "Walk by neighbourhood, not landmark", "text": "Former French Concession streets and lane houses reward a route shaped around architecture, cafés, shops and human pace."},
+      {"title": "Let Jiangnan extend the story", "text": "Hangzhou, Suzhou or a water town can become a day or the next stop, chosen around season, weekend crowds and what you actually want to see."}
+    ],
+    "faq_zh": [
+      {"q": "上海第一次去住几晚？", "a": "建议 3–4 晚。既能完成城市内部的历史与当代对照，也能选择是否加入江南一日。"},
+      {"q": "上海适合旅程开始还是结束？", "a": "都适合。国际航班选择多、城市服务成熟；开始时可缓冲时差，结束时适合购物、进餐与从容离境。"},
+      {"q": "苏州、杭州和水乡应该都去吗？", "a": "通常不建议一次全部加入。顾问会按季节、兴趣、周末人流与下一段路线选择一个最合适的延伸。"}
+    ],
+    "faq_en": [
+      {"q": "How many nights should a first Shanghai visit have?", "a": "Three to four nights. That gives the historical and contemporary city enough space, with the option of one Jiangnan day."},
+      {"q": "Is Shanghai better at the start or end of a China trip?", "a": "Either works. Strong international connections and mature city services make it useful for easing into jet lag or finishing with dining, shopping and a calm departure."},
+      {"q": "Should I visit Suzhou, Hangzhou and a water town?", "a": "Usually not all in one short stay. Your advisor chooses the most relevant extension around season, interests, weekend crowds and the next stage of the route."}
+    ]
+  }
+}

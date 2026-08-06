@@ -213,6 +213,10 @@ app.get('/sitemap.xml', (req, res) => {
   pages.push({ loc: `${baseUrl}/en/destinations/china`, priority: '0.8', changefreq: 'monthly' });
   pages.push({ loc: `${baseUrl}/guides/first-trip-to-china`, priority: '0.8', changefreq: 'monthly' });
   pages.push({ loc: `${baseUrl}/en/guides/first-trip-to-china`, priority: '0.9', changefreq: 'monthly' });
+  Object.keys(chinaCitiesData).forEach(slug => {
+    pages.push({ loc: `${baseUrl}/destinations/china/${slug}`, priority: '0.8', changefreq: 'monthly' });
+    pages.push({ loc: `${baseUrl}/en/destinations/china/${slug}`, priority: '0.9', changefreq: 'monthly' });
+  });
   Object.entries(chinaRegionsData).filter(([s, r]) => r.parent === 'china').forEach(([slug]) => {
     pages.push({ loc: `${baseUrl}/destinations/china/${slug}`, priority: '0.7', changefreq: 'monthly' });
     pages.push({ loc: `${baseUrl}/en/destinations/china/${slug}`, priority: '0.6', changefreq: 'monthly' });
@@ -287,6 +291,14 @@ try {
   chinaRegionsData = JSON.parse(fs.readFileSync(chinaRegionsPath, 'utf-8'));
 } catch (err) {
   console.error('Failed to load china-regions:', err.message);
+}
+
+const chinaCitiesPath = path.join(__dirname, 'data', 'china-cities.json');
+let chinaCitiesData = {};
+try {
+  chinaCitiesData = JSON.parse(fs.readFileSync(chinaCitiesPath, 'utf-8'));
+} catch (err) {
+  console.error('Failed to load china-cities:', err.message);
 }
 
 // Load lodges metadata (per-brand)
@@ -739,7 +751,7 @@ app.get('/destinations/china', (req, res) => {
   // Featured: all jianglu routes (top-of-funnel teaser)
   const featuredRoutes = Object.values(routesIndex).slice(0, 6);
   res.render('china-hub', {
-    china, subRegions, featuredRoutes, lang,
+    china, subRegions, featuredRoutes, cities: chinaCitiesData, lang,
     title: lang === 'en'
       ? 'Luxury China Tours & Bespoke Private Travel | WR Journeys'
       : '中国入境定制旅行与慢奢线路 | WR Journeys',
@@ -754,8 +766,11 @@ app.get('/destinations/china', (req, res) => {
         { name: lang === 'en' ? 'China' : '中国', path: '/destinations/china' },
       ]),
       schemas.itemList(
-        subRegions.map(r => ({ name: lang === 'en' ? r.name_en : r.name_zh, url: `/destinations/china/${r.slug}` })),
-        lang === 'en' ? 'China sub-regions' : '中国子区域'
+        [
+          ...Object.entries(chinaCitiesData).map(([slug, city]) => ({ name: lang === 'en' ? city.name_en : city.name_zh, url: `/destinations/china/${slug}` })),
+          ...subRegions.map(r => ({ name: lang === 'en' ? r.name_en : r.name_zh, url: `/destinations/china/${r.slug}` })),
+        ],
+        lang === 'en' ? 'China cities and regions' : '中国城市与区域'
       ),
     ],
   });
@@ -799,9 +814,43 @@ app.get('/guides/first-trip-to-china', (req, res) => {
   });
 });
 
-// China sub-region (yunnan / guizhou / shangri-la / sichuan)
+// China city intent pages and sub-regions.
 app.get('/destinations/china/:region', (req, res) => {
   const lang = req.lang;
+  const city = chinaCitiesData[req.params.region];
+  if (city) {
+    const isEn = lang === 'en';
+    const canonicalPath = `${isEn ? '/en' : ''}/destinations/china/${req.params.region}`;
+    const title = isEn
+      ? `Luxury ${city.name_en} Private Tours & Travel Guide | WR Journeys`
+      : `${city.name_zh}私人定制旅行与入境指南 | WR Journeys`;
+    const metaDescription = isEn
+      ? `Plan a private ${city.name_en} journey with a real human advisor. ${city.stay_en}, thoughtful pacing, trusted local coordination and a route shaped around you.`
+      : `由真人顾问规划${city.name_zh}私人定制旅行。建议停留${city.stay_zh}，结合合理节奏、可信在地协调与从开始到结束的持续服务。`;
+    return res.render('china-city', {
+      city: { slug: req.params.region, ...city }, lang, title, metaDescription,
+      cities: chinaCitiesData,
+      contentGroup: 'china_inbound',
+      schemas: [
+        schemas.breadcrumbList([
+          { name: isEn ? 'Home' : '首页', path: '/' },
+          { name: isEn ? 'Destinations' : '目的地', path: '/destinations' },
+          { name: isEn ? 'China' : '中国', path: '/destinations/china' },
+          { name: isEn ? city.name_en : city.name_zh, path: `/destinations/china/${req.params.region}` },
+        ]),
+        {
+          '@context': 'https://schema.org',
+          '@type': 'TouristDestination',
+          '@id': `https://itinerary.wildroadgroup.com${canonicalPath}#destination`,
+          name: isEn ? city.name_en : city.name_zh,
+          description: metaDescription,
+          url: `https://itinerary.wildroadgroup.com${canonicalPath}`,
+          image: `https://itinerary.wildroadgroup.com${city.hero}`,
+          touristType: ['Private travel', 'Cultural travel', 'Luxury travel'],
+        },
+      ],
+    });
+  }
   const region = chinaRegionsData[req.params.region];
   if (!region || region.parent !== 'china') return res.status(404).send('Not found');
   const matchTags = (region.matchTags || []).map(t => t.toLowerCase());

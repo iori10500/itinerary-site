@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="/main.css?v=20260801">
   <link rel="stylesheet" href="/enquiry.css?v=20260806">
-  <link rel="stylesheet" href="/china-inbound.css?v=20260806c">
+  <link rel="stylesheet" href="/china-inbound.css?v=20260806d">
   <%- include('partials/jsonld') %>
   <%- include('partials/ga') %>
 </head>
@@ -69,6 +69,15 @@
       <div>
         <p><%= lang === 'en' ? 'See what genuinely fits into 10, 14 or 21 days, plus the practical entry, payment and rail details that make a first journey feel clear.' : '了解 10、14 或 21 天真正适合怎样安排，以及入境、支付与铁路出行等让第一趟旅程更从容的实用信息。' %></p>
         <a href="<%= lang === 'en' ? '/en' : '' %>/guides/first-trip-to-china"><%= lang === 'en' ? 'Read the first-trip guide' : '查看第一次来华旅行指南' %> <span>→</span></a>
+      </div>
+    </section>
+
+    <section class="china-section china-hub-cities">
+      <header class="china-section__head"><p><%= lang === 'en' ? 'THREE GATEWAY CITIES' : '三座门户城市' %></p><h2><%= lang === 'en' ? 'Begin with the China you want to understand.' : '从你最想理解的中国开始。' %></h2></header>
+      <div class="china-hub-city-grid">
+        <% Object.entries(cities).forEach(function(entry) { var slug = entry[0], city = entry[1]; %>
+        <a href="<%= lang === 'en' ? '/en' : '' %>/destinations/china/<%= slug %>"><span><%= lang === 'en' ? 'PRIVATE CITY JOURNEY' : '城市私人旅程' %></span><h3><%= lang === 'en' ? city.name_en : city.name_zh %></h3><p><%= lang === 'en' ? city.role_en : city.role_zh %> →</p></a>
+        <% }); %>
       </div>
     </section>
 
