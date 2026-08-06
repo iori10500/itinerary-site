@@ -4,115 +4,112 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= title %></title>
-  <meta name="description" content="<%= lang === 'en' ? china.headline_en : china.headline_zh %>">
+  <meta name="description" content="<%= metaDescription %>">
   <link rel="canonical" href="https://itinerary.wildroadgroup.com<%= lang === 'en' ? '/en' : '' %>/destinations/china">
   <link rel="alternate" hreflang="zh-CN" href="https://itinerary.wildroadgroup.com/destinations/china">
   <link rel="alternate" hreflang="en" href="https://itinerary.wildroadgroup.com/en/destinations/china">
-  <link rel="alternate" hreflang="x-default" href="https://itinerary.wildroadgroup.com/destinations/china">
+  <link rel="alternate" hreflang="x-default" href="https://itinerary.wildroadgroup.com/en/destinations/china">
   <meta property="og:title" content="<%= title %>">
+  <meta property="og:description" content="<%= metaDescription %>">
   <meta property="og:url" content="https://itinerary.wildroadgroup.com<%= lang === 'en' ? '/en' : '' %>/destinations/china">
+  <meta property="og:image" content="https://itinerary.wildroadgroup.com/images/chengdu-dali-lijiang-14d/cover.jpg">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
   <link rel="stylesheet" href="/fonts/fonts.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/main.css?v=20260801">
-  <style>
-    .ch-hero { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); padding: 64px 24px 48px; text-align: center; }
-    .ch-hero .kicker { color: #c8a96e; font-size: 11px; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; margin-bottom: 12px; }
-    .ch-hero h1 { color: #fff; font-family: 'Playfair Display', serif; font-size: 38px; margin: 0 0 12px; line-height: 1.25; }
-    .ch-hero .sub { color: rgba(255,255,255,0.7); font-size: 16px; max-width: 720px; margin: 0 auto; }
-    .ch-manifesto { max-width: 760px; margin: 0 auto; padding: 48px 24px 32px; font-size: 16px; line-height: 1.85; color: #333; }
-    .ch-manifesto p { margin: 0 0 18px; }
-    .ch-partners { margin-top: 24px; padding: 20px 22px; background: #f7f5f0; border-left: 3px solid #c8a96e; border-radius: 4px; }
-    .ch-partners a { color: #9b7740; text-decoration: none; font-weight: 600; }
-    .ch-regions { max-width: 1200px; margin: 0 auto; padding: 24px 24px 60px; }
-    .ch-section-title { font-family: 'Playfair Display', serif; font-size: 26px; color: #1a1a2e; margin: 32px 0 24px; border-bottom: 1px solid #e8e5dd; padding-bottom: 12px; }
-    .ch-region-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
-    .ch-region-card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); text-decoration: none; color: inherit; transition: transform 0.2s; display: block; }
-    .ch-region-card:hover { transform: translateY(-3px); }
-    .ch-region-card .name { font-family: 'Playfair Display', serif; font-size: 22px; color: #1a1a2e; margin: 0 0 6px; }
-    .ch-region-card .headline { font-size: 14px; color: #555; line-height: 1.55; margin: 0 0 12px; }
-    .ch-region-card .meta { font-size: 12px; color: #c8a96e; font-weight: 500; }
-    .ch-featured { max-width: 1200px; margin: 0 auto; padding: 24px 24px 80px; }
-    .ch-featured-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
-    .ch-route-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06); text-decoration: none; color: inherit; display: block; transition: transform 0.2s; }
-    .ch-route-card:hover { transform: translateY(-3px); }
-    .ch-route-card .img { position: relative; height: 180px; background: #1a1a2e; overflow: hidden; }
-    .ch-route-card .img picture, .ch-route-card .img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .ch-route-card .img .badge { position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.55); color: #fff; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 20px; }
-    .ch-route-card .body { padding: 14px 18px 18px; }
-    .ch-route-card .region { font-size: 11px; color: #c8a96e; letter-spacing: 0.12em; text-transform: uppercase; }
-    .ch-route-card .title { font-size: 15px; font-weight: 500; color: #1a1a2e; margin: 4px 0 6px; line-height: 1.4; }
-    .ch-route-card .sub { font-size: 12px; color: #888; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-    @media (max-width:640px) { .ch-hero h1 { font-size: 26px; } .ch-manifesto { padding: 32px 20px 24px; font-size: 15px; } }
-  </style>
-<%- include('partials/jsonld') %>
-<%- include('partials/ga') %>
+  <link rel="stylesheet" href="/enquiry.css?v=20260806">
+  <link rel="stylesheet" href="/china-inbound.css?v=20260806">
+  <%- include('partials/jsonld') %>
+  <%- include('partials/ga') %>
 </head>
-<body>
-  <%- include("partials/header") %>
-  <button id="langToggle" onclick="toggleLang()" class="lang-toggle"><%= lang === 'en' ? '中' : 'EN' %></button>
+<body class="china-page china-hub-page">
+  <%- include('partials/header') %>
+  <a class="lang-toggle" href="<%= lang === 'en' ? '/destinations/china' : '/en/destinations/china' %>" hreflang="<%= lang === 'en' ? 'zh-CN' : 'en' %>"><%= lang === 'en' ? '中' : 'EN' %></a>
 
-  <section class="ch-hero">
-    <a href="<%= lang === 'en' ? '/en' : '' %>/destinations" style="color:rgba(255,255,255,0.5);font-size:12px;text-decoration:none;display:block;margin-bottom:14px;"><%= lang === 'en' ? '← All destinations' : '← 全部目的地' %></a>
-    <div class="kicker"><%= lang === 'en' ? 'Inbound China · Curated' : '中国 · 入境精选' %></div>
-    <h1><%= lang === 'en' ? china.headline_en : china.headline_zh %></h1>
-    <p class="sub"><%= lang === 'en' ? 'Hand-picked routes across Guizhou, Yunnan, Shangri-la and Sichuan — anchored on Jianglu, Songtsam, MUXI.' : '贵州、云南、香格里拉、四川的精选线路 — 由匠庐、松赞、木夕大里支撑。' %></p>
-  </section>
-
-  <div class="ch-manifesto">
-    <% (lang === 'en' ? china.manifesto_en : china.manifesto_zh).split(/\n\n+/).forEach(function(para) { %>
-    <p><%= para %></p>
-    <% }); %>
-    <div class="ch-partners">
-      <strong><%= lang === 'en' ? 'Hospitality anchors' : '在地住宿伙伴' %></strong> ·
-      <a href="<%= lang === 'en' ? '/en' : '' %>/brands/jianglu"><%= lang === 'en' ? 'Jianglu' : '匠庐' %></a>
-      &nbsp;·&nbsp;
-      <a href="<%= lang === 'en' ? '/en' : '' %>/brands/songtsam"><%= lang === 'en' ? 'Songtsam' : '松赞' %></a>
-      <br><span><%= lang === 'en' ? 'A real WR advisor connects the right lodge, pace and local operator around your needs.' : '由 WR 真人顾问根据你的需求，把住宿、节奏与在地执行连接成一段完整旅程。' %></span>
-    </div>
-  </div>
-
-  <div class="ch-regions">
-    <h2 class="ch-section-title"><%= lang === 'en' ? 'Sub-regions' : '子区域' %></h2>
-    <div class="ch-region-grid">
-      <% subRegions.forEach(function(r) { %>
-      <a class="ch-region-card" href="<%= lang === 'en' ? '/en' : '' %>/destinations/china/<%= r.slug %>">
-        <div class="name"><%= lang === 'en' ? r.name_en : r.name_zh %></div>
-        <div class="headline"><%= lang === 'en' ? r.headline_en : r.headline_zh %></div>
-        <div class="meta"><% if (r.routeCount > 0) { %><%= r.routeCount %> <%= lang === 'en' ? 'curated routes' : '条甄选线路' %><% } else { %><%= lang === 'en' ? 'Bespoke / in development' : '一事一议 / 开发中' %><% } %> →</div>
-      </a>
-      <% }); %>
-    </div>
-  </div>
-
-  <% if (featuredRoutes && featuredRoutes.length) { %>
-  <div class="ch-featured">
-    <h2 class="ch-section-title"><%= lang === 'en' ? 'Featured Routes' : '精选线路' %></h2>
-    <div class="ch-featured-grid">
-      <% featuredRoutes.forEach(function(r) { %>
-      <a class="ch-route-card" href="<%= lang === 'en' ? '/en' : '' %>/routes/<%= r.slug %>">
-        <div class="img">
-          <picture>
-            <source srcset="<%= r.hero_path.replace(/\.jpg$/, '.webp') %>" type="image/webp">
-            <img src="<%= r.hero_path %>" alt="<%= lang === 'en' ? r.title_en : r.title_zh %>" loading="lazy">
-          </picture>
-          <div class="badge"><%= lang === 'en' ? r.duration_en : r.duration_zh %></div>
+  <main>
+    <section class="china-hero china-hero--hub">
+      <picture class="china-hero__media" aria-hidden="true">
+        <source srcset="/images/chengdu-dali-lijiang-14d/cover.webp" type="image/webp">
+        <img src="/images/chengdu-dali-lijiang-14d/cover.jpg" alt="" loading="eager">
+      </picture>
+      <div class="china-hero__veil"></div>
+      <div class="china-hero__inner">
+        <div class="china-hero__copy">
+          <a class="china-back" href="<%= lang === 'en' ? '/en' : '' %>/destinations"><%= lang === 'en' ? 'Destinations / China' : '目的地 / 中国' %></a>
+          <p class="china-kicker"><%= lang === 'en' ? 'PRIVATE CHINA JOURNEYS · HUMAN-LED' : '中国入境定制 · 真人全程服务' %></p>
+          <h1><%= lang === 'en' ? 'Private journeys through a China worth slowing down for.' : '在值得慢下来的中国，完成一段真正属于你的旅程。' %></h1>
+          <p class="china-hero__lead"><%= lang === 'en' ? 'From Guizhou mountain lodges to Yunnan, Shangri-La and western Sichuan, one real advisor listens first, shapes every detail and stays with you through your return.' : '从贵州山野、云南苍洱到香格里拉与川西，由同一位真人顾问先聆听需求，再规划细节，并持续跟进到旅行归来。' %></p>
+          <div class="china-actions">
+            <a class="china-button china-button--primary" href="<%= advisorUrl(lang, { source: 'china-hub-hero' }) %>" data-enquiry-cta="china-hub-hero"><%= lang === 'en' ? 'Plan my China journey' : '开始规划中国旅程' %><span>→</span></a>
+            <a class="china-button china-button--quiet" href="#routes"><%= lang === 'en' ? 'Explore sample journeys' : '浏览参考线路' %></a>
+          </div>
+          <p class="china-microcopy"><%= lang === 'en' ? 'A considered reply within 24 hours · Complimentary planning until you book' : '工作时间内尽快回复 · 确认落单前规划不收费' %></p>
         </div>
-        <div class="body">
-          <div class="region"><%= lang === 'en' ? r.region_en : r.region_zh %></div>
-          <div class="title"><%= lang === 'en' ? r.title_en : r.title_zh %></div>
-          <div class="sub"><%= lang === 'en' ? r.subtitle_en : r.subtitle_zh %></div>
-        </div>
-      </a>
-      <% }); %>
-    </div>
-  </div>
-  <% } %>
+        <aside class="china-promise" aria-label="<%= lang === 'en' ? 'Our planning promise' : '我们的规划承诺' %>">
+          <div><span>01</span><p><strong><%= lang === 'en' ? 'A real person, from start to finish' : '真人从开始跟到结束' %></strong><%= lang === 'en' ? 'No automated itinerary hand-off.' : '不会把行程交给自动系统。' %></p></div>
+          <div><span>02</span><p><strong><%= lang === 'en' ? 'China hospitality, known from inside' : '真正理解中国酒店与在地资源' %></strong><%= lang === 'en' ? 'Boutique founders, local operators and trusted guides.' : '连接精品酒店主理人、在地执行者与可信向导。' %></p></div>
+          <div><span>03</span><p><strong><%= lang === 'en' ? 'AI makes us faster. Listening makes it yours.' : 'AI 提高效率，聆听决定旅程' %></strong><%= lang === 'en' ? 'Technology supports the work; judgement stays human.' : '技术协助整理与联络，取舍始终由真人负责。' %></p></div>
+        </aside>
+      </div>
+    </section>
 
-  <%- include("partials/footer") %>
-  <script>function toggleLang(){const u=new URL(window.location);const p=u.pathname;const isEn=p==="/en"||p.startsWith("/en/");const np=isEn?(p==="/en"?"/":p.substring(3)):(p==="/"?"/en":"/en"+p);localStorage.setItem("wr_lang",isEn?"zh":"en");u.pathname=np;u.searchParams.delete("lang");window.location=u.toString()}</script>
+    <section class="china-editorial">
+      <div class="china-editorial__label"><span>WR</span><%= lang === 'en' ? 'Why travel China with us' : '为什么和我们探索中国' %></div>
+      <div class="china-editorial__body">
+        <% (lang === 'en' ? china.manifesto_en : china.manifesto_zh).split(/\n\n+/).forEach(function(para) { %><p><%= para %></p><% }); %>
+      </div>
+    </section>
+
+    <section class="china-method" aria-label="<%= lang === 'en' ? 'How we plan' : '我们的规划方式' %>">
+      <article><span>Listen</span><h2><%= lang === 'en' ? 'We begin with the way you want to feel.' : '先理解你希望这段旅程是什么感受。' %></h2><p><%= lang === 'en' ? 'Pace, sleep, food, children, mobility and what you would rather leave out.' : '节奏、睡眠、饮食、儿童、体力，以及你不想安排的部分。' %></p></article>
+      <article><span>Shape</span><h2><%= lang === 'en' ? 'We build one coherent journey.' : '把住宿、交通与体验连成完整旅程。' %></h2><p><%= lang === 'en' ? 'Hotels, transfers, guides and local experiences are designed as one story—not separate bookings.' : '不是零散预订，而是围绕同一目标完成路线、住宿、车辆与在地体验。' %></p></article>
+      <article><span>Stay</span><h2><%= lang === 'en' ? 'The same person stays involved.' : '由同一位顾问持续跟进。' %></h2><p><%= lang === 'en' ? 'From the first conversation to the moment you return home.' : '从第一次沟通、出发前确认，到旅途中协调及旅行归来。' %></p></article>
+    </section>
+
+    <section class="china-section china-regions">
+      <header class="china-section__head"><p><%= lang === 'en' ? 'FOUR WAYS INTO SOUTHWEST CHINA' : '进入中国西南的四种方式' %></p><h2><%= lang === 'en' ? 'Choose a landscape. We will find the right pace.' : '先选择一片山河，再找到适合你的节奏。' %></h2></header>
+      <div class="china-region-grid">
+        <% subRegions.forEach(function(r, index) { %>
+        <a class="china-region-card" href="<%= lang === 'en' ? '/en' : '' %>/destinations/china/<%= r.slug %>">
+          <span class="china-card-index">0<%= index + 1 %></span>
+          <div><p><%= lang === 'en' ? r.name_en : r.name_zh %></p><h3><%= lang === 'en' ? r.headline_en : r.headline_zh %></h3></div>
+          <footer><%= r.routeCount > 0 ? r.routeCount + (lang === 'en' ? ' curated journeys' : ' 条甄选线路') : (lang === 'en' ? 'Bespoke, by request' : '一事一议') %><span>↗</span></footer>
+        </a>
+        <% }); %>
+      </div>
+    </section>
+
+    <% if (featuredRoutes && featuredRoutes.length) { %>
+    <section class="china-section china-routes" id="routes">
+      <header class="china-section__head"><p><%= lang === 'en' ? 'JOURNEYS TO BEGIN WITH' : '从这些旅程开始' %></p><h2><%= lang === 'en' ? 'Reference routes, never fixed packages.' : '它们是灵感，不是不能修改的标准团。' %></h2></header>
+      <div class="china-route-grid">
+        <% featuredRoutes.forEach(function(r) { %>
+        <a class="china-route-card" href="<%= lang === 'en' ? '/en' : '' %>/routes/<%= r.slug %>">
+          <picture><source srcset="<%= r.hero_path.replace(/\.jpg$/, '.webp') %>" type="image/webp"><img src="<%= r.hero_path %>" alt="<%= lang === 'en' ? r.title_en : r.title_zh %>" loading="lazy" decoding="async"></picture>
+          <div class="china-route-card__copy"><p><%= lang === 'en' ? r.region_en : r.region_zh %> · <%= lang === 'en' ? r.duration_en : r.duration_zh %></p><h3><%= lang === 'en' ? r.title_en : r.title_zh %></h3><span><%= lang === 'en' ? 'See the journey' : '查看旅程' %> →</span></div>
+        </a>
+        <% }); %>
+      </div>
+    </section>
+    <% } %>
+
+    <section class="china-faq">
+      <header><p><%= lang === 'en' ? 'BEFORE WE BEGIN' : '开始之前' %></p><h2><%= lang === 'en' ? 'A few useful answers.' : '几个常见问题。' %></h2></header>
+      <div>
+        <details><summary><%= lang === 'en' ? 'Can you plan a first trip to China?' : '第一次来中国，也可以规划吗？' %></summary><p><%= lang === 'en' ? 'Yes. We can build a clear first journey around your time, interests and comfort with distance—without compressing China into a checklist.' : '可以。我们会根据时间、兴趣和对长距离移动的接受程度设计第一趟中国旅行，不把中国压缩成打卡清单。' %></p></details>
+        <details><summary><%= lang === 'en' ? 'Is every itinerary private and customisable?' : '所有行程都是私人定制吗？' %></summary><p><%= lang === 'en' ? 'Our published routes are starting points. Dates, hotels, pace, guides, vehicles and experiences can be reshaped around your party.' : '公开线路只是起点，日期、住宿、节奏、向导、车辆与体验都可围绕同行者调整。' %></p></details>
+        <details><summary><%= lang === 'en' ? 'What does WR Journeys arrange?' : 'WR Journeys 可以安排哪些内容？' %></summary><p><%= lang === 'en' ? 'Depending on the brief: boutique and luxury stays, private transfers, trusted local guides, experiences and the practical coordination that holds the journey together.' : '根据实际需求，可安排精品及奢华住宿、私人接送、可信在地向导、特色体验，以及串联整段旅程的协调工作。' %></p></details>
+        <details><summary><%= lang === 'en' ? 'Will I speak to a real person?' : '我会直接与真人沟通吗？' %></summary><p><%= lang === 'en' ? 'Always. AI helps us organise information and coordinate faster, but listening, route judgement and end-to-end care remain with a real advisor.' : '会。AI 只帮助我们更快整理信息和协调资源；需求聆听、路线判断与从开始到结束的服务始终由真人顾问负责。' %></p></details>
+      </div>
+    </section>
+
+    <section class="china-enquiry" id="china-enquiry">
+      <div class="china-enquiry__copy"><p class="china-kicker"><%= lang === 'en' ? 'START WITH ONE IDEA' : '从一个想法开始' %></p><h2><%= lang === 'en' ? 'Tell us what China should feel like to you.' : '告诉我们，你希望在中国感受到什么。' %></h2><p><%= lang === 'en' ? 'You do not need a finished brief. A rough month, one place or a feeling is enough for a real advisor to begin.' : '不需要准备完整需求。一个大致月份、一个地方，或一种期待，就足够让真人顾问开始规划。' %></p></div>
+      <div class="china-enquiry__form"><%- include('partials/enquiry-form', { variant: 'short', source: 'china-hub', route: null }) %></div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
 </body>
 </html>

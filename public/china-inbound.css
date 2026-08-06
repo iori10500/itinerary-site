@@ -1,0 +1,770 @@
+:root {
+  --china-ink: #171812;
+  --china-cream: #f5f0e6;
+  --china-paper: #fbf8f1;
+  --china-moss: #394537;
+  --china-gold: #b89152;
+  --china-line: rgba(23, 24, 18, 0.14);
+}
+
+body {
+  background: var(--china-paper);
+  color: var(--china-ink);
+}
+
+.china-hero,
+.china-region-hero {
+  position: relative;
+  min-height: min(820px, 88vh);
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  color: #fff;
+}
+
+.china-hero__media,
+.china-region-hero__media,
+.china-hero__media img,
+.china-region-hero__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.china-hero__veil,
+.china-region-hero__veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(11, 14, 10, 0.82) 0%, rgba(11, 14, 10, 0.45) 52%, rgba(11, 14, 10, 0.12) 100%),
+    linear-gradient(0deg, rgba(11, 14, 10, 0.68) 0%, transparent 52%);
+}
+
+.china-hero__content,
+.china-region-hero__content,
+.china-hero__inner {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 104px 0 52px;
+}
+
+.china-hero__content,
+.china-hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: clamp(40px, 8vw, 112px);
+  align-items: end;
+}
+
+.china-eyebrow {
+  margin: 0 0 18px;
+  color: #e2c68e;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.china-hero h1,
+.china-region-hero h1 {
+  max-width: 820px;
+  margin: 0;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: clamp(46px, 6.2vw, 84px);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+
+.china-hero__lede,
+.china-hero__lead,
+.china-region-hero__lede {
+  max-width: 720px;
+  margin: 28px 0 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(17px, 1.7vw, 22px);
+  line-height: 1.7;
+}
+
+.china-hero__actions,
+.china-actions,
+.china-region-hero__actions,
+.china-closing__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.china-button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 22px;
+  border: 1px solid var(--china-gold);
+  background: var(--china-gold);
+  color: #17140e;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.china-button:hover {
+  transform: translateY(-2px);
+  background: #c9a96d;
+}
+
+.china-button--ghost {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: transparent;
+  color: #fff;
+}
+
+.china-button--ghost:hover {
+  background: #fff;
+  color: var(--china-ink);
+}
+
+.china-promise {
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(16, 20, 15, 0.4);
+  backdrop-filter: blur(14px);
+}
+
+.china-promise > div {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 12px;
+  padding: 17px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.china-promise > div:last-child {
+  border-bottom: 0;
+}
+
+.china-promise > div > span {
+  color: #e2c68e;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+.china-promise > div p {
+  margin: 0;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.china-promise > div strong {
+  display: block;
+  margin-bottom: 4px;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.china-promise__label {
+  color: #e2c68e;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.china-promise p {
+  margin: 16px 0 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: clamp(22px, 2vw, 30px);
+  line-height: 1.45;
+}
+
+.china-section {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 104px 0;
+}
+
+.china-section--compact {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.china-section__head {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(32px, 8vw, 120px);
+  align-items: start;
+  margin-bottom: 48px;
+}
+
+.china-section__head h2,
+.china-editorial h2,
+.china-closing h2 {
+  margin: 0;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: clamp(36px, 5vw, 68px);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+}
+
+.china-section__head p {
+  max-width: 630px;
+  margin: 0;
+  color: rgba(23, 24, 18, 0.68);
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.china-editorial {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(48px, 9vw, 132px);
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.china-editorial__label {
+  color: rgba(23, 24, 18, 0.62);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.china-editorial__label span {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--china-gold);
+  font-family: "Playfair Display", serif;
+  font-size: 54px;
+  letter-spacing: 0;
+}
+
+.china-editorial__body p {
+  margin: 0 0 24px;
+  color: rgba(23, 24, 18, 0.72);
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: clamp(20px, 2vw, 28px);
+  line-height: 1.7;
+}
+
+.china-editorial__copy p {
+  max-width: 590px;
+  margin: 26px 0 0;
+  color: rgba(23, 24, 18, 0.72);
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.china-editorial__aside {
+  align-self: end;
+  padding: 34px 0 8px 34px;
+  border-left: 1px solid var(--china-gold);
+}
+
+.china-editorial__aside strong {
+  display: block;
+  margin-bottom: 14px;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.china-editorial__aside p {
+  margin: 0;
+  color: rgba(23, 24, 18, 0.66);
+  line-height: 1.8;
+}
+
+.china-method {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  padding: 0 max(24px, calc((100% - 1180px) / 2));
+  background: var(--china-moss);
+  color: #fff;
+}
+
+.china-method > article {
+  min-height: 360px;
+  padding: 54px 34px;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.china-method > article:last-child {
+  border-right: 0;
+}
+
+.china-method > article > span {
+  color: #e2c68e;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.china-method > article h2 {
+  margin: 78px 0 18px;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: clamp(27px, 2.6vw, 39px);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.china-method > article p {
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.75;
+}
+
+.china-method__inner {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 104px 0;
+}
+
+.china-method__grid,
+.china-region-grid,
+.china-route-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.china-method__card {
+  min-height: 260px;
+  padding: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.china-method__number {
+  color: #e2c68e;
+  font-family: "Playfair Display", serif;
+  font-size: 44px;
+}
+
+.china-method__card h3 {
+  margin: 56px 0 12px;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.china-method__card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.7;
+}
+
+.china-region-card,
+.china-route-card {
+  display: flex;
+  min-height: 340px;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px;
+  border: 1px solid var(--china-line);
+  background: #eee7d9;
+  color: var(--china-ink);
+  text-decoration: none;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.china-region-card:nth-child(2n),
+.china-route-card:nth-child(2n) {
+  background: #e2e5dc;
+}
+
+.china-region-card:hover,
+.china-route-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(37, 34, 25, 0.12);
+}
+
+.china-region-card__index,
+.china-route-card__meta {
+  margin-bottom: auto;
+  color: #8a6a35;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.china-region-card h3,
+.china-route-card h3 {
+  margin: 0 0 12px;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: 31px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.china-region-card .china-card-index {
+  margin-bottom: auto;
+  color: #8a6a35;
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+}
+
+.china-region-card > div > p {
+  margin-bottom: 10px;
+  color: #8a6a35;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.china-region-card footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 26px;
+  color: rgba(23, 24, 18, 0.58);
+  font-size: 12px;
+}
+
+.china-route-card {
+  min-height: 0;
+  padding: 0;
+  justify-content: flex-start;
+  overflow: hidden;
+  background: #fff;
+}
+
+.china-route-card picture,
+.china-route-card img {
+  display: block;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.china-route-card__copy {
+  display: flex;
+  min-height: 210px;
+  flex: 1;
+  flex-direction: column;
+  padding: 26px;
+}
+
+.china-route-card__copy > p {
+  color: #8a6a35;
+  font-size: 11px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.china-route-card__copy > span {
+  margin-top: auto;
+  color: #8a6a35;
+  font-size: 12px;
+}
+
+.china-region-card p,
+.china-route-card p {
+  margin: 0;
+  color: rgba(23, 24, 18, 0.66);
+  line-height: 1.65;
+}
+
+.china-route-card__arrow {
+  margin-top: 26px;
+  color: #8a6a35;
+}
+
+.china-faq {
+  display: grid;
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 104px 0;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(32px, 8vw, 120px);
+  border-top: 1px solid var(--china-line);
+}
+
+.china-faq header > p {
+  color: #8a6a35;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+}
+
+.china-faq header h2 {
+  margin: 15px 0 0;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: clamp(36px, 4vw, 58px);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.china-faq details {
+  border-bottom: 1px solid var(--china-line);
+  padding: 24px 0;
+}
+
+.china-faq summary {
+  cursor: pointer;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: 23px;
+}
+
+.china-faq p {
+  max-width: 780px;
+  margin: 18px 0 0;
+  color: rgba(23, 24, 18, 0.68);
+  line-height: 1.8;
+}
+
+.china-enquiry {
+  display: grid;
+  padding: 104px max(24px, calc((100% - 1180px) / 2));
+  grid-template-columns: minmax(0, 0.82fr) minmax(420px, 1.18fr);
+  gap: clamp(46px, 8vw, 112px);
+  background: #191b18;
+  color: #fff;
+}
+
+.china-enquiry__copy h2 {
+  margin: 0;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: clamp(40px, 5vw, 70px);
+  font-weight: 400;
+  line-height: 1.04;
+}
+
+.china-enquiry__copy > p:last-child {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.china-kicker,
+.china-back {
+  color: #e2c68e;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.china-back {
+  display: inline-block;
+  margin-bottom: 22px;
+}
+
+.china-microcopy {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 12px;
+}
+
+.china-enquiry__inner {
+  display: grid;
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 104px 0;
+  grid-template-columns: minmax(0, 0.82fr) minmax(420px, 1.18fr);
+  gap: clamp(46px, 8vw, 112px);
+}
+
+.china-enquiry__intro h2 {
+  margin: 0;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: clamp(40px, 5vw, 70px);
+  font-weight: 400;
+  line-height: 1.04;
+}
+
+.china-enquiry__intro p {
+  margin-top: 24px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.china-region-hero {
+  min-height: min(700px, 82vh);
+}
+
+.china-region-hero__content {
+  max-width: 1180px;
+}
+
+.china-region-hero h1 {
+  max-width: 920px;
+}
+
+.china-partner-note {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--china-line);
+  color: rgba(23, 24, 18, 0.6);
+  line-height: 1.7;
+}
+
+.china-partner-note a {
+  color: #755729;
+}
+
+.china-empty {
+  padding: 54px;
+  border: 1px solid var(--china-line);
+  background: #efe9dd;
+}
+
+.china-empty h3 {
+  margin: 0 0 14px;
+  font-family: "Playfair Display", "Noto Serif SC", serif;
+  font-size: 34px;
+  font-weight: 400;
+}
+
+.china-empty p {
+  max-width: 720px;
+  color: rgba(23, 24, 18, 0.68);
+  line-height: 1.75;
+}
+
+.china-empty .china-button,
+.china-closing .china-button {
+  margin-top: 20px;
+}
+
+.china-closing {
+  padding: 96px 24px;
+  background: #ded5c4;
+  text-align: center;
+}
+
+.china-closing h2,
+.china-closing p,
+.china-closing__actions {
+  max-width: 820px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.china-closing p {
+  margin-top: 22px;
+  color: rgba(23, 24, 18, 0.68);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.china-closing__actions {
+  justify-content: center;
+}
+
+.china-closing .china-button--ghost {
+  border-color: rgba(23, 24, 18, 0.35);
+  color: var(--china-ink);
+}
+
+.china-closing .china-button--ghost:hover {
+  background: var(--china-ink);
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .china-hero__content,
+  .china-hero__inner,
+  .china-section__head,
+  .china-editorial,
+  .china-enquiry__inner,
+  .china-enquiry,
+  .china-faq {
+    grid-template-columns: 1fr;
+  }
+
+  .china-method__grid,
+  .china-method,
+  .china-region-grid,
+  .china-route-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .china-promise {
+    max-width: 520px;
+  }
+
+  .china-enquiry__inner {
+    gap: 52px;
+  }
+}
+
+@media (max-width: 620px) {
+  .china-page .site-nav {
+    box-sizing: border-box;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 20px;
+    padding-right: 64px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+    white-space: nowrap;
+  }
+
+  .china-page .site-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .china-hero,
+  .china-region-hero {
+    min-height: 720px;
+  }
+
+  .china-hero__content,
+  .china-hero__inner,
+  .china-region-hero__content,
+  .china-section,
+  .china-method__inner,
+  .china-enquiry__inner {
+    width: min(100% - 32px, 1180px);
+  }
+
+  .china-hero__content,
+  .china-region-hero__content {
+    padding-bottom: 44px;
+  }
+
+  .china-hero h1,
+  .china-region-hero h1 {
+    font-size: clamp(45px, 15vw, 66px);
+  }
+
+  .china-section,
+  .china-method__inner,
+  .china-enquiry__inner {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .china-method__grid,
+  .china-method,
+  .china-region-grid,
+  .china-route-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .china-region-card,
+  .china-route-card {
+    min-height: 290px;
+  }
+
+  .china-enquiry__inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .china-button,
+  .china-region-card,
+  .china-route-card {
+    transition: none;
+  }
+}

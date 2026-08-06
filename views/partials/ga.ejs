@@ -7,7 +7,7 @@
   gtag('set', 'linker', { domains: ['wr-travel.com', 'wildroadgroup.com'], accept_incoming: true });
   gtag('set', {
     site_hostname: location.hostname,
-    content_group: 'wr_journeys',
+    content_group: '<%= typeof contentGroup !== "undefined" ? contentGroup : "wr_journeys" %>',
     brand: 'WR Travel'
   });
   gtag('config', 'G-R0TMD98X7G');

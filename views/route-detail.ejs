@@ -67,7 +67,7 @@
 </head>
 <body>
   <%- include("partials/header") %>
-  <button id="langToggle" onclick="toggleLang()" class="lang-toggle"><%= lang === 'en' ? '中' : 'EN' %></button>
+  <a id="langToggle" class="lang-toggle" hreflang="<%= lang === 'en' ? 'zh-CN' : 'en' %>" href="<%= lang === 'en' ? '/routes/' + route.slug : '/en/routes/' + route.slug %>"><%= lang === 'en' ? '中' : 'EN' %></a>
 
   <section class="r-hero">
     <picture>
@@ -157,6 +157,5 @@
   </div>
 
   <%- include("partials/footer") %>
-  <script>function toggleLang(){const u=new URL(window.location);const p=u.pathname;const isEn=p==="/en"||p.startsWith("/en/");const np=isEn?(p==="/en"?"/":p.substring(3)):(p==="/"?"/en":"/en"+p);localStorage.setItem("wr_lang",isEn?"zh":"en");u.pathname=np;u.searchParams.delete("lang");window.location=u.toString()}</script>
 </body>
 </html>

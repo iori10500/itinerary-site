@@ -182,7 +182,7 @@ app.get('/sitemap.xml', (req, res) => {
   const countries = getCountries();
   pages.push({ loc: `${baseUrl}/destinations`, priority: '0.9', changefreq: 'monthly' });
   pages.push({ loc: `${baseUrl}/en/destinations`, priority: '0.8', changefreq: 'monthly' });
-  countries.forEach(c => {
+  countries.filter(c => c.slug !== 'china').forEach(c => {
     pages.push({ loc: `${baseUrl}/destinations/${c.slug}`, priority: '0.8', changefreq: 'monthly' });
     pages.push({ loc: `${baseUrl}/en/destinations/${c.slug}`, priority: '0.7', changefreq: 'monthly' });
   });
@@ -738,7 +738,13 @@ app.get('/destinations/china', (req, res) => {
   const featuredRoutes = Object.values(routesIndex).slice(0, 6);
   res.render('china-hub', {
     china, subRegions, featuredRoutes, lang,
-    title: lang === 'en' ? 'China · Inbound Hub | WR Journeys' : '中国 · 入境之家 | WR Journeys',
+    title: lang === 'en'
+      ? 'Luxury China Tours & Bespoke Private Travel | WR Journeys'
+      : '中国入境定制旅行与慢奢线路 | WR Journeys',
+    metaDescription: lang === 'en'
+      ? 'Plan a private China journey with a real human advisor. Bespoke routes through Guizhou, Yunnan, Shangri-La and Sichuan, with boutique stays and end-to-end care.'
+      : '由真人顾问规划中国入境定制旅行，覆盖贵州、云南、香格里拉与四川，以精品住宿、在地体验和从开始到结束的持续服务串联完整旅程。',
+    contentGroup: 'china_inbound',
     schemas: [
       schemas.breadcrumbList([
         { name: lang === 'en' ? 'Home' : '首页', path: '/' },
@@ -765,7 +771,13 @@ app.get('/destinations/china/:region', (req, res) => {
   });
   res.render('china-region', {
     region: { slug: req.params.region, ...region }, routes: regionRoutes, lang,
-    title: (lang === 'en' ? region.name_en : region.name_zh) + ' · ' + (lang === 'en' ? 'China' : '中国') + ' | WR Journeys',
+    title: lang === 'en'
+      ? `Luxury ${region.name_en} Tours & Private Journeys | WR Journeys`
+      : `${region.name_zh}入境定制旅行与精品线路 | WR Journeys`,
+    metaDescription: lang === 'en'
+      ? `Plan a private ${region.name_en}, China journey with a real advisor. Thoughtful pacing, boutique stays, local coordination and end-to-end human care.`
+      : `由真人顾问规划${region.name_zh}私人定制旅行，结合精品住宿、在地体验、合理节奏与从需求沟通到旅行结束的持续服务。`,
+    contentGroup: 'china_inbound',
     schemas: [
       schemas.breadcrumbList([
         { name: lang === 'en' ? 'Home' : '首页', path: '/' },
@@ -1004,6 +1016,7 @@ app.get('/routes/:slug', (req, res) => {
   }).filter(Boolean);
   res.render('route-detail', {
     route, brand, lang, lodgesWithGallery,
+    contentGroup: ['jianglu', 'songtsam', 'wildroad'].includes(brand.slug) ? 'china_inbound' : 'wr_journeys',
     schemas: [
       schemas.touristTrip(route, brand, lang),
       schemas.breadcrumbList([
@@ -1223,7 +1236,8 @@ app.get('/:id', (req, res) => {
     title: itinerary.title + ' - WR Travel',
     lang: lang,
     itineraries: itineraries,
-    destinations: destinationsData
+    destinations: destinationsData,
+    contentGroup: (itinerary.regions_en || []).includes('China') ? 'china_inbound' : 'wr_journeys'
   });
 });
 

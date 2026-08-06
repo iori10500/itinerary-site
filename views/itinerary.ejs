@@ -96,7 +96,9 @@
   <%- include("partials/header") %>
 
   <!-- Language Toggle -->
-  <button id="langToggle" onclick="toggleLang()" class="lang-toggle"><%= lang === 'en' ? '中' : 'EN' %></button>
+  <% if (itinerary) { %>
+  <a id="langToggle" class="lang-toggle" hreflang="<%= lang === 'en' ? 'zh-CN' : 'en' %>" href="<%= lang === 'en' ? '/' + itinerary.id : '/en/' + itinerary.id %>"><%= lang === 'en' ? '中' : 'EN' %></a>
+  <% } %>
 
   <!-- TOP BAR -->
   <div class="top-bar">
@@ -253,19 +255,6 @@
   <div class="footer" style="display:none;">
     <strong>WanderWay Travel</strong> · <%= lang === 'en' ? 'Global Luxury Custom Travel' : '全球奢华定制旅行' %>
   </div>
-
-<script>
-  function toggleLang() {
-    const u = new URL(window.location);
-    const p = u.pathname;
-    const isEn = p === "/en" || p.startsWith("/en/");
-    const np = isEn ? (p === "/en" ? "/" : p.substring(3)) : (p === "/" ? "/en" : "/en" + p);
-    localStorage.setItem("wr_lang", isEn ? "zh" : "en");
-    u.pathname = np;
-    u.searchParams.delete("lang");
-    window.location = u.toString();
-  }
-</script>
 
   <!-- Floating Consult Button -->
   <a href="<%= advisorUrl(lang, { source: 'itinerary-floating' }) %>" data-enquiry-cta="itinerary-floating" class="float-consult" aria-label="<%= lang === 'en' ? 'Consult' : '咨询' %>">💬 <%= lang === 'en' ? 'Consult' : '咨询' %></a>
