@@ -1198,10 +1198,12 @@ app.get('/:id', (req, res) => {
   if (!itinerary) {
     return res.status(404).render('itinerary', {
       itinerary: null,
-      brochureHtml: null,
+      brochureContent: null,
       title: lang === 'en' ? 'Not Found - WR Travel' : '未找到 - WR Travel',
       lang: lang,
-      itineraries: itineraries
+      itineraries: itineraries,
+      destinations: destinationsData,
+      contentGroup: 'wr_journeys'
     });
   }
   
@@ -1233,7 +1235,7 @@ app.get('/:id', (req, res) => {
   res.render('itinerary', {
     itinerary: itinerary,
     brochureContent: brochureContent,
-    title: itinerary.title + ' - WR Travel',
+    title: (lang === 'en' ? (itinerary.title_en || itinerary.title) : itinerary.title) + ' - WR Travel',
     lang: lang,
     itineraries: itineraries,
     destinations: destinationsData,

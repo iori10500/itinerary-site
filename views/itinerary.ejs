@@ -157,7 +157,7 @@
   <% } %>
 
   <!-- 目的地简介 -->
-  <% if (itinerary.regions_en && itinerary.regions_en.length > 0) { %>
+  <% if (itinerary && itinerary.regions_en && itinerary.regions_en.length > 0) { %>
   <% var countrySlug = itinerary.regions_en[0].toLowerCase().replace(/\s+/g, '-') %>
   <% var destInfo = destinations && destinations[countrySlug] %>
   <% if (destInfo) { %>
