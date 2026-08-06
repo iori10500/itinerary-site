@@ -227,10 +227,12 @@ body {
 
 .china-editorial {
   display: grid;
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
   grid-template-columns: 1fr 1fr;
   gap: clamp(48px, 9vw, 132px);
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 88px;
+  padding-bottom: 88px;
 }
 
 .china-editorial__label {
@@ -691,6 +693,10 @@ body {
     max-width: 520px;
   }
 
+  .china-editorial {
+    gap: 36px;
+  }
+
   .china-enquiry__inner {
     gap: 52px;
   }
@@ -722,6 +728,7 @@ body {
   .china-hero__inner,
   .china-region-hero__content,
   .china-section,
+  .china-editorial,
   .china-method__inner,
   .china-enquiry__inner {
     width: min(100% - 32px, 1180px);
@@ -738,10 +745,11 @@ body {
   }
 
   .china-section,
+  .china-editorial,
   .china-method__inner,
   .china-enquiry__inner {
-    padding-top: 72px;
-    padding-bottom: 72px;
+    padding-top: 64px;
+    padding-bottom: 64px;
   }
 
   .china-method__grid,
@@ -749,6 +757,46 @@ body {
   .china-region-grid,
   .china-route-grid {
     grid-template-columns: 1fr;
+  }
+
+  .china-editorial {
+    gap: 30px;
+  }
+
+  .china-editorial__label span {
+    margin-bottom: 12px;
+    font-size: 44px;
+  }
+
+  .china-editorial__body p {
+    margin-bottom: 18px;
+    font-size: 20px;
+    line-height: 1.62;
+  }
+
+  .china-method {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .china-method > article {
+    min-height: 0;
+    padding: 44px 24px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .china-method > article:last-child {
+    border-bottom: 0;
+  }
+
+  .china-method > article h2 {
+    margin: 34px 0 14px;
+    font-size: 30px;
+  }
+
+  .china-method > article p {
+    margin-bottom: 0;
   }
 
   .china-region-card,
