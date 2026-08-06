@@ -1199,6 +1199,7 @@ app.get('/:id', (req, res) => {
     return res.status(404).render('itinerary', {
       itinerary: null,
       brochureContent: null,
+      hasPdf: false,
       title: lang === 'en' ? 'Not Found - WR Travel' : '未找到 - WR Travel',
       lang: lang,
       itineraries: itineraries,
@@ -1235,6 +1236,7 @@ app.get('/:id', (req, res) => {
   res.render('itinerary', {
     itinerary: itinerary,
     brochureContent: brochureContent,
+    hasPdf: fs.existsSync(path.join(__dirname, 'public', 'pdfs', `${itinerary.id}.pdf`)),
     title: (lang === 'en' ? (itinerary.title_en || itinerary.title) : itinerary.title) + ' - WR Travel',
     lang: lang,
     itineraries: itineraries,

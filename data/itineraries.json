@@ -122,7 +122,7 @@
   {
     "id": "chengdu-dali-lijiang-14d",
     "title": "西南秘境·成都大理丽江",
-    "title_en": "Sichuan & Yunnan 14 Days",
+    "title_en": "Luxury Southwest China: Chengdu, Dali & Lijiang — 14 Days",
     "subtitle": "CHENGDU · DALI · LIJIANG · 14天13晚 · 10人定制",
     "subtitle_en": "CHENGDU · DALI · LIJIANG · 14 Days · Tailor-Made for 10",
     "days": 14,
@@ -137,11 +137,13 @@
     "tags": ["成都", "大理", "丽江", "六善", "安缦", "大熊猫", "玉龙雪山", "虎跳峡", "四川", "云南"],
     "tags_en": ["Chengdu", "Dali", "Lijiang", "Six Senses", "Aman", "Panda", "Jade Dragon Snow Mountain", "Tiger Leaping Gorge", "Sichuan", "Yunnan"],
     "description": "从六善青城山温泉到大理艾迪逊洱海，从丽江安缦院落到成都博舍太古里——四城四境，西南精华一网打尽。",
-    "description_en": "From Six Senses Qingcheng to The Dali Edition on Erhai Lake, from Aman Lijiang's courtyard to Upper House Chengdu — four cities, four worlds, the ultimate Southwest China journey.",
+    "description_en": "A private 14-day luxury journey through Chengdu, Qingcheng Mountain, Dali and Lijiang, pairing pandas, Bai and Naxi culture, Tiger Leaping Gorge and Jade Dragon Snow Mountain with exceptional stays and a real WR Travel advisor from first conversation to homecoming.",
     "coverImage": "images/chengdu-dali-lijiang-14d/cover.jpg",
     "brochurePath": "brochure/chengdu-dali-lijiang-14d.html",
+    "brochurePath_en": "brochure/chengdu-dali-lijiang-14d-en.html",
     "createdAt": "2026-06-09",
-    "versions": ["行程手册"]
+    "updatedAt": "2026-08-06",
+    "versions": ["行程手册", "英文版"]
   },
   {
     "id": "zhangjiajie-hunan-8d",
