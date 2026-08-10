@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="/main.css?v=20260810a">
   <link rel="stylesheet" href="/enquiry.css?v=20260806">
-  <link rel="stylesheet" href="/australia.css?v=20260810a">
+  <link rel="stylesheet" href="/australia.css?v=20260810b">
   <%- include('partials/jsonld') %>
   <%- include('partials/ga') %>
 </head>
@@ -88,9 +88,23 @@
       </div>
     </section>
 
+    <section class="au-purpose">
+      <header>
+        <div class="au-section-mark"><span>03</span><p><%= lang === 'en' ? 'WHY LODGE-LED' : '为什么从旅宿出发' %></p></div>
+        <h2><%= lang === 'en' ? 'The room is only the beginning.' : '房间只是旅程的起点。' %></h2>
+        <p><%= lang === 'en' ? 'The official collection defines Australian luxury through rare access to place, people and knowledge — not decoration alone. Across the members, more than 350 experiences make the landscape legible.' : '官方合集对澳式奢华的定义，来自对地方、人物与知识的稀有接近，而不只是装饰。20 处成员旅宿共同提供超过 350 项体验，让景观真正变得可理解。' %></p>
+      </header>
+      <div class="au-purpose__grid">
+        <article><span>01</span><h3><%= lang === 'en' ? 'Privileged access' : '稀有抵达' %></h3><p><%= lang === 'en' ? 'Small guest numbers and remote settings create access that a day trip cannot reproduce.' : '极少的住客数量与偏远选址，带来普通一日游无法复制的抵达方式。' %></p></article>
+        <article><span>02</span><h3><%= lang === 'en' ? 'A reason to do' : '不只住，更要做' %></h3><p><%= lang === 'en' ? 'Land, wildlife, water, culture, food and wellbeing turn each lodge into a way of knowing its region.' : '陆地、野生动物、水域、文化、饮食与疗愈，让每家旅宿成为理解所在地的方式。' %></p></article>
+        <article><span>03</span><h3><%= lang === 'en' ? 'Purpose in place' : '扎根地方的价值' %></h3><p><%= lang === 'en' ? 'Conservation, Indigenous and remote communities, local craftspeople and regional producers are part of the operating model.' : '自然保护、原住民及偏远社区、本地工匠与区域生产者，都是这套旅宿运营方式的一部分。' %></p></article>
+        <article><span>04</span><h3><%= lang === 'en' ? 'Human judgement' : '真人判断' %></h3><p><%= lang === 'en' ? 'We translate the collection into one realistic route, balancing season, access, lodge availability and the way you want to travel.' : '我们把合集转化为一条真正可行的路线，在季节、交通、房态与你想要的旅行方式之间作出判断。' %></p></article>
+      </div>
+    </section>
+
     <section class="au-atlas" id="lodges">
       <header class="au-atlas__head">
-        <div class="au-section-mark"><span>03</span><p><%= lang === 'en' ? 'THE LODGE ATLAS' : '旅宿地图' %></p></div>
+        <div class="au-section-mark"><span>04</span><p><%= lang === 'en' ? 'THE LODGE ATLAS' : '旅宿地图' %></p></div>
         <div><h2><%= lang === 'en' ? 'Twenty lodges. Six ways into the continent.' : '20 处旅宿，6 种进入大陆的方式。' %></h2><p><%= lang === 'en' ? 'An official-member index, organised by landscape rather than hotel tier.' : '依照官方成员名单，以景观而非酒店等级重新整理。' %></p></div>
       </header>
       <div class="au-atlas__grid">

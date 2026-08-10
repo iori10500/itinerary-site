@@ -10,7 +10,7 @@
       "note_zh": "从大堡礁、偏远岛屿到南大洋，让潮汐、海风与水下世界决定一天的节奏。",
       "lodges": [
         { "name": "Capella Lodge", "place_en": "Lord Howe Island, NSW", "place_zh": "新南威尔士州 · 豪勋爵岛", "url": "https://luxurylodgesofaustralia.com.au/lodges/capella-lodge/" },
-        { "name": "Lizard Island Resort & The House", "place_en": "Great Barrier Reef, QLD", "place_zh": "昆士兰州 · 大堡礁", "url": "https://luxurylodgesofaustralia.com.au/lodges/lizard-island/" },
+        { "name": "Lizard Island & The House", "place_en": "Great Barrier Reef, QLD", "place_zh": "昆士兰州 · 大堡礁", "url": "https://luxurylodgesofaustralia.com.au/lodges/lizard-island/" },
         { "name": "Orpheus Island Lodge & Pelorus Private Island", "place_en": "Great Barrier Reef, QLD", "place_zh": "昆士兰州 · 大堡礁", "url": "https://luxurylodgesofaustralia.com.au/lodges/orpheus-island-lodge/" },
         { "name": "Pretty Beach House", "place_en": "Bouddi Peninsula, NSW", "place_zh": "新南威尔士州 · 布迪半岛", "url": "https://luxurylodgesofaustralia.com.au/lodges/pretty-beach-house/" },
         { "name": "qualia", "place_en": "Hamilton Island, QLD", "place_zh": "昆士兰州 · 汉密尔顿岛", "url": "https://luxurylodgesofaustralia.com.au/lodges/qualia/" },
@@ -72,7 +72,7 @@
       "note_en": "Small-ship access to coastlines and anchorages that roads cannot reach.",
       "note_zh": "以小型船只抵达公路无法触及的海岸、峡湾与隐秘锚地。",
       "lodges": [
-        { "name": "On Board", "place_en": "Southwest Tasmania", "place_zh": "塔斯马尼亚州 · 西南荒野", "url": "https://luxurylodgesofaustralia.com.au/lodges/on-board/" },
+        { "name": "OnBoard", "place_en": "Southwest Tasmania", "place_zh": "塔斯马尼亚州 · 西南荒野", "url": "https://luxurylodgesofaustralia.com.au/lodges/on-board/" },
         { "name": "True North Adventure Cruises", "place_en": "Remote Australian coastlines", "place_zh": "澳大利亚偏远海岸", "url": "https://luxurylodgesofaustralia.com.au/lodges/true-north-adventure-cruises/" }
       ]
     }

@@ -145,6 +145,7 @@
 
 .au-intro,
 .au-route-logic,
+.au-purpose,
 .au-atlas {
   padding: clamp(78px, 10vw, 150px) clamp(24px, 7vw, 110px);
 }
@@ -305,6 +306,16 @@
 .au-route-logic__steps h3 { margin: 0 0 9px; font-family: 'Playfair Display', Georgia, serif; font-size: 25px; font-weight: 400; }
 .au-route-logic__steps p { margin: 0; color: rgba(255, 255, 255, .66); font-size: 14px; line-height: 1.7; }
 
+.au-purpose { color: #fff; background: #17211c; }
+.au-purpose header { display: grid; grid-template-columns: .65fr 1.35fr 1.1fr; gap: clamp(40px, 6vw, 100px); align-items: start; }
+.au-purpose header h2 { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(42px, 5vw, 76px); font-weight: 400; line-height: 1.02; }
+.au-purpose header > p { margin: 4px 0 0; color: rgba(255,255,255,.67); font-size: 15px; line-height: 1.85; }
+.au-purpose__grid { display: grid; grid-template-columns: repeat(4,1fr); margin-top: clamp(58px,8vw,110px); border-top: 1px solid rgba(255,255,255,.16); border-left: 1px solid rgba(255,255,255,.16); }
+.au-purpose__grid article { min-height: 280px; padding: 28px; border-right: 1px solid rgba(255,255,255,.16); border-bottom: 1px solid rgba(255,255,255,.16); }
+.au-purpose__grid span { color: #f2ca86; font-size: 10px; letter-spacing: .16em; }
+.au-purpose__grid h3 { margin: 70px 0 13px; font-family: 'Playfair Display', Georgia, serif; font-size: 28px; font-weight: 400; }
+.au-purpose__grid p { margin: 0; color: rgba(255,255,255,.6); font-size: 13px; line-height: 1.75; }
+
 .au-atlas { background: #e8dfd0; }
 .au-atlas__head { display: grid; grid-template-columns: .65fr 2.85fr; gap: clamp(40px, 6vw, 100px); margin-bottom: 70px; }
 .au-atlas__head h2 { max-width: 780px; margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(42px, 5.3vw, 80px); font-weight: 400; line-height: 1.04; }
@@ -351,6 +362,9 @@
   .au-intro__figures { grid-column: 2; }
   .au-route-logic { grid-template-columns: 1fr 2fr; }
   .au-route-logic__steps { grid-column: 2; }
+  .au-purpose header { grid-template-columns: 1fr 2fr; }
+  .au-purpose header > p { grid-column: 2; }
+  .au-purpose__grid { grid-template-columns: repeat(2,1fr); }
   .au-season { grid-template-columns: 1fr 1fr; }
   .au-enquiry { grid-template-columns: 1fr; }
 }
@@ -366,6 +380,7 @@
   .au-hero__coordinates { display: none; }
   .au-intro,
   .au-route-logic,
+  .au-purpose,
   .au-atlas { padding: 72px 24px; }
   .au-intro,
   .au-route-logic { display: block; }
@@ -380,6 +395,12 @@
   .au-landscape--south { min-height: 48vh; }
   .au-route-logic__headline h2 { font-size: 40px; }
   .au-route-logic__steps { margin-top: 48px; }
+  .au-purpose header { display: block; }
+  .au-purpose header h2 { margin-top: 34px; font-size: 46px; }
+  .au-purpose header > p { margin-top: 24px; }
+  .au-purpose__grid { grid-template-columns: 1fr; margin-top: 48px; }
+  .au-purpose__grid article { min-height: 230px; }
+  .au-purpose__grid h3 { margin-top: 48px; }
   .au-atlas__head { display: block; margin-bottom: 42px; }
   .au-atlas__head > div:last-child { margin-top: 34px; }
   .au-atlas__head h2 { font-size: 46px; }
