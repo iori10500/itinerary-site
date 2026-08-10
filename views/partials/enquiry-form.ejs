@@ -86,7 +86,7 @@
   </div>
 
   <% if (turnstileSiteKey) { %>
-  <div class="cf-turnstile" data-sitekey="<%= turnstileSiteKey %>" data-theme="light" data-size="flexible"></div>
+  <div class="cf-turnstile" data-sitekey="<%= turnstileSiteKey %>" data-theme="<%= typeof turnstileTheme !== 'undefined' ? turnstileTheme : 'light' %>" data-size="flexible"></div>
   <% } %>
 
   <label class="enquiry-consent">

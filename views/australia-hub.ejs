@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="/main.css?v=20260810a">
   <link rel="stylesheet" href="/enquiry.css?v=20260806">
-  <link rel="stylesheet" href="/australia.css?v=20260810b">
+  <link rel="stylesheet" href="/australia.css?v=20260810c">
   <%- include('partials/jsonld') %>
   <%- include('partials/ga') %>
 </head>
@@ -138,7 +138,7 @@
 
     <section class="au-enquiry">
       <div class="au-enquiry__copy"><p class="au-eyebrow"><%= lang === 'en' ? 'START WITH ONE LANDSCAPE' : '从一种景观开始' %></p><h2><%= lang === 'en' ? 'Tell us what would make Australia worth the distance.' : '告诉我们，什么会让澳大利亚值得这段距离。' %></h2><p><%= lang === 'en' ? 'A reef, a lodge name, a month or simply the feeling you want is enough. One real advisor will connect the practical details from first conversation to return.' : '一个珊瑚礁、一家旅宿、一个月份，或一种想要的感受就足够。真人顾问会从第一次沟通开始，把实际细节持续连接到旅行归来。' %></p></div>
-      <div class="au-enquiry__form"><%- include('partials/enquiry-form', { variant: 'short', source: 'australia-luxury-lodges', route: null }) %></div>
+      <div class="au-enquiry__form"><%- include('partials/enquiry-form', { variant: 'short', source: 'australia-luxury-lodges', route: null, turnstileTheme: 'dark' }) %></div>
     </section>
 
     <details class="au-credits"><summary><%= lang === 'en' ? 'Landscape image credits' : '景观图片来源' %></summary><p>Uluṟu — LoksLoka / CC BY-SA 4.0 · Great Barrier Reef — Nerdge / Public Domain · Daintree — Robert Linsdell / CC BY 2.0 · Kangaroo Island — Gary M. Stolz, USFWS / Public Domain · Freycinet — Liam2520 / CC BY-SA 4.0. <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a></p></details>
