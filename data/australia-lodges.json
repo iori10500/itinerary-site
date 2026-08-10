@@ -1,0 +1,80 @@
+{
+  "source": "https://luxurylodgesofaustralia.com.au/",
+  "checked": "2026-08-10",
+  "collections": [
+    {
+      "slug": "islands-coastal",
+      "name_en": "Islands & Coastal",
+      "name_zh": "岛屿与海岸",
+      "note_en": "Reef, remote islands and the Southern Ocean — stays where the water determines the day.",
+      "note_zh": "从大堡礁、偏远岛屿到南大洋，让潮汐、海风与水下世界决定一天的节奏。",
+      "lodges": [
+        { "name": "Capella Lodge", "place_en": "Lord Howe Island, NSW", "place_zh": "新南威尔士州 · 豪勋爵岛", "url": "https://luxurylodgesofaustralia.com.au/lodges/capella-lodge/" },
+        { "name": "Lizard Island Resort & The House", "place_en": "Great Barrier Reef, QLD", "place_zh": "昆士兰州 · 大堡礁", "url": "https://luxurylodgesofaustralia.com.au/lodges/lizard-island/" },
+        { "name": "Orpheus Island Lodge & Pelorus Private Island", "place_en": "Great Barrier Reef, QLD", "place_zh": "昆士兰州 · 大堡礁", "url": "https://luxurylodgesofaustralia.com.au/lodges/orpheus-island-lodge/" },
+        { "name": "Pretty Beach House", "place_en": "Bouddi Peninsula, NSW", "place_zh": "新南威尔士州 · 布迪半岛", "url": "https://luxurylodgesofaustralia.com.au/lodges/pretty-beach-house/" },
+        { "name": "qualia", "place_en": "Hamilton Island, QLD", "place_zh": "昆士兰州 · 汉密尔顿岛", "url": "https://luxurylodgesofaustralia.com.au/lodges/qualia/" },
+        { "name": "Saffire Freycinet", "place_en": "Freycinet, TAS", "place_zh": "塔斯马尼亚州 · 菲欣纳", "url": "https://luxurylodgesofaustralia.com.au/lodges/saffire-freycinet/" },
+        { "name": "Southern Ocean Lodge", "place_en": "Kangaroo Island, SA", "place_zh": "南澳州 · 袋鼠岛", "url": "https://luxurylodgesofaustralia.com.au/lodges/southern-ocean-lodge/" }
+      ]
+    },
+    {
+      "slug": "rainforest-river",
+      "name_en": "Rainforest & River",
+      "name_zh": "雨林与河流",
+      "note_en": "A slower immersion in the ancient Daintree, with forest, river and reef within one living system.",
+      "note_zh": "沉入古老的丹翠雨林，在同一生态系统里理解森林、河流与珊瑚礁。",
+      "lodges": [
+        { "name": "Silky Oaks Lodge", "place_en": "Daintree Rainforest, QLD", "place_zh": "昆士兰州 · 丹翠雨林", "url": "https://luxurylodgesofaustralia.com.au/lodges/silky-oaks-lodge/" }
+      ]
+    },
+    {
+      "slug": "outback-beyond",
+      "name_en": "Outback & Beyond",
+      "name_zh": "内陆与远境",
+      "note_en": "Red earth, vast stations, tropical floodplains and the cultural depth of Country.",
+      "note_zh": "红土、辽阔牧场、热带湿地与原住民文化共同构成的澳洲远境。",
+      "lodges": [
+        { "name": "Arkaba", "place_en": "Flinders Ranges, SA", "place_zh": "南澳州 · 弗林德斯山脉", "url": "https://luxurylodgesofaustralia.com.au/lodges/arkaba/" },
+        { "name": "Bamurru Plains", "place_en": "Top End, NT", "place_zh": "北领地 · 顶端地区", "url": "https://luxurylodgesofaustralia.com.au/lodges/bamurru-plains/" },
+        { "name": "Bullo River Station", "place_en": "East Kimberley, NT", "place_zh": "北领地 · 东金伯利", "url": "https://luxurylodgesofaustralia.com.au/lodges/bullo-river-station/" },
+        { "name": "El Questro Homestead", "place_en": "The Kimberley, WA", "place_zh": "西澳州 · 金伯利", "url": "https://luxurylodgesofaustralia.com.au/lodges/el-questro-homestead/" },
+        { "name": "Longitude 131°", "place_en": "Uluṟu, NT", "place_zh": "北领地 · 乌鲁鲁", "url": "https://luxurylodgesofaustralia.com.au/lodges/longitude-131/" },
+        { "name": "Mt Mulligan Lodge", "place_en": "Northern Outback, QLD", "place_zh": "昆士兰州 · 北部内陆", "url": "https://luxurylodgesofaustralia.com.au/lodges/mt-mulligan-lodge/" },
+        { "name": "Sal Salis", "place_en": "Ningaloo Reef, WA", "place_zh": "西澳州 · 宁格鲁礁", "url": "https://luxurylodgesofaustralia.com.au/lodges/sal-salis/" }
+      ]
+    },
+    {
+      "slug": "peaks-valleys",
+      "name_en": "Peaks & Valleys",
+      "name_zh": "山峰与谷地",
+      "note_en": "High-country quiet and long views over Queensland's Scenic Rim.",
+      "note_zh": "在昆士兰风景环线的高地安静停留，把视线放到更远。",
+      "lodges": [
+        { "name": "Spicers Peak Lodge", "place_en": "Scenic Rim, QLD", "place_zh": "昆士兰州 · 风景环线", "url": "https://luxurylodgesofaustralia.com.au/lodges/spicers-peak-lodge/" }
+      ]
+    },
+    {
+      "slug": "wine-spa-country",
+      "name_en": "Wine & Spa Country",
+      "name_zh": "葡萄酒与疗愈乡野",
+      "note_en": "Produce, cellar doors and deeply local hospitality in Victoria and South Australia.",
+      "note_zh": "在维多利亚与南澳，以农产、酒庄和深植地方的款待理解土地。",
+      "lodges": [
+        { "name": "Lake House & Dairy Flat Lodge", "place_en": "Daylesford, VIC", "place_zh": "维多利亚州 · 戴尔斯福德", "url": "https://luxurylodgesofaustralia.com.au/lodges/lake-house/" },
+        { "name": "The Louise", "place_en": "Barossa Valley, SA", "place_zh": "南澳州 · 巴罗萨谷", "url": "https://luxurylodgesofaustralia.com.au/lodges/the-louise/" }
+      ]
+    },
+    {
+      "slug": "wilderness-cruises",
+      "name_en": "Wilderness Cruises",
+      "name_zh": "荒野巡航",
+      "note_en": "Small-ship access to coastlines and anchorages that roads cannot reach.",
+      "note_zh": "以小型船只抵达公路无法触及的海岸、峡湾与隐秘锚地。",
+      "lodges": [
+        { "name": "On Board", "place_en": "Southwest Tasmania", "place_zh": "塔斯马尼亚州 · 西南荒野", "url": "https://luxurylodgesofaustralia.com.au/lodges/on-board/" },
+        { "name": "True North Adventure Cruises", "place_en": "Remote Australian coastlines", "place_zh": "澳大利亚偏远海岸", "url": "https://luxurylodgesofaustralia.com.au/lodges/true-north-adventure-cruises/" }
+      ]
+    }
+  ]
+}

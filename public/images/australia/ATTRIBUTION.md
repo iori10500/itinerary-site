@@ -1,0 +1,7 @@
+# Australia destination image attribution
+
+- `uluru.jpg` / `uluru.webp`: “Uluru Kata-Tjuta” by LoksLoka, [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Uluru_Kata-Tjuta.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Resized and converted to WebP.
+- `great-barrier-reef.jpg` / `great-barrier-reef.webp`: “Great Barrier Reef (aerial view)” by Nerdge, [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Great_Barrier_Reef_(aerial_view).JPG), public domain. Resized and converted to WebP.
+- `freycinet.jpg` / `freycinet.webp`: “Wineglass Bay, Freycinet National Park” by Liam2520, [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Wineglass_Bay,_Freycinet_National_Park.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Resized and converted to WebP.
+- `daintree.jpg` / `daintree.webp`: “Daintree Rainforest, Queensland” by Robert Linsdell, [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Daintree_Rainforest,_Queensland_(483852)_(9440809733).jpg), [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/). Resized and converted to WebP.
+- `kangaroo-island.jpg` / `kangaroo-island.webp`: “Ocean habitat coastline of Kangaroo Island, South Australia” by Stolz Gary M / U.S. Fish and Wildlife Service, [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Ocean_habitat_coastline_of_Kangaroo_island_south_Australia.jpg), public domain. Resized and converted to WebP.

@@ -1,0 +1,401 @@
+:root {
+  --au-ink: #17221d;
+  --au-eucalyptus: #334d3d;
+  --au-eucalyptus-light: #54715d;
+  --au-ochre: #b86d39;
+  --au-sand: #e9ddc7;
+  --au-paper: #f3efe6;
+  --au-reef: #86b8b3;
+  --au-line: rgba(23, 34, 29, .18);
+}
+
+.au-page {
+  margin: 0;
+  color: var(--au-ink);
+  background: var(--au-paper);
+}
+
+.au-page .site-nav {
+  position: relative;
+  z-index: 30;
+}
+
+.au-page .lang-toggle {
+  z-index: 40;
+}
+
+.au-page main {
+  overflow: hidden;
+}
+
+.au-hero {
+  position: relative;
+  min-height: calc(100vh - 48px);
+  display: grid;
+  align-items: end;
+  color: #fff;
+  isolation: isolate;
+}
+
+.au-hero__media,
+.au-hero__media img,
+.au-hero__veil {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.au-hero__media img {
+  object-fit: cover;
+  object-position: 52% center;
+}
+
+.au-hero__veil {
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(13, 18, 16, .84) 0%, rgba(13, 18, 16, .42) 50%, rgba(13, 18, 16, .12) 78%),
+    linear-gradient(0deg, rgba(13, 18, 16, .58), transparent 45%);
+}
+
+.au-hero__copy {
+  position: relative;
+  z-index: 2;
+  width: min(760px, calc(100% - 48px));
+  margin: 0 0 clamp(58px, 9vh, 104px) clamp(24px, 9vw, 150px);
+}
+
+.au-back,
+.au-eyebrow {
+  font-size: 11px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+.au-back {
+  color: rgba(255, 255, 255, .74);
+  text-decoration: none;
+}
+
+.au-eyebrow {
+  margin: 28px 0 15px;
+  color: #f2ca86;
+}
+
+.au-hero h1 {
+  max-width: 740px;
+  margin: 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(58px, 7.2vw, 116px);
+  font-weight: 400;
+  line-height: .92;
+  letter-spacing: -.045em;
+}
+
+.au-hero__lead {
+  max-width: 630px;
+  margin: 28px 0 0;
+  font-size: clamp(16px, 1.35vw, 21px);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, .82);
+}
+
+.au-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.au-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, .45);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background .25s ease, color .25s ease, border-color .25s ease;
+}
+
+.au-button span { margin-left: 18px; }
+.au-button--solid { color: #18231e; background: #e6b35f; border-color: #e6b35f; }
+.au-button:hover { color: #18231e; background: #fff; border-color: #fff; }
+
+.au-hero__coordinates {
+  position: absolute;
+  z-index: 2;
+  right: 34px;
+  bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, .52);
+  font-size: 9px;
+  letter-spacing: .12em;
+  writing-mode: vertical-rl;
+}
+
+.au-hero__coordinates i { width: 1px; height: 76px; background: rgba(255, 255, 255, .35); }
+
+.au-intro,
+.au-route-logic,
+.au-atlas {
+  padding: clamp(78px, 10vw, 150px) clamp(24px, 7vw, 110px);
+}
+
+.au-section-mark {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--au-ochre);
+}
+
+.au-section-mark span {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.au-section-mark p {
+  margin: 0;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .22em;
+}
+
+.au-intro {
+  display: grid;
+  grid-template-columns: minmax(130px, .6fr) minmax(420px, 2.15fr) minmax(240px, .8fr);
+  gap: clamp(36px, 5vw, 90px);
+  background: var(--au-paper);
+}
+
+.au-intro__statement {
+  margin: 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(30px, 3.5vw, 56px);
+  line-height: 1.18;
+  letter-spacing: -.025em;
+}
+
+.au-intro__notes {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 44px;
+  align-items: end;
+  margin-top: 52px;
+  padding-top: 26px;
+  border-top: 1px solid var(--au-line);
+}
+
+.au-intro__notes p {
+  margin: 0;
+  color: rgba(23, 34, 29, .72);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.au-intro__notes a,
+.au-season__copy a {
+  color: var(--au-ink);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+}
+
+.au-intro__figures {
+  border-top: 1px solid var(--au-line);
+}
+
+.au-intro__figures div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--au-line);
+}
+
+.au-intro__figures strong {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.au-intro__figures span {
+  color: rgba(23, 34, 29, .62);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.au-landscapes {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  grid-template-rows: 56vh 46vh;
+  min-height: 900px;
+  background: #101713;
+}
+
+.au-landscape {
+  position: relative;
+  min-height: 350px;
+  overflow: hidden;
+  color: #fff;
+}
+
+.au-landscape--reef { grid-row: 1 / 3; }
+.au-landscape picture,
+.au-landscape picture::after,
+.au-landscape img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.au-landscape picture::after {
+  content: '';
+  background: linear-gradient(0deg, rgba(10, 16, 13, .72), rgba(10, 16, 13, .03) 60%);
+}
+
+.au-landscape img {
+  object-fit: cover;
+  transition: transform 1.2s ease;
+}
+
+.au-landscape:hover img { transform: scale(1.025); }
+.au-landscape > div { position: absolute; z-index: 2; left: clamp(24px, 4vw, 64px); right: 24px; bottom: clamp(28px, 5vw, 70px); }
+.au-landscape span { font-size: 10px; letter-spacing: .2em; color: #f1c77d; }
+.au-landscape h2 { margin: 10px 0 3px; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(38px, 5vw, 82px); font-weight: 400; line-height: 1; }
+.au-landscape p { margin: 10px 0 0; color: rgba(255, 255, 255, .76); font-size: 14px; }
+.au-landscape--forest h2,
+.au-landscape--south h2 { font-size: clamp(34px, 3.4vw, 54px); }
+
+.au-route-logic {
+  display: grid;
+  grid-template-columns: .65fr 1.2fr 1.65fr;
+  gap: clamp(40px, 6vw, 100px);
+  color: #fff;
+  background: var(--au-eucalyptus);
+}
+
+.au-route-logic__headline h2 {
+  margin: 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(34px, 4vw, 62px);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.au-route-logic__steps article { position: relative; padding: 0 0 30px 54px; border-bottom: 1px solid rgba(255, 255, 255, .15); }
+.au-route-logic__steps article + article { padding-top: 30px; }
+.au-route-logic__steps article > span { position: absolute; left: 0; top: 3px; color: #f2ca86; font-size: 10px; }
+.au-route-logic__steps article + article > span { top: 33px; }
+.au-route-logic__steps h3 { margin: 0 0 9px; font-family: 'Playfair Display', Georgia, serif; font-size: 25px; font-weight: 400; }
+.au-route-logic__steps p { margin: 0; color: rgba(255, 255, 255, .66); font-size: 14px; line-height: 1.7; }
+
+.au-atlas { background: #e8dfd0; }
+.au-atlas__head { display: grid; grid-template-columns: .65fr 2.85fr; gap: clamp(40px, 6vw, 100px); margin-bottom: 70px; }
+.au-atlas__head h2 { max-width: 780px; margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(42px, 5.3vw, 80px); font-weight: 400; line-height: 1.04; }
+.au-atlas__head > div:last-child > p { margin: 18px 0 0; color: rgba(23, 34, 29, .62); }
+.au-atlas__grid { border-top: 1px solid var(--au-line); }
+.au-collection { border-bottom: 1px solid var(--au-line); }
+.au-collection summary { list-style: none; display: grid; grid-template-columns: 70px 1fr 48px; gap: 24px; align-items: start; padding: 28px 0; cursor: pointer; }
+.au-collection summary::-webkit-details-marker { display: none; }
+.au-collection summary > span { padding-top: 7px; color: var(--au-ochre); font-size: 10px; letter-spacing: .14em; }
+.au-collection summary h3 { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(26px, 3vw, 40px); font-weight: 400; }
+.au-collection summary p { max-width: 650px; margin: 7px 0 0; color: rgba(23, 34, 29, .62); font-size: 13px; line-height: 1.6; }
+.au-collection summary strong { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--au-line); border-radius: 50%; font-family: 'Playfair Display', Georgia, serif; font-weight: 400; }
+.au-collection ol { margin: 0 0 32px 94px; padding: 0; list-style: none; border-top: 1px solid var(--au-line); }
+.au-collection li { display: grid; grid-template-columns: 1fr 40px; align-items: center; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--au-line); }
+.au-collection li h4 { margin: 0; font-size: 14px; font-weight: 600; }
+.au-collection li p { margin: 4px 0 0; color: rgba(23, 34, 29, .56); font-size: 11px; letter-spacing: .05em; text-transform: uppercase; }
+.au-collection li a { display: grid; place-items: center; width: 36px; height: 36px; color: var(--au-ink); border: 1px solid var(--au-line); border-radius: 50%; text-decoration: none; transition: color .2s, background .2s; }
+.au-collection li a:hover { color: #fff; background: var(--au-ink); }
+.au-atlas__note { max-width: 650px; margin: 30px 0 0 94px; color: rgba(23, 34, 29, .48); font-size: 11px; line-height: 1.7; }
+
+.au-season { display: grid; grid-template-columns: 1.25fr .75fr; min-height: 720px; background: var(--au-ink); color: #fff; }
+.au-season picture,
+.au-season img { width: 100%; height: 100%; }
+.au-season img { display: block; object-fit: cover; }
+.au-season__copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(50px, 7vw, 110px); }
+.au-season__copy h2 { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(42px, 5vw, 74px); font-weight: 400; line-height: 1.02; }
+.au-season__copy > p:not(.au-eyebrow) { margin: 28px 0; color: rgba(255, 255, 255, .68); font-size: 15px; line-height: 1.8; }
+.au-season__copy a { color: #f2ca86; }
+
+.au-enquiry { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px, 8vw, 130px); padding: clamp(76px, 10vw, 150px) clamp(24px, 9vw, 145px); background: #c9aa77; }
+.au-enquiry__copy h2 { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(42px, 5.2vw, 76px); font-weight: 400; line-height: 1.02; }
+.au-enquiry__copy > p:last-child { max-width: 580px; margin: 28px 0 0; font-size: 15px; line-height: 1.8; }
+.au-enquiry .au-eyebrow { color: #5c3722; }
+.au-enquiry__form { align-self: center; }
+.au-enquiry__form .enquiry-form { background: rgba(246, 240, 226, .9); }
+
+.au-credits { padding: 20px clamp(24px, 7vw, 110px); color: rgba(23, 34, 29, .52); background: var(--au-paper); font-size: 10px; }
+.au-credits summary { cursor: pointer; letter-spacing: .08em; text-transform: uppercase; }
+.au-credits p { max-width: 920px; line-height: 1.7; }
+.au-credits a { color: inherit; }
+
+@media (max-width: 980px) {
+  .au-intro { grid-template-columns: 1fr 3fr; }
+  .au-intro__figures { grid-column: 2; }
+  .au-route-logic { grid-template-columns: 1fr 2fr; }
+  .au-route-logic__steps { grid-column: 2; }
+  .au-season { grid-template-columns: 1fr 1fr; }
+  .au-enquiry { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .au-hero { min-height: 760px; }
+  .au-hero__media img { object-position: 61% center; }
+  .au-hero__veil { background: linear-gradient(0deg, rgba(13, 18, 16, .88), rgba(13, 18, 16, .24) 75%); }
+  .au-hero__copy { width: auto; margin: 0 24px 54px; }
+  .au-hero h1 { font-size: clamp(52px, 16vw, 74px); }
+  .au-hero__lead { font-size: 15px; }
+  .au-actions { flex-direction: column; align-items: stretch; }
+  .au-hero__coordinates { display: none; }
+  .au-intro,
+  .au-route-logic,
+  .au-atlas { padding: 72px 24px; }
+  .au-intro,
+  .au-route-logic { display: block; }
+  .au-intro__body,
+  .au-route-logic__headline { margin-top: 34px; }
+  .au-intro__statement { font-size: 34px; }
+  .au-intro__notes { grid-template-columns: 1fr; gap: 24px; margin-top: 36px; }
+  .au-intro__figures { margin-top: 48px; }
+  .au-landscapes { display: block; min-height: 0; }
+  .au-landscape { min-height: 62vh; }
+  .au-landscape--forest,
+  .au-landscape--south { min-height: 48vh; }
+  .au-route-logic__headline h2 { font-size: 40px; }
+  .au-route-logic__steps { margin-top: 48px; }
+  .au-atlas__head { display: block; margin-bottom: 42px; }
+  .au-atlas__head > div:last-child { margin-top: 34px; }
+  .au-atlas__head h2 { font-size: 46px; }
+  .au-collection summary { grid-template-columns: 34px 1fr 42px; gap: 10px; }
+  .au-collection summary p { font-size: 12px; }
+  .au-collection ol { margin-left: 44px; }
+  .au-atlas__note { margin-left: 44px; }
+  .au-season { display: block; min-height: 0; }
+  .au-season picture { display: block; height: 58vh; }
+  .au-season__copy { padding: 72px 24px; }
+  .au-season__copy h2 { font-size: 46px; }
+  .au-enquiry { padding: 72px 24px; }
+  .au-enquiry__copy h2 { font-size: 46px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .au-landscape img,
+  .au-button { transition: none; }
+}

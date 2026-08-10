@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="<%= lang === 'en' ? 'en' : 'zh-CN' %>">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <meta name="description" content="<%= metaDescription %>">
+  <link rel="canonical" href="https://itinerary.wildroadgroup.com<%= lang === 'en' ? '/en' : '' %>/destinations/australia">
+  <link rel="alternate" hreflang="zh-CN" href="https://itinerary.wildroadgroup.com/destinations/australia">
+  <link rel="alternate" hreflang="en" href="https://itinerary.wildroadgroup.com/en/destinations/australia">
+  <link rel="alternate" hreflang="x-default" href="https://itinerary.wildroadgroup.com/en/destinations/australia">
+  <meta property="og:title" content="<%= title %>">
+  <meta property="og:description" content="<%= metaDescription %>">
+  <meta property="og:url" content="https://itinerary.wildroadgroup.com<%= lang === 'en' ? '/en' : '' %>/destinations/australia">
+  <meta property="og:image" content="https://itinerary.wildroadgroup.com/images/australia/uluru.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="stylesheet" href="/main.css?v=20260801">
+  <link rel="stylesheet" href="/enquiry.css?v=20260806">
+  <link rel="stylesheet" href="/australia.css?v=20260810a">
+  <%- include('partials/jsonld') %>
+  <%- include('partials/ga') %>
+</head>
+<body class="au-page">
+  <%- include('partials/header') %>
+  <a class="lang-toggle" href="<%= lang === 'en' ? '/destinations/australia' : '/en/destinations/australia' %>" hreflang="<%= lang === 'en' ? 'zh-CN' : 'en' %>"><%= lang === 'en' ? '中' : 'EN' %></a>
+
+  <main>
+    <section class="au-hero">
+      <picture class="au-hero__media" aria-hidden="true">
+        <source srcset="/images/australia/uluru.webp" type="image/webp">
+        <img src="/images/australia/uluru.jpg" alt="" loading="eager">
+      </picture>
+      <div class="au-hero__veil"></div>
+      <div class="au-hero__copy">
+        <a class="au-back" href="<%= lang === 'en' ? '/en' : '' %>/destinations"><%= lang === 'en' ? 'Destinations / Australia' : '目的地 / 澳大利亚' %></a>
+        <p class="au-eyebrow"><%= lang === 'en' ? 'ONE CONTINENT · MANY ECOLOGIES' : '一座大陆 · 多重生态' %></p>
+        <h1><%= lang === 'en' ? 'Australia, read through its lodges.' : '从旅宿出发，重新读懂澳大利亚。' %></h1>
+        <p class="au-hero__lead"><%= lang === 'en' ? 'Not a grand tour built around flights, but a considered sequence of reef, rainforest, red earth and Southern Ocean — with enough time for each place to become real.' : '不是围绕航班拼接的澳洲大环游，而是把珊瑚礁、雨林、红土与南大洋串成有节奏的停留，让每个地方真正发生。' %></p>
+        <div class="au-actions">
+          <a class="au-button au-button--solid" href="<%= advisorUrl(lang, { source: 'australia-hero' }) %>" data-enquiry-cta="australia-hero"><%= lang === 'en' ? 'Shape my Australia journey' : '开始规划澳洲旅程' %><span>→</span></a>
+          <a class="au-button au-button--line" href="#lodges"><%= lang === 'en' ? 'Explore the lodge atlas' : '浏览旅宿地图' %></a>
+        </div>
+      </div>
+      <div class="au-hero__coordinates" aria-hidden="true"><span>10° 41′ S</span><i></i><span>43° 39′ S</span></div>
+    </section>
+
+    <section class="au-intro">
+      <div class="au-section-mark"><span>01</span><p><%= lang === 'en' ? 'THE PLANNING LENS' : '规划抓手' %></p></div>
+      <div class="au-intro__body">
+        <p class="au-intro__statement"><%= lang === 'en' ? 'Luxury Lodges of Australia gives us a useful way into an otherwise enormous country: twenty independently owned and operated stays, each inseparable from its landscape.' : '面对一片辽阔大陆，Luxury Lodges of Australia 提供了一个清晰的入口：20 处独立拥有、独立运营的旅宿，每一处都与所在地景观不可分割。' %></p>
+        <div class="au-intro__notes">
+          <p><%= lang === 'en' ? 'It is a member-owned marketing association, not a hotel chain. We use the collection as an editorial and planning reference; the journey itself remains independently designed around you.' : '它是由成员共同拥有的市场推广协会，并非连锁酒店集团。WR 把这套合集作为内容与规划参考，真正的旅程仍由我们围绕你的需求独立设计。' %></p>
+          <a href="https://luxurylodgesofaustralia.com.au/" target="_blank" rel="noopener"><%= lang === 'en' ? 'Visit the official collection' : '查看官方合集' %> ↗</a>
+        </div>
+      </div>
+      <div class="au-intro__figures" aria-label="<%= lang === 'en' ? 'Collection overview' : '合集概览' %>">
+        <div><strong>1</strong><span><%= lang === 'en' ? 'continent' : '座大陆' %></span></div>
+        <div><strong>20</strong><span><%= lang === 'en' ? 'member lodges' : '处成员旅宿' %></span></div>
+        <div><strong>350+</strong><span><%= lang === 'en' ? 'place-led experiences' : '项在地体验' %></span></div>
+      </div>
+    </section>
+
+    <section class="au-landscapes" aria-label="<%= lang === 'en' ? 'Australian landscapes' : '澳大利亚景观' %>">
+      <article class="au-landscape au-landscape--reef">
+        <picture><source srcset="/images/australia/great-barrier-reef.webp" type="image/webp"><img src="/images/australia/great-barrier-reef.jpg" alt="<%= lang === 'en' ? 'Aerial view of the Great Barrier Reef' : '大堡礁航拍景观' %>" loading="lazy" decoding="async"></picture>
+        <div><span>18° S</span><h2><%= lang === 'en' ? 'Reef' : '珊瑚礁' %></h2><p><%= lang === 'en' ? 'Enter by island, not itinerary.' : '从一座岛进入，而不是从行程表进入。' %></p></div>
+      </article>
+      <article class="au-landscape au-landscape--forest">
+        <picture><source srcset="/images/australia/daintree.webp" type="image/webp"><img src="/images/australia/daintree.jpg" alt="<%= lang === 'en' ? 'Daintree Rainforest' : '丹翠雨林' %>" loading="lazy" decoding="async"></picture>
+        <div><span>16° S</span><h2><%= lang === 'en' ? 'Rainforest' : '雨林' %></h2><p><%= lang === 'en' ? 'Ancient, humid and alive at every scale.' : '古老、湿润，每个尺度都充满生命。' %></p></div>
+      </article>
+      <article class="au-landscape au-landscape--south">
+        <picture><source srcset="/images/australia/kangaroo-island.webp" type="image/webp"><img src="/images/australia/kangaroo-island.jpg" alt="<%= lang === 'en' ? 'Kangaroo Island coastline' : '袋鼠岛海岸线' %>" loading="lazy" decoding="async"></picture>
+        <div><span>35° S</span><h2><%= lang === 'en' ? 'Southern Ocean' : '南大洋' %></h2><p><%= lang === 'en' ? 'Raw coast, long weather, few rooms.' : '原始海岸、漫长天气与极少的房间。' %></p></div>
+      </article>
+    </section>
+
+    <section class="au-route-logic">
+      <div class="au-section-mark"><span>02</span><p><%= lang === 'en' ? 'HOW TO BUILD IT' : '如何组合' %></p></div>
+      <div class="au-route-logic__headline"><h2><%= lang === 'en' ? 'Choose two or three ecologies. Give each one room to breathe.' : '选择两到三种生态，为每一段停留留出呼吸。' %></h2></div>
+      <div class="au-route-logic__steps">
+        <article><span>01</span><h3><%= lang === 'en' ? 'Anchor' : '先定锚点' %></h3><p><%= lang === 'en' ? 'Begin with the place you would cross the world for — reef, Uluṟu, wilderness or wine country.' : '先选择一个值得跨越半个地球抵达的地方：珊瑚礁、乌鲁鲁、荒野或葡萄酒乡。' %></p></article>
+        <article><span>02</span><h3><%= lang === 'en' ? 'Connect' : '再做连接' %></h3><p><%= lang === 'en' ? 'Add one contrasting landscape, then use a city only where it genuinely improves the rhythm.' : '再加入一种形成对照的景观；城市只在真正改善节奏时才进入路线。' %></p></article>
+        <article><span>03</span><h3><%= lang === 'en' ? 'Stay' : '最后停住' %></h3><p><%= lang === 'en' ? 'Three or four nights per lodge is often more valuable than adding another state.' : '每处旅宿住三至四晚，往往比再多去一个州更有价值。' %></p></article>
+      </div>
+    </section>
+
+    <section class="au-atlas" id="lodges">
+      <header class="au-atlas__head">
+        <div class="au-section-mark"><span>03</span><p><%= lang === 'en' ? 'THE LODGE ATLAS' : '旅宿地图' %></p></div>
+        <div><h2><%= lang === 'en' ? 'Twenty lodges. Six ways into the continent.' : '20 处旅宿，6 种进入大陆的方式。' %></h2><p><%= lang === 'en' ? 'An official-member index, organised by landscape rather than hotel tier.' : '依照官方成员名单，以景观而非酒店等级重新整理。' %></p></div>
+      </header>
+      <div class="au-atlas__grid">
+        <% collections.forEach(function(collection, collectionIndex) { %>
+        <details class="au-collection" <%= collectionIndex === 0 ? 'open' : '' %>>
+          <summary>
+            <span>0<%= collectionIndex + 1 %></span>
+            <div><h3><%= lang === 'en' ? collection.name_en : collection.name_zh %></h3><p><%= lang === 'en' ? collection.note_en : collection.note_zh %></p></div>
+            <strong><%= collection.lodges.length %></strong>
+          </summary>
+          <ol>
+            <% collection.lodges.forEach(function(lodge) { %>
+            <li><div><h4><%= lodge.name %></h4><p><%= lang === 'en' ? lodge.place_en : lodge.place_zh %></p></div><a href="<%= lodge.url %>" target="_blank" rel="noopener" aria-label="<%= lodge.name %> — <%= lang === 'en' ? 'official page' : '官方页面' %>">↗</a></li>
+            <% }); %>
+          </ol>
+        </details>
+        <% }); %>
+      </div>
+      <p class="au-atlas__note"><%= lang === 'en' ? 'Member list checked against the official Luxury Lodges of Australia collection on 10 August 2026. Membership and lodge details may change.' : '成员名单于 2026 年 8 月 10 日按 Luxury Lodges of Australia 官方合集核对；成员及旅宿信息可能发生变化。' %></p>
+    </section>
+
+    <section class="au-season">
+      <picture><source srcset="/images/australia/freycinet.webp" type="image/webp"><img src="/images/australia/freycinet.jpg" alt="<%= lang === 'en' ? 'Wineglass Bay in Freycinet National Park, Tasmania' : '塔斯马尼亚菲欣纳国家公园酒杯湾' %>" loading="lazy" decoding="async"></picture>
+      <div class="au-season__copy">
+        <p class="au-eyebrow"><%= lang === 'en' ? 'SEASON IS PART OF THE ROUTE' : '季节本身就是路线的一部分' %></p>
+        <h2><%= lang === 'en' ? 'Australia cannot be planned by one “best time”.' : '澳大利亚不存在一个适用于全境的“最佳时间”。' %></h2>
+        <p><%= lang === 'en' ? 'The tropical north, Red Centre, southern coast and Tasmania move on different calendars. We begin with the experience you want, then work backwards through climate, access and lodge seasonality.' : '热带北部、红土中心、南部海岸与塔斯马尼亚遵循不同日历。我们先理解你想要的体验，再反推气候、交通与旅宿开放季。' %></p>
+        <a href="<%= advisorUrl(lang, { source: 'australia-season' }) %>" data-enquiry-cta="australia-season"><%= lang === 'en' ? 'Ask a real advisor when to go' : '向真人顾问咨询出行时间' %> →</a>
+      </div>
+    </section>
+
+    <section class="au-enquiry">
+      <div class="au-enquiry__copy"><p class="au-eyebrow"><%= lang === 'en' ? 'START WITH ONE LANDSCAPE' : '从一种景观开始' %></p><h2><%= lang === 'en' ? 'Tell us what would make Australia worth the distance.' : '告诉我们，什么会让澳大利亚值得这段距离。' %></h2><p><%= lang === 'en' ? 'A reef, a lodge name, a month or simply the feeling you want is enough. One real advisor will connect the practical details from first conversation to return.' : '一个珊瑚礁、一家旅宿、一个月份，或一种想要的感受就足够。真人顾问会从第一次沟通开始，把实际细节持续连接到旅行归来。' %></p></div>
+      <div class="au-enquiry__form"><%- include('partials/enquiry-form', { variant: 'short', source: 'australia-luxury-lodges', route: null }) %></div>
+    </section>
+
+    <details class="au-credits"><summary><%= lang === 'en' ? 'Landscape image credits' : '景观图片来源' %></summary><p>Uluṟu — LoksLoka / CC BY-SA 4.0 · Great Barrier Reef — Nerdge / Public Domain · Daintree — Robert Linsdell / CC BY 2.0 · Kangaroo Island — Gary M. Stolz, USFWS / Public Domain · Freycinet — Liam2520 / CC BY-SA 4.0. <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a></p></details>
+  </main>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

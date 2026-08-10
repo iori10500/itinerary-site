@@ -400,6 +400,19 @@
 }
 .site-nav a:hover { color: #c8a96e; }
 
+@media (max-width: 720px) {
+  .site-nav {
+    justify-content: flex-start;
+    gap: 18px;
+    padding: 10px 14px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+  .site-nav::-webkit-scrollbar { display: none; }
+  .site-nav a { flex: 0 0 auto; white-space: nowrap; }
+}
+
 /* ===== FOOTER ===== */
 .site-footer {
   background: #1a1a2e;

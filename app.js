@@ -301,6 +301,14 @@ try {
   console.error('Failed to load china-cities:', err.message);
 }
 
+const australiaLodgesPath = path.join(__dirname, 'data', 'australia-lodges.json');
+let australiaLodgesData = { collections: [] };
+try {
+  australiaLodgesData = JSON.parse(fs.readFileSync(australiaLodgesPath, 'utf-8'));
+} catch (err) {
+  console.error('Failed to load australia-lodges:', err.message);
+}
+
 // Load lodges metadata (per-brand)
 const lodgesByBrand = {}; // { brandSlug: { lodgeSlug: { name_zh, gallery: [...] } } }
 try {
@@ -644,6 +652,7 @@ function generateFaqItems(guide, destInfo, lang) {
 
 // Extract unique countries from itineraries
 const COUNTRY_MAP = {
+  australia:   { zh: '澳大利亚', en: 'Australia', flag: '🇦🇺', aliases: ['澳洲'] },
   switzerland: { zh: '瑞士', en: 'Switzerland', flag: '🇨🇭' },
   tanzania:    { zh: '坦桑尼亚', en: 'Tanzania', flag: '🇹🇿' },
   italy:       { zh: '意大利', en: 'Italy', flag: '🇮🇹' },
@@ -874,6 +883,47 @@ app.get('/destinations/china/:region', (req, res) => {
         { name: lang === 'en' ? 'China' : '中国', path: '/destinations/china' },
         { name: lang === 'en' ? region.name_en : region.name_zh, path: `/destinations/china/${req.params.region}` },
       ]),
+    ],
+  });
+});
+
+// Australia destination hub: landscape-led slow luxury, beginning with the
+// independently owned Luxury Lodges of Australia collection.
+app.get('/destinations/australia', (req, res) => {
+  const lang = req.lang;
+  const isEn = lang === 'en';
+  const title = isEn
+    ? 'Luxury Australia Travel & Private Lodge Journeys | WR Journeys'
+    : '澳大利亚奢华旅行与精品旅宿定制 | WR Journeys';
+  const metaDescription = isEn
+    ? 'Plan a private Australia journey through reef, rainforest, red centre and Southern Ocean lodges. A real WR advisor connects the stays into one considered route.'
+    : '以 Luxury Lodges of Australia 为起点，串联珊瑚礁、雨林、红土中心与南大洋精品旅宿，由 WR 真人顾问规划完整澳洲慢奢旅程。';
+  const allLodges = australiaLodgesData.collections.flatMap(collection => collection.lodges);
+  res.render('australia-hub', {
+    lang, title, metaDescription,
+    collections: australiaLodgesData.collections,
+    allLodges,
+    contentGroup: 'australia_luxury_travel',
+    schemas: [
+      schemas.breadcrumbList([
+        { name: isEn ? 'Home' : '首页', path: '/' },
+        { name: isEn ? 'Destinations' : '目的地', path: '/destinations' },
+        { name: isEn ? 'Australia' : '澳大利亚', path: '/destinations/australia' },
+      ]),
+      schemas.itemList(
+        allLodges.map(lodge => ({ name: lodge.name, url: lodge.url })),
+        isEn ? 'Luxury Lodges of Australia featured planning collection' : 'Luxury Lodges of Australia 规划参考合集'
+      ),
+      {
+        '@context': 'https://schema.org',
+        '@type': 'TouristDestination',
+        '@id': `https://itinerary.wildroadgroup.com${isEn ? '/en' : ''}/destinations/australia#destination`,
+        name: isEn ? 'Australia' : '澳大利亚',
+        description: metaDescription,
+        url: `https://itinerary.wildroadgroup.com${isEn ? '/en' : ''}/destinations/australia`,
+        image: 'https://itinerary.wildroadgroup.com/images/australia/uluru.jpg',
+        touristType: ['Luxury travel', 'Nature travel', 'Private travel'],
+      },
     ],
   });
 });
