@@ -18,7 +18,7 @@
   <meta property="og:title" content="<%= title %>">
   <meta property="og:description" content="<%= metaDescription %>">
   <meta property="og:url" content="https://itinerary.wildroadgroup.com<%= lang === 'en' ? '/en' : '' %>/destinations/china/<%= region.slug %>">
-  <meta property="og:image" content="https://itinerary.wildroadgroup.com<%= regionHero.replace(/\.webp$/, '.jpg') %>">
+  <meta property="og:image" content="<%= cdnImage(regionHero.replace(/\.webp$/, '.jpg'), 1600) %>">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/fonts/fonts.css">
@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="/china-inbound.css?v=20260806d">
   <%- include('partials/jsonld') %>
   <%- include('partials/ga') %>
+  <script src="/cdn-fallback.js" defer></script>
 </head>
 <body class="china-page china-region-page">
   <%- include('partials/header') %>
@@ -33,7 +34,7 @@
 
   <main>
     <section class="china-hero china-hero--region">
-      <img class="china-hero__media" src="<%= regionHero %>" alt="<%= lang === 'en' ? region.name_en : region.name_zh %>" loading="eager">
+      <img class="china-hero__media" src="<%= cdnImage(regionHero, 1600) %>" alt="<%= lang === 'en' ? region.name_en : region.name_zh %>" loading="eager">
       <div class="china-hero__veil"></div>
       <div class="china-hero__inner china-hero__inner--region">
         <div class="china-hero__copy">
@@ -60,7 +61,7 @@
       <header class="china-section__head"><p><%= lang === 'en' ? 'CURATED STARTING POINTS' : '甄选出发点' %></p><h2><%= routes && routes.length ? (lang === 'en' ? 'Routes to make your own.' : '把参考线路，改成你的旅程。') : (lang === 'en' ? 'Built privately, on request.' : '暂不设标准路线，一事一议设计。') %></h2></header>
       <% if (routes && routes.length) { %>
       <div class="china-route-grid">
-        <% routes.forEach(function(r) { %><a class="china-route-card" href="<%= lang === 'en' ? '/en' : '' %>/routes/<%= r.slug %>"><picture><source srcset="<%= r.hero_path.replace(/\.jpg$/, '.webp') %>" type="image/webp"><img src="<%= r.hero_path %>" alt="<%= lang === 'en' ? r.title_en : r.title_zh %>" loading="lazy" decoding="async"></picture><div class="china-route-card__copy"><p><%= lang === 'en' ? r.duration_en : r.duration_zh %></p><h3><%= lang === 'en' ? r.title_en : r.title_zh %></h3><span><%= lang === 'en' ? 'See the journey' : '查看旅程' %> →</span></div></a><% }); %>
+        <% routes.forEach(function(r) { %><a class="china-route-card" href="<%= lang === 'en' ? '/en' : '' %>/routes/<%= r.slug %>"><picture><source srcset="<%= cdnImage(r.hero_path.replace(/\.jpg$/, '.webp'), 800) %>" type="image/webp"><img src="<%= cdnImage(r.hero_path, 800) %>" alt="<%= lang === 'en' ? r.title_en : r.title_zh %>" loading="lazy" decoding="async"></picture><div class="china-route-card__copy"><p><%= lang === 'en' ? r.duration_en : r.duration_zh %></p><h3><%= lang === 'en' ? r.title_en : r.title_zh %></h3><span><%= lang === 'en' ? 'See the journey' : '查看旅程' %> →</span></div></a><% }); %>
       </div>
       <% } else { %>
       <div class="china-empty"><p><%= lang === 'en' ? 'Public routes are still being prepared. A real advisor can already shape a private journey around your dates, fitness, photography or family needs.' : '公开线路仍在整理中。真人顾问已经可以围绕日期、体力、摄影或亲子需求，一事一议设计私人旅程。' %></p><a href="<%= advisorUrl(lang, { source: 'china-region-empty-' + region.slug }) %>" data-enquiry-cta="china-region-empty"><%= lang === 'en' ? 'Ask an advisor' : '联系顾问' %> →</a></div>

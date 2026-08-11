@@ -11,7 +11,7 @@
   <link rel="alternate" hreflang="x-default" href="https://itinerary.wildroadgroup.com/routes/<%= route.slug %>">
   <meta property="og:title" content="<%= (lang === 'en' ? route.title_en : route.title_zh) %> | WR Journeys">
   <meta property="og:url" content="https://itinerary.wildroadgroup.com<%= lang === 'en' ? '/en' : '' %>/routes/<%= route.slug %>">
-  <meta property="og:image" content="https://itinerary.wildroadgroup.com<%= route.hero_path %>">
+  <meta property="og:image" content="<%= cdnImage(route.hero_path, 1600) %>">
   <meta property="og:type" content="article">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" href="/favicon.png">
@@ -64,6 +64,7 @@
     @media (max-width:640px) { .r-hero h1 { font-size:26px; } .r-hero { height:50vh; } .r-body { padding:32px 20px 60px; } .lodge-shot picture, .lodge-shot img { height:140px; } .lodge-shot-hero picture, .lodge-shot-hero img { height:200px; } }
   </style>
 <%- include('partials/ga') %>
+  <script src="/cdn-fallback.js" defer></script>
 </head>
 <body>
   <%- include("partials/header") %>
@@ -71,8 +72,8 @@
 
   <section class="r-hero">
     <picture>
-      <source srcset="<%= route.hero_path.replace(/\.jpg$/, '.webp') %>" type="image/webp">
-      <img src="<%= route.hero_path %>" alt="<%= lang === 'en' ? route.title_en : route.title_zh %>" loading="eager">
+      <source srcset="<%= cdnImage(route.hero_path.replace(/\.jpg$/, '.webp'), 1600) %>" type="image/webp">
+      <img src="<%= cdnImage(route.hero_path, 1600) %>" alt="<%= lang === 'en' ? route.title_en : route.title_zh %>" loading="eager">
     </picture>
     <div class="scrim"></div>
     <div class="inner">
@@ -117,8 +118,8 @@
         <% lodge.gallery.forEach(function(g, idx) { %>
         <figure class="lodge-shot<%= idx === 0 ? ' lodge-shot-hero' : '' %>">
           <picture>
-            <source srcset="<%= g.path.replace(/\.jpg$/, '.webp') %>" type="image/webp">
-            <img src="<%= g.path %>" alt="<%= lang === 'en' ? g.caption_en : g.caption_zh %>" loading="lazy" decoding="async">
+            <source srcset="<%= cdnImage(g.path.replace(/\.jpg$/, '.webp'), 1000) %>" type="image/webp">
+            <img src="<%= cdnImage(g.path, 1000) %>" alt="<%= lang === 'en' ? g.caption_en : g.caption_zh %>" loading="lazy" decoding="async">
           </picture>
           <figcaption><%= lang === 'en' ? g.caption_en : g.caption_zh %></figcaption>
         </figure>

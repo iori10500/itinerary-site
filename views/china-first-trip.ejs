@@ -12,7 +12,7 @@
   <meta property="og:title" content="<%= title %>">
   <meta property="og:description" content="<%= metaDescription %>">
   <meta property="og:url" content="https://itinerary.wildroadgroup.com<%= lang === 'en' ? '/en' : '' %>/guides/first-trip-to-china">
-  <meta property="og:image" content="https://itinerary.wildroadgroup.com/images/chengdu-dali-lijiang-14d/cover.jpg">
+  <meta property="og:image" content="<%= cdnImage('/images/chengdu-dali-lijiang-14d/cover.jpg', 1600) %>">
   <meta property="og:type" content="article">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/fonts/fonts.css">
@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="/china-inbound.css?v=20260806d">
   <%- include('partials/jsonld') %>
   <%- include('partials/ga') %>
+  <script src="/cdn-fallback.js" defer></script>
 </head>
 <body class="china-page china-guide-page">
   <%- include('partials/header') %>
@@ -29,8 +30,8 @@
   <main>
     <section class="china-guide-hero">
       <picture class="china-guide-hero__media" aria-hidden="true">
-        <source srcset="/images/chengdu-dali-lijiang-14d/cover.webp" type="image/webp">
-        <img src="/images/chengdu-dali-lijiang-14d/cover.jpg" alt="" loading="eager">
+        <source srcset="<%= cdnImage('/images/chengdu-dali-lijiang-14d/cover.webp', 1600) %>" type="image/webp">
+        <img src="<%= cdnImage('/images/chengdu-dali-lijiang-14d/cover.jpg', 1600) %>" alt="" loading="eager">
       </picture>
       <div class="china-guide-hero__veil"></div>
       <div class="china-guide-hero__inner">

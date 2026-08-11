@@ -12,7 +12,7 @@
   <meta property="og:title" content="<%= title %>">
   <meta property="og:description" content="<%= metaDescription %>">
   <meta property="og:url" content="https://itinerary.wildroadgroup.com<%= lang === 'en' ? '/en' : '' %>/destinations/australia">
-  <meta property="og:image" content="https://itinerary.wildroadgroup.com/images/australia/uluru.jpg">
+  <meta property="og:image" content="<%= cdnImage('/images/australia/uluru.jpg', 1600) %>">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" href="/favicon.png">
@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="/australia.css?v=20260810c">
   <%- include('partials/jsonld') %>
   <%- include('partials/ga') %>
+  <script src="/cdn-fallback.js" defer></script>
 </head>
 <body class="au-page">
   <%- include('partials/header') %>
@@ -30,8 +31,8 @@
   <main>
     <section class="au-hero">
       <picture class="au-hero__media" aria-hidden="true">
-        <source srcset="/images/australia/uluru.webp" type="image/webp">
-        <img src="/images/australia/uluru.jpg" alt="" loading="eager">
+        <source srcset="<%= cdnImage('/images/australia/uluru.webp', 1600) %>" type="image/webp">
+        <img src="<%= cdnImage('/images/australia/uluru.jpg', 1600) %>" alt="" loading="eager">
       </picture>
       <div class="au-hero__veil"></div>
       <div class="au-hero__copy">
@@ -65,15 +66,15 @@
 
     <section class="au-landscapes" aria-label="<%= lang === 'en' ? 'Australian landscapes' : '澳大利亚景观' %>">
       <article class="au-landscape au-landscape--reef">
-        <picture><source srcset="/images/australia/great-barrier-reef.webp" type="image/webp"><img src="/images/australia/great-barrier-reef.jpg" alt="<%= lang === 'en' ? 'Aerial view of the Great Barrier Reef' : '大堡礁航拍景观' %>" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="<%= cdnImage('/images/australia/great-barrier-reef.webp', 1000) %>" type="image/webp"><img src="<%= cdnImage('/images/australia/great-barrier-reef.jpg', 1000) %>" alt="<%= lang === 'en' ? 'Aerial view of the Great Barrier Reef' : '大堡礁航拍景观' %>" loading="lazy" decoding="async"></picture>
         <div><span>18° S</span><h2><%= lang === 'en' ? 'Reef' : '珊瑚礁' %></h2><p><%= lang === 'en' ? 'Enter by island, not itinerary.' : '从一座岛进入，而不是从行程表进入。' %></p></div>
       </article>
       <article class="au-landscape au-landscape--forest">
-        <picture><source srcset="/images/australia/daintree.webp" type="image/webp"><img src="/images/australia/daintree.jpg" alt="<%= lang === 'en' ? 'Daintree Rainforest' : '丹翠雨林' %>" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="<%= cdnImage('/images/australia/daintree.webp', 1000) %>" type="image/webp"><img src="<%= cdnImage('/images/australia/daintree.jpg', 1000) %>" alt="<%= lang === 'en' ? 'Daintree Rainforest' : '丹翠雨林' %>" loading="lazy" decoding="async"></picture>
         <div><span>16° S</span><h2><%= lang === 'en' ? 'Rainforest' : '雨林' %></h2><p><%= lang === 'en' ? 'Ancient, humid and alive at every scale.' : '古老、湿润，每个尺度都充满生命。' %></p></div>
       </article>
       <article class="au-landscape au-landscape--south">
-        <picture><source srcset="/images/australia/kangaroo-island.webp" type="image/webp"><img src="/images/australia/kangaroo-island.jpg" alt="<%= lang === 'en' ? 'Kangaroo Island coastline' : '袋鼠岛海岸线' %>" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="<%= cdnImage('/images/australia/kangaroo-island.webp', 1000) %>" type="image/webp"><img src="<%= cdnImage('/images/australia/kangaroo-island.jpg', 1000) %>" alt="<%= lang === 'en' ? 'Kangaroo Island coastline' : '袋鼠岛海岸线' %>" loading="lazy" decoding="async"></picture>
         <div><span>35° S</span><h2><%= lang === 'en' ? 'Southern Ocean' : '南大洋' %></h2><p><%= lang === 'en' ? 'Raw coast, long weather, few rooms.' : '原始海岸、漫长天气与极少的房间。' %></p></div>
       </article>
     </section>
@@ -127,7 +128,7 @@
     </section>
 
     <section class="au-season">
-      <picture><source srcset="/images/australia/freycinet.webp" type="image/webp"><img src="/images/australia/freycinet.jpg" alt="<%= lang === 'en' ? 'Wineglass Bay in Freycinet National Park, Tasmania' : '塔斯马尼亚菲欣纳国家公园酒杯湾' %>" loading="lazy" decoding="async"></picture>
+      <picture><source srcset="<%= cdnImage('/images/australia/freycinet.webp', 1000) %>" type="image/webp"><img src="<%= cdnImage('/images/australia/freycinet.jpg', 1000) %>" alt="<%= lang === 'en' ? 'Wineglass Bay in Freycinet National Park, Tasmania' : '塔斯马尼亚菲欣纳国家公园酒杯湾' %>" loading="lazy" decoding="async"></picture>
       <div class="au-season__copy">
         <p class="au-eyebrow"><%= lang === 'en' ? 'SEASON IS PART OF THE ROUTE' : '季节本身就是路线的一部分' %></p>
         <h2><%= lang === 'en' ? 'Australia cannot be planned by one “best time”.' : '澳大利亚不存在一个适用于全境的“最佳时间”。' %></h2>

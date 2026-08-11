@@ -8,12 +8,12 @@
   <% if (itinerary) { %>
   <meta property="og:title" content="<%= lang === 'en' ? (itinerary.title_en || itinerary.title) : itinerary.title %> - WR Travel">
   <meta property="og:description" content="<%= lang === 'en' ? (itinerary.description_en || '') : itinerary.description %>">
-  <meta property="og:image" content="https://itinerary.wildroadgroup.com/<%= itinerary.coverImage %>">
+  <meta property="og:image" content="<%= cdnImage(itinerary.coverImage, 1600) %>">
   <meta property="og:url" content="https://itinerary.wildroadgroup.com<%= lang === 'en' ? '/en' : '' %>/<%= itinerary.id %>">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="<%= lang === 'en' ? (itinerary.title_en || itinerary.title) : itinerary.title %> - WR Travel">
   <meta name="twitter:description" content="<%= lang === 'en' ? (itinerary.description_en || '') : itinerary.description %>">
-  <meta name="twitter:image" content="https://itinerary.wildroadgroup.com/<%= itinerary.coverImage %>">
+  <meta name="twitter:image" content="<%= cdnImage(itinerary.coverImage, 1600) %>">
   <link rel="canonical" href="https://itinerary.wildroadgroup.com<%= lang === 'en' ? '/en' : '' %>/<%= itinerary.id %>">
   <link rel="alternate" hreflang="zh-CN" href="https://itinerary.wildroadgroup.com/<%= itinerary.id %>">
   <link rel="alternate" hreflang="en" href="https://itinerary.wildroadgroup.com/en/<%= itinerary.id %>">
@@ -35,7 +35,7 @@
     "description": lang === 'en' ? (itinerary.description_en || itinerary.description) : itinerary.description,
     "touristType": "Luxury",
     "duration": "P" + itinerary.days + "D",
-    "image": "https://itinerary.wildroadgroup.com/" + itinerary.coverImage,
+    "image": cdnImage(itinerary.coverImage, 1600),
     "url": "https://itinerary.wildroadgroup.com" + (lang === 'en' ? '/en' : '') + "/" + itinerary.id,
     "datePublished": itinerary.createdAt,
     "dateModified": itinerary.updatedAt || itinerary.createdAt,
@@ -91,6 +91,7 @@
   <link rel="stylesheet" href="/main.css?v=20260801">
   <link rel="stylesheet" href="/detail.css">
 <%- include('partials/ga') %>
+  <script src="/cdn-fallback.js" defer></script>
 </head>
 <body style="background:#1a1a2e;color:rgba(255,255,255,0.8);">
   <%- include("partials/header") %>
@@ -240,8 +241,8 @@
       <% itineraries.filter(function(r) { return r.id !== itinerary.id; }).slice(0, 3).forEach(function(rel) { %>
         <a href="<%= lang === 'en' ? '/en' : '' %>/<%= rel.id %>" class="related-card">
           <picture>
-            <source srcset="/<%= rel.coverImage.replace(/\.(jpg|jpeg|png)$/i, '.webp') %>" type="image/webp">
-            <img src="/<%= rel.coverImage %>" alt="<%= lang === 'en' ? (rel.title_en || rel.title) : rel.title %>" loading="lazy" decoding="async">
+            <source srcset="<%= cdnImage(rel.coverImage.replace(/\.(jpg|jpeg|png)$/i, '.webp'), 800) %>" type="image/webp">
+            <img src="<%= cdnImage(rel.coverImage, 800) %>" alt="<%= lang === 'en' ? (rel.title_en || rel.title) : rel.title %>" loading="lazy" decoding="async">
           </picture>
           <div class="related-body">
             <p class="related-title"><%= lang === 'en' ? (rel.title_en || rel.title) : rel.title %></p>

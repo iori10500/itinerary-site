@@ -87,6 +87,7 @@
     .gd-related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
   </style>
 <%- include('partials/ga') %>
+  <script src="/cdn-fallback.js" defer></script>
 </head>
 <body>
   <button id="langToggle" onclick="toggleLang()" class="lang-toggle"><%= lang === 'en' ? '中' : 'EN' %></button>
@@ -132,8 +133,8 @@
           <a class="card" href="<%= lang === 'en' ? '/en' : '' %>/<%= item.id %>" style="text-decoration:none;color:inherit;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.06);transition:transform 0.3s;">
             <div style="position:relative;height:180px;overflow:hidden;">
               <picture>
-                <source srcset="/<%= item.coverImage.replace(/\.(jpg|jpeg|png)$/i, '.webp') %>" type="image/webp">
-                <img src="/<%= item.coverImage %>" alt="<%= lang === 'en' ? (item.title_en || item.title) : item.title %>" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;">
+                <source srcset="<%= cdnImage(item.coverImage.replace(/\.(jpg|jpeg|png)$/i, '.webp'), 800) %>" type="image/webp">
+                <img src="<%= cdnImage(item.coverImage, 800) %>" alt="<%= lang === 'en' ? (item.title_en || item.title) : item.title %>" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;">
               </picture>
               <div style="position:absolute;top:16px;left:16px;background:rgba(0,0,0,0.55);color:#fff;font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;"><%= lang === 'en' ? item.days + 'D ' + (item.days - 1) + 'N' : item.days + '天' + (item.days - 1) + '晚' %></div>
             </div>

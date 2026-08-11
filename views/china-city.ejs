@@ -12,7 +12,7 @@
   <meta property="og:title" content="<%= title %>">
   <meta property="og:description" content="<%= metaDescription %>">
   <meta property="og:url" content="https://itinerary.wildroadgroup.com<%= lang === 'en' ? '/en' : '' %>/destinations/china/<%= city.slug %>">
-  <meta property="og:image" content="https://itinerary.wildroadgroup.com<%= city.hero %>">
+  <meta property="og:image" content="<%= cdnImage(city.hero, 1600) %>">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/fonts/fonts.css">
@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="/china-inbound.css?v=20260806d">
   <%- include('partials/jsonld') %>
   <%- include('partials/ga') %>
+  <script src="/cdn-fallback.js" defer></script>
 </head>
 <body class="china-page china-city-page china-city-page--<%= city.slug %>">
   <%- include('partials/header') %>
@@ -29,8 +30,8 @@
   <main>
     <section class="china-city-hero">
       <picture class="china-city-hero__media" aria-hidden="true">
-        <source srcset="<%= city.hero.replace(/\.jpg$/, '.webp') %>" type="image/webp">
-        <img src="<%= city.hero %>" alt="" loading="eager">
+        <source srcset="<%= cdnImage(city.hero.replace(/\.jpg$/, '.webp'), 1600) %>" type="image/webp">
+        <img src="<%= cdnImage(city.hero, 1600) %>" alt="" loading="eager">
       </picture>
       <div class="china-city-hero__veil"></div>
       <div class="china-city-hero__inner">

@@ -7,7 +7,7 @@
   <meta name="description" content="<%= lang === 'en' ? 'Human-curated slow-luxury journeys. A real advisor listens, plans and stays with your travel story from first conversation to return.' : '真人甄选的慢奢旅程。从第一次交谈到旅行归来，由真人顾问聆听、规划并陪您完成整段旅行故事。' %>">
   <meta property="og:title" content="<%= title %>">
   <meta property="og:description" content="<%= lang === 'en' ? 'AI helps us connect faster; listening, judgement and end-to-end care remain human.' : 'AI 让我们更快相遇；聆听、判断与从始至终的照顾始终来自真人。' %>">
-  <meta property="og:image" content="https://itinerary.wildroadgroup.com/<%= itineraries[0] ? itineraries[0].coverImage : '' %>">
+  <meta property="og:image" content="<%= itineraries[0] ? cdnImage(itineraries[0].coverImage, 1600) : '' %>">
   <meta property="og:url" content="https://itinerary.wildroadgroup.com<%= lang === 'en' ? '/en' : '' %>/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="WR Travel">
@@ -15,7 +15,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="<%= title %>">
   <meta name="twitter:description" content="<%= lang === 'en' ? 'A real advisor, from first conversation to return.' : '从第一次交谈到旅行归来，始终由真人顾问陪伴。' %>">
-  <meta name="twitter:image" content="https://itinerary.wildroadgroup.com/<%= itineraries[0] ? itineraries[0].coverImage : '' %>">
+  <meta name="twitter:image" content="<%= itineraries[0] ? cdnImage(itineraries[0].coverImage, 1600) : '' %>">
   <link rel="canonical" href="https://itinerary.wildroadgroup.com<%= lang === 'en' ? '/en' : '' %>/">
   <link rel="alternate" hreflang="zh-CN" href="https://itinerary.wildroadgroup.com/">
   <link rel="alternate" hreflang="en" href="https://itinerary.wildroadgroup.com/en/">
@@ -54,6 +54,7 @@
   <link rel="stylesheet" href="/main.css?v=20260801">
   <link rel="stylesheet" href="/enquiry.css">
 <%- include('partials/ga') %>
+  <script src="/cdn-fallback.js" defer></script>
 </head>
 <body>
   <%- include("partials/header") %>
@@ -156,8 +157,8 @@
            data-regions="<%= (item.regions || []).join(',') %>,<%= (item.regions_en || []).join(',') %>">
           <div class="card-image">
             <picture>
-              <source srcset="/<%= item.coverImage.replace(/\.(jpg|jpeg|png)$/i, '.webp') %>" type="image/webp">
-              <img src="/<%= item.coverImage %>" alt="<%= cardTitle %>" loading="lazy" decoding="async"
+              <source srcset="<%= cdnImage(item.coverImage.replace(/\.(jpg|jpeg|png)$/i, '.webp'), 800) %>" type="image/webp">
+              <img src="<%= cdnImage(item.coverImage, 800) %>" alt="<%= cardTitle %>" loading="lazy" decoding="async"
                    onerror="this.style.display='none'">
             </picture>
             <div class="gradient"></div>

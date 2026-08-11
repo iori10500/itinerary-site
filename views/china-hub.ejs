@@ -12,7 +12,7 @@
   <meta property="og:title" content="<%= title %>">
   <meta property="og:description" content="<%= metaDescription %>">
   <meta property="og:url" content="https://itinerary.wildroadgroup.com<%= lang === 'en' ? '/en' : '' %>/destinations/china">
-  <meta property="og:image" content="https://itinerary.wildroadgroup.com/images/chengdu-dali-lijiang-14d/cover.jpg">
+  <meta property="og:image" content="<%= cdnImage('/images/chengdu-dali-lijiang-14d/cover.jpg', 1600) %>">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" href="/favicon.png">
@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="/china-inbound.css?v=20260806d">
   <%- include('partials/jsonld') %>
   <%- include('partials/ga') %>
+  <script src="/cdn-fallback.js" defer></script>
 </head>
 <body class="china-page china-hub-page">
   <%- include('partials/header') %>
@@ -30,8 +31,8 @@
   <main>
     <section class="china-hero china-hero--hub">
       <picture class="china-hero__media" aria-hidden="true">
-        <source srcset="/images/chengdu-dali-lijiang-14d/cover.webp" type="image/webp">
-        <img src="/images/chengdu-dali-lijiang-14d/cover.jpg" alt="" loading="eager">
+        <source srcset="<%= cdnImage('/images/chengdu-dali-lijiang-14d/cover.webp', 1600) %>" type="image/webp">
+        <img src="<%= cdnImage('/images/chengdu-dali-lijiang-14d/cover.jpg', 1600) %>" alt="" loading="eager">
       </picture>
       <div class="china-hero__veil"></div>
       <div class="china-hero__inner">
@@ -106,7 +107,7 @@
       <div class="china-route-grid">
         <% featuredRoutes.forEach(function(r) { %>
         <a class="china-route-card" href="<%= lang === 'en' ? '/en' : '' %>/routes/<%= r.slug %>">
-          <picture><source srcset="<%= r.hero_path.replace(/\.jpg$/, '.webp') %>" type="image/webp"><img src="<%= r.hero_path %>" alt="<%= lang === 'en' ? r.title_en : r.title_zh %>" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="<%= cdnImage(r.hero_path.replace(/\.jpg$/, '.webp'), 800) %>" type="image/webp"><img src="<%= cdnImage(r.hero_path, 800) %>" alt="<%= lang === 'en' ? r.title_en : r.title_zh %>" loading="lazy" decoding="async"></picture>
           <div class="china-route-card__copy"><p><%= lang === 'en' ? r.region_en : r.region_zh %> · <%= lang === 'en' ? r.duration_en : r.duration_zh %></p><h3><%= lang === 'en' ? r.title_en : r.title_zh %></h3><span><%= lang === 'en' ? 'See the journey' : '查看旅程' %> →</span></div>
         </a>
         <% }); %>

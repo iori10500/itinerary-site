@@ -27,6 +27,28 @@ function extractBrochureContent(html) {
 const app = express();
 app.disable('x-powered-by');
 const PORT = 3099;
+const JOURNEYS_CDN_BASE = 'https://img.wr-travel.com/wr-journeys';
+
+function cdnImage(assetPath, width) {
+  if (!assetPath) return assetPath;
+
+  const original = String(assetPath);
+  if (original.startsWith(JOURNEYS_CDN_BASE)) return original;
+  if (/^(?:data:|blob:|https?:\/\/)/i.test(original)) {
+    const originPrefix = 'https://itinerary.wildroadgroup.com/';
+    if (!original.startsWith(originPrefix)) return original;
+  }
+
+  const localPath = original
+    .replace('https://itinerary.wildroadgroup.com/', '')
+    .replace(/^(?:\.\.\/)+/, '')
+    .replace(/^\/+/, '');
+  if (!/\.(?:avif|gif|jpe?g|png|svg|webp)$/i.test(localPath)) return original;
+
+  const cdnUrl = `${JOURNEYS_CDN_BASE}/${localPath}`;
+  if (!width || /\.(?:gif|svg)$/i.test(localPath)) return cdnUrl;
+  return `${cdnUrl}?imageView2/2/w/${Math.round(width)}/format/webp/q/82`;
+}
 
 // Set EJS as view engine
 app.set('view engine', 'ejs');
@@ -64,6 +86,7 @@ app.locals.urlFor = function(p, lang) {
   return p;
 };
 app.locals.SITE_URL = 'https://itinerary.wildroadgroup.com';
+app.locals.cdnImage = cdnImage;
 app.locals.advisorUrl = function(lang, params = {}) {
   const base = (lang === 'en' ? '/en' : '') + '/advisor';
   const query = new URLSearchParams(Object.entries(params).filter(([, value]) => value));
@@ -71,7 +94,7 @@ app.locals.advisorUrl = function(lang, params = {}) {
 };
 app.locals.turnstileSiteKey = process.env.TURNSTILE_SITE_KEY || '';
 app.locals.advisorEmail = process.env.ADVISOR_PUBLIC_EMAIL || 'info@wildroadgroup.com';
-app.locals.wechatQrPath = process.env.WECHAT_QR_PATH || '/images/wechat-contact-qr.png';
+app.locals.wechatQrPath = process.env.WECHAT_QR_PATH || cdnImage('/images/wechat-contact-qr.png');
 
 app.use(express.json({ limit: '32kb' }));
 app.use(express.urlencoded({ extended: false, limit: '32kb' }));
@@ -817,7 +840,7 @@ app.get('/guides/first-trip-to-china', (req, res) => {
         dateModified: '2026-08-06',
         author: { '@type': 'Organization', name: 'WR Journeys' },
         publisher: { '@id': 'https://itinerary.wildroadgroup.com#org' },
-        image: 'https://itinerary.wildroadgroup.com/images/chengdu-dali-lijiang-14d/cover.jpg',
+        image: cdnImage('/images/chengdu-dali-lijiang-14d/cover.jpg', 1600),
       },
     ],
   });
@@ -854,7 +877,7 @@ app.get('/destinations/china/:region', (req, res) => {
           name: isEn ? city.name_en : city.name_zh,
           description: metaDescription,
           url: `https://itinerary.wildroadgroup.com${canonicalPath}`,
-          image: `https://itinerary.wildroadgroup.com${city.hero}`,
+          image: cdnImage(city.hero, 1600),
           touristType: ['Private travel', 'Cultural travel', 'Luxury travel'],
         },
       ],
@@ -921,7 +944,7 @@ app.get('/destinations/australia', (req, res) => {
         name: isEn ? 'Australia' : '澳大利亚',
         description: metaDescription,
         url: `https://itinerary.wildroadgroup.com${isEn ? '/en' : ''}/destinations/australia`,
-        image: 'https://itinerary.wildroadgroup.com/images/australia/uluru.jpg',
+        image: cdnImage('/images/australia/uluru.jpg', 1600),
         touristType: ['Luxury travel', 'Nature travel', 'Private travel'],
       },
     ],
